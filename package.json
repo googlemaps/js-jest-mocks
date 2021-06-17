@@ -1,0 +1,51 @@
+{
+  "name": "@googlemaps/jest-mocks",
+  "version": "1.0.0",
+  "keywords": [
+    "google",
+    "maps",
+    "jest"
+  ],
+  "homepage": "https://github.com/googlemaps/js-jest-mocks",
+  "bugs": {
+    "url": "https://github.com/googlemaps/js-jest-mocks/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/googlemaps/js-jest-mocks.git"
+  },
+  "license": "Apache-2.0",
+  "author": "Justin Poehnelt",
+  "files": [
+    "dist/*"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "format": "prettier *.json *.js --write && eslint src/* --fix",
+    "lint": "eslint src/*",
+    "prepare": "rollup -c",
+    "test": "jest src/*",
+    "build": "rm -rf dist && rollup -c"
+  },
+  "devDependencies": {
+    "@types/google.maps": "^3.45.3",
+    "@types/jest": "^26.0.23",
+    "@typescript-eslint/eslint-plugin": ">=4.27.0",
+    "@typescript-eslint/parser": ">=4.27.0",
+    "eslint": "^7.28.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jest": "^24.3.6",
+    "eslint-plugin-prettier": "^3.4.0",
+    "jest": "^27.0.4",
+    "prettier": "^2.3.1",
+    "rollup": "^2.52.1",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "ts-jest": "^27.0.3",
+    "typescript": "^4.3.4"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://wombat-dressing-room.appspot.com"
+  }
+}
