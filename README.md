@@ -1,6 +1,6 @@
 # Jest Mocks for Google Maps
 
-[![npm](https://img.shields.io/npm/v/@googlemaps/three)](https://www.npmjs.com/package/@googlemaps/jest-mocks)
+[![npm](https://img.shields.io/npm/v/@googlemaps/jest-mocks)](https://www.npmjs.com/package/@googlemaps/jest-mocks)
 ![Build](https://github.com/googlemaps/js-jest-mocks/workflows/Build/badge.svg)
 ![Release](https://github.com/googlemaps/js-jest-mocks/workflows/Release/badge.svg)
 [![codecov](https://codecov.io/gh/googlemaps/js-jest-mocks/branch/main/graph/badge.svg)](https://codecov.io/gh/googlemaps/js-jest-mocks)
