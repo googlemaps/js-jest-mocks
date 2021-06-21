@@ -22,7 +22,7 @@ export default [
     plugins: [typescript()],
     output: {
       file: "dist/index.js",
-      format: "esm",
+      format: "cjs",
     },
   },
 ];
