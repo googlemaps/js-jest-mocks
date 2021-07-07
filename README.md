@@ -41,4 +41,5 @@ the library that we want you to build real production applications on it.
 If you find a bug, or have a feature suggestion, please [log an issue][issues]. If you'd like to
 contribute, please read [How to Contribute][contrib].
 
-[issues]: https://github.com/googlemaps/v3-utility-library/issues
+[issues]: https://github.com/googlemaps/js-jest-mocks/issues
+[contrib]: CONTRIBUTING.md
