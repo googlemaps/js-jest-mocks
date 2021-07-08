@@ -24,6 +24,8 @@ import { MVCArray } from "./mvcarray";
 import { MVCObject } from "./mvcobject";
 import { Point } from "./point";
 import { Polyline } from "./polyline";
+import { Autocomplete } from "./places/autocomplete";
+import { SearchBox } from "./places/searchbox";
 import { Size } from "./size";
 
 enum MapTypeId {
@@ -55,6 +57,10 @@ const initialize = function (): void {
         clearListeners: jest.fn(),
         removeListener: jest.fn(),
         trigger: jest.fn(),
+      },
+      places: {
+        Autocomplete: Autocomplete,
+        SearchBox: SearchBox,
       },
       Polyline: Polyline,
       Circle: Circle,
