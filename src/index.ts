@@ -16,14 +16,15 @@
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
+import { Circle } from "./circle";
 import { LatLng, LatLngBounds } from "./latlng";
 import { Map_ } from "./map";
 import { Marker } from "./marker";
 import { MVCArray } from "./mvcarray";
 import { MVCObject } from "./mvcobject";
 import { Point } from "./point";
-import { Size } from "./size";
 import { Polyline } from "./polyline";
+import { Size } from "./size";
 
 enum MapTypeId {
   HYBRID = "hybrid",
@@ -56,6 +57,7 @@ const initialize = function (): void {
         trigger: jest.fn(),
       },
       Polyline: Polyline,
+      Circle: Circle,
     },
   };
 };
