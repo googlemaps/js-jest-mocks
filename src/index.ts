@@ -16,16 +16,17 @@
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
+import { Circle } from "./circle";
 import { LatLng, LatLngBounds } from "./latlng";
 import { Map_ } from "./map";
 import { Marker } from "./marker";
 import { MVCArray } from "./mvcarray";
 import { MVCObject } from "./mvcobject";
 import { Point } from "./point";
-import { Size } from "./size";
 import { Polyline } from "./polyline";
 import { Autocomplete } from "./places/autocomplete";
 import { SearchBox } from "./places/searchbox";
+import { Size } from "./size";
 
 enum MapTypeId {
   HYBRID = "hybrid",
@@ -62,6 +63,7 @@ const initialize = function (): void {
         SearchBox: SearchBox,
       },
       Polyline: Polyline,
+      Circle: Circle,
     },
   };
 };
