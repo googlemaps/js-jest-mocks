@@ -24,6 +24,7 @@ import { MVCObject } from "./mvcobject";
 import { Point } from "./point";
 import { Size } from "./size";
 import { Polyline } from "./polyline";
+import { Autocomplete } from "./places/autocomplete";
 
 enum MapTypeId {
   HYBRID = "hybrid",
@@ -54,6 +55,9 @@ const initialize = function (): void {
         clearListeners: jest.fn(),
         removeListener: jest.fn(),
         trigger: jest.fn(),
+      },
+      places: {
+        Autocomplete: Autocomplete,
       },
       Polyline: Polyline,
     },
