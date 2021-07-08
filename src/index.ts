@@ -25,6 +25,7 @@ import { Point } from "./point";
 import { Size } from "./size";
 import { Polyline } from "./polyline";
 import { Autocomplete } from "./places/autocomplete";
+import { SearchBox } from "./places/searchbox";
 
 enum MapTypeId {
   HYBRID = "hybrid",
@@ -58,6 +59,7 @@ const initialize = function (): void {
       },
       places: {
         Autocomplete: Autocomplete,
+        SearchBox: SearchBox,
       },
       Polyline: Polyline,
     },
