@@ -31,7 +31,7 @@
   "devDependencies": {
     "@types/google.maps": "^3.45.6",
     "@types/jest": "^26.0.24",
-    "@typescript-eslint/eslint-plugin": ">=4.28.4",
+    "@typescript-eslint/eslint-plugin": ">=4.28.5",
     "@typescript-eslint/parser": ">=4.28.4",
     "eslint": "^7.31.0",
     "eslint-config-prettier": "^8.3.0",
