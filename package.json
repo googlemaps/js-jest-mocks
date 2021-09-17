@@ -22,8 +22,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "format": "prettier *.json *.js --write && eslint src/* --fix",
-    "lint": "eslint src/*",
+    "format": "eslint . --fix",
+    "lint": "eslint .",
     "prepare": "rm -rf dist && rollup -c",
     "test": "jest src/*",
     "docs": "typedoc src/index.ts"
