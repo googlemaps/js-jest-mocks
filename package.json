@@ -26,7 +26,7 @@
     "lint": "eslint src/*",
     "prepare": "rm -rf dist && rollup -c",
     "test": "jest src/*",
-    "docs": "typedoc src/index.ts && cp -r dist docs/dist && cp -r examples docs/examples"
+    "docs": "typedoc src/index.ts"
   },
   "devDependencies": {
     "@types/google.maps": "^3.45.6",
