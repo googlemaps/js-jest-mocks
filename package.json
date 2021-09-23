@@ -39,7 +39,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^27.2.1",
     "prettier": "^2.4.1",
-    "rollup": "^2.56.3",
+    "rollup": "^2.57.0",
     "rollup-plugin-typescript2": "^0.30.0",
     "ts-jest": "^27.0.5",
     "typedoc": "^0.22.4",
