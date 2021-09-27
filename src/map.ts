@@ -14,7 +14,8 @@
  * limitations under the License.
  */
 
-import { LatLng } from "./latlng";
+import { LatLng, LatLngBounds } from "./latlng";
+
 import { MVCObject } from "./mvcobject";
 
 export class Map_ extends MVCObject implements google.maps.Map {
@@ -26,60 +27,64 @@ export class Map_ extends MVCObject implements google.maps.Map {
   constructor(mapDiv: Element | null, opts?: google.maps.MapOptions) {
     super();
   }
-  fitBounds = jest
+  public fitBounds = jest
     .fn()
     .mockImplementation(
       (
         bounds: google.maps.LatLngBounds | google.maps.LatLngBoundsLiteral,
         padding?: number | google.maps.Padding
-      ): void => {}
+      ): void => {
+        return null;
+      }
     );
-  getBounds = jest
-    .fn()
-    .mockImplementation(
-      (): google.maps.LatLngBounds | null | undefined => null
-    );
-  getCenter = jest
+  public getBounds = jest.fn().mockImplementation(() => new LatLngBounds());
+  public getCenter = jest
     .fn()
     .mockImplementation(
       (): google.maps.LatLng => new LatLng({ lat: 0, lng: 0 })
     );
-  getClickableIcons = jest.fn().mockImplementation((): boolean => false);
-  getDiv = jest.fn().mockImplementation((): Element => {
+  public getClickableIcons = jest.fn().mockImplementation((): boolean => false);
+  public getDiv = jest.fn().mockImplementation((): Element => {
     return jest.fn() as unknown as Element;
   });
-  getHeading = jest.fn().mockImplementation((): number => 0);
-  getMapTypeId = jest
+  public getHeading = jest.fn().mockImplementation((): number => 0);
+  public getMapTypeId = jest
     .fn()
     .mockImplementation(
       (): google.maps.MapTypeId => google.maps.MapTypeId.ROADMAP
     );
-  getProjection = jest
+  public getProjection = jest
     .fn()
     .mockImplementation((): google.maps.Projection | null => jest.fn() as null);
-  getRenderingType = jest
+  public getRenderingType = jest
     .fn()
     .mockImplementation(
       (): google.maps.RenderingType => google.maps.RenderingType.RASTER
     );
-  getStreetView = jest
+  public getStreetView = jest
     .fn()
     .mockImplementation(
       (): google.maps.StreetViewPanorama =>
         jest.fn() as unknown as google.maps.StreetViewPanorama
     );
-  getTilt = jest.fn().mockImplementation((): number => 0);
-  getZoom = jest.fn().mockImplementation((): number => 0);
-  moveCamera = jest
+  public getTilt = jest.fn().mockImplementation((): number => 0);
+  public getZoom = jest.fn().mockImplementation((): number => 0);
+  public moveCamera = jest
     .fn()
-    .mockImplementation((cameraOptions: google.maps.CameraOptions): void => {});
-  panBy = jest.fn().mockImplementation((x: number, y: number): void => {});
-  panTo = jest
+    .mockImplementation((cameraOptions: google.maps.CameraOptions): void => {
+      return null;
+    });
+  public panBy = jest.fn().mockImplementation((x: number, y: number): void => {
+    return null;
+  });
+  public panTo = jest
     .fn()
     .mockImplementation(
-      (latLng: google.maps.LatLng | google.maps.LatLngLiteral): void => {}
+      (latLng: google.maps.LatLng | google.maps.LatLngLiteral): void => {
+        return null;
+      }
     );
-  panToBounds = jest
+  public panToBounds = jest
     .fn()
     .mockImplementation(
       (
@@ -87,28 +92,44 @@ export class Map_ extends MVCObject implements google.maps.Map {
           | google.maps.LatLngBounds
           | google.maps.LatLngBoundsLiteral,
         padding?: number | google.maps.Padding
-      ): void => {}
+      ): void => {
+        return null;
+      }
     );
-  setCenter = jest
+  public setCenter = jest
     .fn()
     .mockImplementation(
-      (latlng: google.maps.LatLng | google.maps.LatLngLiteral): void => {}
+      (latlng: google.maps.LatLng | google.maps.LatLngLiteral): void => {
+        return null;
+      }
     );
-  setHeading = jest.fn().mockImplementation((heading: number): void => {});
-  setMapTypeId = jest
+  public setHeading = jest.fn().mockImplementation((heading: number): void => {
+    return null;
+  });
+  public setMapTypeId = jest
     .fn()
-    .mockImplementation(
-      (mapTypeId: google.maps.MapTypeId | string): void => {}
-    );
-  setOptions = jest
+    .mockImplementation((mapTypeId: google.maps.MapTypeId | string): void => {
+      return null;
+    });
+  public setOptions = jest
     .fn()
-    .mockImplementation((options: google.maps.MapOptions): void => {});
-  setStreetView = jest
+    .mockImplementation((options: google.maps.MapOptions): void => {
+      return null;
+    });
+  public setStreetView = jest
     .fn()
-    .mockImplementation((panorama: google.maps.StreetViewPanorama): void => {});
-  setTilt = jest.fn().mockImplementation((tilt: number): void => {});
-  setZoom = jest.fn().mockImplementation((zoom: number): void => {});
-  setClickableIcons = jest
+    .mockImplementation((panorama: google.maps.StreetViewPanorama): void => {
+      return null;
+    });
+  public setTilt = jest.fn().mockImplementation((tilt: number): void => {
+    return null;
+  });
+  public setZoom = jest.fn().mockImplementation((zoom: number): void => {
+    return null;
+  });
+  public setClickableIcons = jest
     .fn()
-    .mockImplementation((clickable: boolean): void => {});
+    .mockImplementation((clickable: boolean): void => {
+      return null;
+    });
 }
