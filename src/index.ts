@@ -16,17 +16,22 @@
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { Circle } from "./circle";
 import { LatLng, LatLngBounds } from "./latlng";
-import { Map_ } from "./map";
-import { Marker } from "./marker";
+
+import { Autocomplete } from "./places/autocomplete";
+import { Circle } from "./circle";
 import { MVCArray } from "./mvcarray";
 import { MVCObject } from "./mvcobject";
+import { MapCanvasProjection } from "./mapcanvasprojection";
+import { MapPanes } from "./mappanes";
+import { Map_ } from "./map";
+import { Marker } from "./marker";
+import { OverlayView } from "./overlayview";
 import { Point } from "./point";
 import { Polyline } from "./polyline";
-import { Autocomplete } from "./places/autocomplete";
 import { SearchBox } from "./places/searchbox";
 import { Size } from "./size";
+import { VisibleRegion } from "./visibleregion";
 
 enum MapTypeId {
   HYBRID = "hybrid",
@@ -64,6 +69,10 @@ const initialize = function (): void {
       },
       Polyline: Polyline,
       Circle: Circle,
+      OverlayView: OverlayView,
+      MapCanvasProjection: MapCanvasProjection,
+      MapPanes: MapPanes,
+      VisibleRegion: VisibleRegion,
     },
   };
 };
@@ -72,10 +81,14 @@ export {
   Marker,
   Map_ as Map,
   Size,
+  MapCanvasProjection,
+  MapPanes,
   MVCArray,
   MVCObject,
+  OverlayView,
   Polyline,
   LatLng,
   LatLngBounds,
+  VisibleRegion,
   initialize,
 };
