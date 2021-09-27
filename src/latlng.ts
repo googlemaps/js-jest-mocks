@@ -15,7 +15,11 @@
  */
 
 export class LatLng implements google.maps.LatLng {
-  constructor(literal: google.maps.LatLngLiteral, noWrap?: boolean) {}
+  constructor(
+    a: google.maps.LatLngLiteral | number,
+    b?: boolean | number,
+    c?: boolean
+  ) {}
 
   equals = jest
     .fn()
