@@ -22,8 +22,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "format": "eslint . --fix",
-    "lint": "eslint .",
+    "format": "gts fix",
+    "lint": "gts check .",
     "prepare": "rm -rf dist && rollup -c",
     "test": "jest src/*",
     "docs": "typedoc src/index.ts"
@@ -31,12 +31,8 @@
   "devDependencies": {
     "@types/google.maps": "^3.46.0",
     "@types/jest": "^27.0.2",
-    "@typescript-eslint/eslint-plugin": ">=4.33.0",
-    "@typescript-eslint/parser": ">=4.33.0",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-jest": "^25.2.2",
-    "eslint-plugin-prettier": "^4.0.0",
+    "gts": "^3.1.0",
     "jest": "^27.3.1",
     "prettier": "^2.4.1",
     "rollup": "^2.58.3",
