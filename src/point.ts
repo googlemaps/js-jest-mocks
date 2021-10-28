@@ -25,6 +25,6 @@ export class Point implements google.maps.Point {
     return other.x === this.x && other.y === this.y;
   }
   toString = jest.fn().mockImplementation((): string => {
-    return "";
+    return '';
   });
 }

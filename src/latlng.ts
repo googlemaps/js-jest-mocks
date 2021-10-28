@@ -26,10 +26,10 @@ export class LatLng implements google.maps.LatLng {
     .mockImplementation((other: google.maps.LatLng): boolean => false);
   lat = jest.fn().mockImplementation((): number => 0);
   lng = jest.fn().mockImplementation((): number => 0);
-  toString = jest.fn().mockImplementation((): string => "");
-  toUrlValue = jest.fn().mockImplementation((precision?: number): string => "");
+  toString = jest.fn().mockImplementation((): string => '');
+  toUrlValue = jest.fn().mockImplementation((precision?: number): string => '');
   toJSON = jest.fn().mockImplementation((): google.maps.LatLngLiteral => {
-    return { lat: 0, lng: 0 };
+    return {lat: 0, lng: 0};
   });
 }
 
@@ -60,17 +60,17 @@ export class LatLngBounds implements google.maps.LatLngBounds {
   getCenter = jest
     .fn()
     .mockImplementation(
-      (): google.maps.LatLng => new google.maps.LatLng({ lat: 0, lng: 0 })
+      (): google.maps.LatLng => new google.maps.LatLng({lat: 0, lng: 0})
     );
   getNorthEast = jest
     .fn()
     .mockImplementation(
-      (): google.maps.LatLng => new google.maps.LatLng({ lat: 0, lng: 0 })
+      (): google.maps.LatLng => new google.maps.LatLng({lat: 0, lng: 0})
     );
   getSouthWest = jest
     .fn()
     .mockImplementation(
-      (): google.maps.LatLng => new google.maps.LatLng({ lat: 0, lng: 0 })
+      (): google.maps.LatLng => new google.maps.LatLng({lat: 0, lng: 0})
     );
   intersects = jest
     .fn()
@@ -81,15 +81,15 @@ export class LatLngBounds implements google.maps.LatLngBounds {
     );
   isEmpty = jest.fn().mockImplementation((): boolean => false);
   toJSON = jest.fn().mockImplementation((): google.maps.LatLngBoundsLiteral => {
-    return { east: 0, north: 0, south: 0, west: 0 };
+    return {east: 0, north: 0, south: 0, west: 0};
   });
   toSpan = jest
     .fn()
     .mockImplementation(
-      (): google.maps.LatLng => new google.maps.LatLng({ lat: 0, lng: 0 })
+      (): google.maps.LatLng => new google.maps.LatLng({lat: 0, lng: 0})
     );
-  toString = jest.fn().mockImplementation((): string => "");
-  toUrlValue = jest.fn().mockImplementation((precision?: number): string => "");
+  toString = jest.fn().mockImplementation((): string => '');
+  toUrlValue = jest.fn().mockImplementation((precision?: number): string => '');
   union = jest
     .fn()
     .mockImplementation(

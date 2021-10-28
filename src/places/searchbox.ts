@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { MVCObject } from "../mvcobject";
+import {MVCObject} from '../mvcobject';
 
 export class SearchBox
   extends MVCObject
@@ -28,7 +28,7 @@ export class SearchBox
   getPlaces = jest
     .fn()
     .mockImplementation((): google.maps.places.PlaceResult[] => [
-      { name: "" } as google.maps.places.PlaceResult,
+      {name: ''} as google.maps.places.PlaceResult,
     ]);
   setBounds = jest
     .fn()

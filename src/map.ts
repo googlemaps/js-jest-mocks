@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import { LatLng, LatLngBounds } from "./latlng";
+import {LatLng, LatLngBounds} from './latlng';
 
-import { MVCObject } from "./mvcobject";
+import {MVCObject} from './mvcobject';
 
 export class Map_ extends MVCObject implements google.maps.Map {
   controls: Array<google.maps.MVCArray<Node>>;
@@ -40,9 +40,7 @@ export class Map_ extends MVCObject implements google.maps.Map {
   public getBounds = jest.fn().mockImplementation(() => new LatLngBounds());
   public getCenter = jest
     .fn()
-    .mockImplementation(
-      (): google.maps.LatLng => new LatLng({ lat: 0, lng: 0 })
-    );
+    .mockImplementation((): google.maps.LatLng => new LatLng({lat: 0, lng: 0}));
   public getClickableIcons = jest.fn().mockImplementation((): boolean => false);
   public getDiv = jest.fn().mockImplementation((): Element => {
     return jest.fn() as unknown as Element;

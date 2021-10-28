@@ -16,28 +16,28 @@
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { LatLng, LatLngBounds } from "./latlng";
+import {LatLng, LatLngBounds} from './latlng';
 
-import { Autocomplete } from "./places/autocomplete";
-import { Circle } from "./circle";
-import { MVCArray } from "./mvcarray";
-import { MVCObject } from "./mvcobject";
-import { MapCanvasProjection } from "./mapcanvasprojection";
-import { MapPanes } from "./mappanes";
-import { Map_ } from "./map";
-import { Marker } from "./marker";
-import { OverlayView } from "./overlayview";
-import { Point } from "./point";
-import { Polyline } from "./polyline";
-import { SearchBox } from "./places/searchbox";
-import { Size } from "./size";
-import { VisibleRegion } from "./visibleregion";
+import {Autocomplete} from './places/autocomplete';
+import {Circle} from './circle';
+import {MVCArray} from './mvcarray';
+import {MVCObject} from './mvcobject';
+import {MapCanvasProjection} from './mapcanvasprojection';
+import {MapPanes} from './mappanes';
+import {Map_} from './map';
+import {Marker} from './marker';
+import {OverlayView} from './overlayview';
+import {Point} from './point';
+import {Polyline} from './polyline';
+import {SearchBox} from './places/searchbox';
+import {Size} from './size';
+import {VisibleRegion} from './visibleregion';
 
 enum MapTypeId {
-  HYBRID = "hybrid",
-  ROADMAP = "roadmap",
-  SATELLITE = "satellite",
-  TERRAIN = "terrain",
+  HYBRID = 'hybrid',
+  ROADMAP = 'roadmap',
+  SATELLITE = 'satellite',
+  TERRAIN = 'terrain',
 }
 
 const initialize = function (): void {

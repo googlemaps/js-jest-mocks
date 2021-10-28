@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-import { LatLng } from "./latlng";
-import { MVCObject } from "./mvcobject";
-import { Point } from "./point";
-import { VisibleRegion } from "./visibleregion";
+import {LatLng} from './latlng';
+import {MVCObject} from './mvcobject';
+import {Point} from './point';
+import {VisibleRegion} from './visibleregion';
 
 export class MapCanvasProjection
   extends MVCObject

@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import { initialize } from "../index";
+import {initialize} from '../index';
 
-test("autocomplete constructor is mocked", () => {
+test('autocomplete constructor is mocked', () => {
   initialize();
   expect(new google.maps.places.Autocomplete(null)).toBeTruthy();
 });

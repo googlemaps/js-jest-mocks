@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import { LatLng } from "./index";
-import { Map_ } from "./map";
-import { MVCObject } from "./mvcobject";
+import {LatLng} from './index';
+import {Map_} from './map';
+import {MVCObject} from './mvcobject';
 
 export class Circle extends MVCObject implements google.maps.Circle {
   constructor(opt?: google.maps.CircleOptions) {
@@ -29,9 +29,7 @@ export class Circle extends MVCObject implements google.maps.Circle {
     );
   getCenter = jest
     .fn()
-    .mockImplementation(
-      (): google.maps.LatLng => new LatLng({ lat: 0, lng: 0 })
-    );
+    .mockImplementation((): google.maps.LatLng => new LatLng({lat: 0, lng: 0}));
   getDraggable = jest.fn().mockImplementation((): boolean => true);
   getEditable = jest.fn().mockImplementation((): boolean => true);
   getMap = jest.fn().mockImplementation((): google.maps.Map => new Map_(null));

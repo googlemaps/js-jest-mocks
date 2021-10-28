@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { MVCObject } from "./mvcobject";
+import {MVCObject} from './mvcobject';
 
 export class Polyline extends MVCObject implements google.maps.Polyline {
   constructor(opts?: {}) {

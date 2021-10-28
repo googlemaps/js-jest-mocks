@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { MVCObject } from "../mvcobject";
+import {MVCObject} from '../mvcobject';
 
 export class Autocomplete
   extends MVCObject
@@ -36,7 +36,7 @@ export class Autocomplete
     .fn()
     .mockImplementation(
       (): google.maps.places.PlaceResult =>
-        ({ name: "" } as google.maps.places.PlaceResult)
+        ({name: ''} as google.maps.places.PlaceResult)
     );
   setBounds = jest
     .fn()

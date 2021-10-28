@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { MVCObject } from "./mvcobject";
+import {MVCObject} from './mvcobject';
 
 export class MVCArray<T> extends MVCObject implements google.maps.MVCArray<T> {
   constructor(array?: T[]) {

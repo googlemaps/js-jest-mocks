@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import { MVCObject } from "./mvcobject";
-import { LatLng } from "./index";
+import {MVCObject} from './mvcobject';
+import {LatLng} from './index';
 
 export class Marker extends MVCObject implements google.maps.Marker {
   static readonly MAX_ZINDEX: number;
@@ -53,8 +53,7 @@ export class Marker extends MVCObject implements google.maps.Marker {
   getPosition = jest
     .fn()
     .mockImplementation(
-      (): google.maps.LatLng | null | undefined =>
-        new LatLng({ lat: 0, lng: 0 })
+      (): google.maps.LatLng | null | undefined => new LatLng({lat: 0, lng: 0})
     );
   getShape = jest
     .fn()

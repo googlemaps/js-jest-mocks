@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import { initialize } from "./index";
+import {initialize} from './index';
 
-test("can initialize", () => {
+test('can initialize', () => {
   initialize();
   expect(new google.maps.Map(null)).toBeTruthy();
 });

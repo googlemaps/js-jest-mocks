@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-import { MVCObject } from "./mvcobject";
-import { MapCanvasProjection } from "./mapcanvasprojection";
-import { MapPanes } from "./mappanes";
-import { Map_ } from "./map";
+import {MVCObject} from './mvcobject';
+import {MapCanvasProjection} from './mapcanvasprojection';
+import {MapPanes} from './mappanes';
+import {Map_} from './map';
 
 export class OverlayView extends MVCObject implements google.maps.OverlayView {
   public draw = jest.fn();
