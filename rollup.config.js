@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import typescript from "rollup-plugin-typescript2";
+import typescript from "@rollup/plugin-typescript";
 
 export default [
   {
