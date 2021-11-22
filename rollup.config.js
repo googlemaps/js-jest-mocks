@@ -19,8 +19,9 @@ import typescript from "@rollup/plugin-typescript";
 export default [
   {
     input: "src/index.ts",
-    plugins: [typescript({ tsconfig: './tsconfig.json', 'declarationDir': './' }),
-],
+    plugins: [
+      typescript({ tsconfig: "./tsconfig.json", declarationDir: "./" }),
+    ],
     output: {
       file: "dist/index.js",
       format: "cjs",
