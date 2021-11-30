@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import { LatLng, LatLngBounds } from "./latlng";
+import { LatLng, LatLngBounds } from './latlng';
 
-import { MVCObject } from "./mvcobject";
+import { MVCObject } from './mvcobject';
 
 export class Map_ extends MVCObject implements google.maps.Map {
   controls: Array<google.maps.MVCArray<Node>>;
@@ -26,6 +26,7 @@ export class Map_ extends MVCObject implements google.maps.Map {
 
   constructor(mapDiv: Element | null, opts?: google.maps.MapOptions) {
     super();
+    this.data = new google.maps.Data();
   }
   public fitBounds = jest
     .fn()
