@@ -20,6 +20,7 @@ import { LatLng, LatLngBounds } from "./latlng";
 
 import { Autocomplete } from "./places/autocomplete";
 import { Circle } from "./circle";
+import { Data } from "./data";
 import { MVCArray } from "./mvcarray";
 import { MVCObject } from "./mvcobject";
 import { MapCanvasProjection } from "./mapcanvasprojection";
@@ -46,6 +47,7 @@ const initialize = function (): void {
       ImageMapType: jest.fn(),
       Marker: Marker,
       Map: Map_,
+      Data: Data,
       Point: Point,
       Size: Size,
       MVCObject: MVCObject,
@@ -80,6 +82,7 @@ const initialize = function (): void {
 export {
   Marker,
   Map_ as Map,
+  Data,
   Size,
   MapCanvasProjection,
   MapPanes,

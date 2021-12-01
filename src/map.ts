@@ -26,6 +26,7 @@ export class Map_ extends MVCObject implements google.maps.Map {
 
   constructor(mapDiv: Element | null, opts?: google.maps.MapOptions) {
     super();
+    this.data = new google.maps.Data();
   }
   public fitBounds = jest
     .fn()
