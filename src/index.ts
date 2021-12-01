@@ -20,7 +20,7 @@ import { LatLng, LatLngBounds } from "./latlng";
 
 import { Autocomplete } from "./places/autocomplete";
 import { Circle } from "./circle";
-import { Data } from "./data";
+import { Data } from "./data/data";
 import { MVCArray } from "./mvcarray";
 import { MVCObject } from "./mvcobject";
 import { MapCanvasProjection } from "./mapcanvasprojection";
@@ -33,6 +33,7 @@ import { Polyline } from "./polyline";
 import { SearchBox } from "./places/searchbox";
 import { Size } from "./size";
 import { VisibleRegion } from "./visibleregion";
+import { Feature } from "./data/feature";
 
 enum MapTypeId {
   HYBRID = "hybrid",
@@ -83,6 +84,7 @@ export {
   Marker,
   Map_ as Map,
   Data,
+  Feature,
   Size,
   MapCanvasProjection,
   MapPanes,

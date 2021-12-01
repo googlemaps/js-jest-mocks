@@ -14,12 +14,16 @@
  * limitations under the License.
  */
 
-import { MVCObject } from "./mvcobject";
+import { Feature } from "..";
+import { MVCObject } from "../mvcobject";
 
 export class Data extends MVCObject implements google.maps.Data {
   constructor(opt?: google.maps.Data.DataOptions | null) {
     super();
   }
+  public static Feature = jest.fn(
+    (options?: google.maps.Data.FeatureOptions | null) => new Feature(options)
+  );
   public add = jest
     .fn()
     .mockImplementation(
