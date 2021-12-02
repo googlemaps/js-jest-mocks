@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import { Feature } from "..";
-import { MVCObject } from "../mvcobject";
+import { Feature } from './feature';
+import { MVCObject } from './mvcobject';
 
 export class Data extends MVCObject implements google.maps.Data {
   constructor(opt?: google.maps.Data.DataOptions | null) {
