@@ -21,9 +21,11 @@ export class Data extends MVCObject implements google.maps.Data {
   constructor(opt?: google.maps.Data.DataOptions | null) {
     super();
   }
-  public static Feature = jest.fn(
-    (options?: google.maps.Data.FeatureOptions | null) => new Feature(options)
-  );
+  public static Feature = jest
+    .fn()
+    .mockImplementation(
+      (options?: google.maps.Data.FeatureOptions | null) => new Feature(options)
+    );
   public add = jest
     .fn()
     .mockImplementation(
