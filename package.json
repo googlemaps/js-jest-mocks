@@ -26,7 +26,8 @@
     "format": "eslint . --fix",
     "lint": "eslint .",
     "prepare": "rm -rf dist && rollup -c",
-    "test": "jest src/*"
+    "test": "jest src/*",
+    "test:watch": "jest --watch src/*"
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^8.3.0",

@@ -21,6 +21,7 @@ import { LatLng, LatLngBounds } from "./latlng";
 import { Autocomplete } from "./places/autocomplete";
 import { Circle } from "./circle";
 import { Data } from "./data";
+import { Feature } from "./data.feature";
 import { MVCArray } from "./mvcarray";
 import { MVCObject } from "./mvcobject";
 import { MapCanvasProjection } from "./mapcanvasprojection";
@@ -83,6 +84,7 @@ export {
   Marker,
   Map_ as Map,
   Data,
+  Feature,
   Size,
   MapCanvasProjection,
   MapPanes,
