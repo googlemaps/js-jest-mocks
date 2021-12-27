@@ -14,18 +14,9 @@
  * limitations under the License.
  */
 
-export enum StreetViewPreference {
-  BEST = 'best',
-  NEAREST = 'nearest',
-}
+import { initialize } from '../../index';
 
-export enum StreetViewSource {
-  DEFAULT = 'default',
-  OUTDOOR = 'outdoor',
-}
-
-export enum StreetViewStatus {
-  OK = 'OK',
-  UNKNOWN_ERROR = 'UNKNOWN_ERROR',
-  ZERO_RESULTS = 'ZERO_RESULTS',
-}
+test('street view coverage layer is mocked', () => {
+  initialize();
+  expect(new google.maps.StreetViewCoverageLayer()).toBeTruthy();
+});

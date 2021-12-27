@@ -14,18 +14,10 @@
  * limitations under the License.
  */
 
-export enum StreetViewPreference {
-  BEST = 'best',
-  NEAREST = 'nearest',
-}
+import { initialize } from '../../index';
 
-export enum StreetViewSource {
-  DEFAULT = 'default',
-  OUTDOOR = 'outdoor',
-}
-
-export enum StreetViewStatus {
-  OK = 'OK',
-  UNKNOWN_ERROR = 'UNKNOWN_ERROR',
-  ZERO_RESULTS = 'ZERO_RESULTS',
-}
+test('street view service is mocked', async () => {
+  initialize();
+  const service = new google.maps.StreetViewService();
+  expect(await service.getPanorama(null)).toBeTruthy();
+});

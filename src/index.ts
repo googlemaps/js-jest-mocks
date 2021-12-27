@@ -34,6 +34,14 @@ import { Polyline } from './drawing/polygons/polyline';
 import { SearchBox } from './places/searchbox';
 import { Size } from './maps/coordinates/size';
 import { VisibleRegion } from './maps/maps/visibleregion';
+import { StreetViewCoverageLayer } from './street-view/rendering/coverage';
+import { StreetViewPanorama } from './street-view/rendering/panorama';
+import {
+  StreetViewPreference,
+  StreetViewSource,
+  StreetViewStatus,
+} from './street-view/service/constants';
+import { StreetViewService } from './street-view/service/service';
 
 enum MapTypeId {
   HYBRID = 'hybrid',
@@ -56,6 +64,12 @@ const initialize = function (): void {
       MapTypeId: MapTypeId,
       LatLng: LatLng,
       LatLngBounds: LatLngBounds,
+      StreetViewPanorama: StreetViewPanorama,
+      StreetViewCoverageLayer: StreetViewCoverageLayer,
+      StreetViewService: StreetViewService,
+      StreetViewPreference: StreetViewPreference,
+      StreetViewSource: StreetViewSource,
+      StreetViewStatus: StreetViewStatus,
       event: {
         addListener: jest.fn(),
         addListenerOnce: jest.fn(),
