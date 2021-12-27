@@ -16,7 +16,7 @@
 
 import { initialize } from '../../index';
 
-test('maps control position', () => {
+test('can initialize', () => {
   initialize();
-  expect(google.maps.ControlPosition).toMatchSnapshot();
+  expect(new google.maps.Map(null)).toBeTruthy();
 });
