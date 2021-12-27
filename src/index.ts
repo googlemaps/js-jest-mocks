@@ -42,6 +42,7 @@ import {
   StreetViewStatus,
 } from './street-view/service/constants';
 import { StreetViewService } from './street-view/service/service';
+import { ControlPosition } from './maps/controls/controlposition';
 
 enum MapTypeId {
   HYBRID = 'hybrid',
@@ -62,6 +63,7 @@ const initialize = function (): void {
       MVCObject: MVCObject,
       MVCArray: MVCArray,
       MapTypeId: MapTypeId,
+      ControlPosition: ControlPosition,
       LatLng: LatLng,
       LatLngBounds: LatLngBounds,
       StreetViewPanorama: StreetViewPanorama,

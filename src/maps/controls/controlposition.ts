@@ -14,11 +14,17 @@
  * limitations under the License.
  */
 
-import { initialize } from '../../index';
-
-test('street view constants', () => {
-  initialize();
-  expect(google.maps.StreetViewPreference).toMatchSnapshot();
-  expect(google.maps.StreetViewSource).toMatchSnapshot();
-  expect(google.maps.StreetViewStatus).toMatchSnapshot();
-});
+export enum ControlPosition {
+  BOTTOM_CENTER = 0.0,
+  BOTTOM_LEFT = 1.0,
+  BOTTOM_RIGHT = 2.0,
+  LEFT_BOTTOM = 3.0,
+  LEFT_CENTER = 4.0,
+  LEFT_TOP = 5.0,
+  RIGHT_BOTTOM = 6.0,
+  RIGHT_CENTER = 7.0,
+  RIGHT_TOP = 8.0,
+  TOP_CENTER = 9.0,
+  TOP_LEFT = 10.0,
+  TOP_RIGHT = 11.0,
+}

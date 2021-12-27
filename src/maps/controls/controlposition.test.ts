@@ -16,9 +16,7 @@
 
 import { initialize } from '../../index';
 
-test('street view constants', () => {
+test('maps control position', () => {
   initialize();
-  expect(google.maps.StreetViewPreference).toMatchSnapshot();
-  expect(google.maps.StreetViewSource).toMatchSnapshot();
-  expect(google.maps.StreetViewStatus).toMatchSnapshot();
+  expect(google.maps.ControlPosition).toMatchSnapshot();
 });
