@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { MVCObject } from '../event/mvcobject';
+import { MVCObject } from "../event/mvcobject";
 
 export class VisibleRegion
   extends MVCObject

@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-import { LatLng, LatLngBounds } from '../coordinates/latlng';
-import { MVCObject } from '../event/mvcobject';
+import { LatLng, LatLngBounds } from "../coordinates/latlng";
+import { MVCObject } from "../event/mvcobject";
 
 export class Map_ extends MVCObject implements google.maps.Map {
-  controls: Array<google.maps.MVCArray<Node>>;
-  data: google.maps.Data;
-  mapTypes: google.maps.MapTypeRegistry;
-  overlayMapTypes: google.maps.MVCArray<google.maps.MapType>;
+  public controls: Array<google.maps.MVCArray<Node>>;
+  public data: google.maps.Data;
+  public mapTypes: google.maps.MapTypeRegistry;
+  public overlayMapTypes: google.maps.MVCArray<google.maps.MapType>;
 
   constructor(mapDiv: Element | null, opts?: google.maps.MapOptions) {
     super();

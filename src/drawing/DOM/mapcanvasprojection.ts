@@ -14,23 +14,29 @@
  * limitations under the License.
  */
 
-import { LatLng } from '../../maps/coordinates/latlng';
-import { Point } from '../../maps/coordinates/point';
-import { MVCObject } from '../../maps/event/mvcobject';
-import { VisibleRegion } from '../../maps/maps/visibleregion';
+import { LatLng } from "../../maps/coordinates/latlng";
+import { Point } from "../../maps/coordinates/point";
+import { MVCObject } from "../../maps/event/mvcobject";
+import { VisibleRegion } from "../../maps/maps/visibleregion";
 
 export class MapCanvasProjection
   extends MVCObject
   implements google.maps.MapCanvasProjection
 {
-  fromContainerPixelToLatLng = jest
+  public fromContainerPixelToLatLng = jest
     .fn()
     .mockImplementation(() => new LatLng(0, 0));
-  fromDivPixelToLatLng = jest.fn().mockImplementation(() => new LatLng(0, 0));
-  fromLatLngToContainerPixel = jest
+  public fromDivPixelToLatLng = jest
+    .fn()
+    .mockImplementation(() => new LatLng(0, 0));
+  public fromLatLngToContainerPixel = jest
     .fn()
     .mockImplementation(() => new Point(0, 0));
-  fromLatLngToDivPixel = jest.fn().mockImplementation(() => new Point(0, 0));
-  getVisibleRegion = jest.fn().mockImplementation(() => new VisibleRegion());
-  getWorldWidth = jest.fn().mockImplementation(() => 0);
+  public fromLatLngToDivPixel = jest
+    .fn()
+    .mockImplementation(() => new Point(0, 0));
+  public getVisibleRegion = jest
+    .fn()
+    .mockImplementation(() => new VisibleRegion());
+  public getWorldWidth = jest.fn().mockImplementation(() => 0);
 }

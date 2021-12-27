@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import { initialize } from '../../index';
+import { initialize } from "../../index";
 
-test('street view service is mocked', async () => {
+test("street view service is mocked", async () => {
   initialize();
   const service = new google.maps.StreetViewService();
   expect(await service.getPanorama(null)).toBeTruthy();

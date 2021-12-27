@@ -16,34 +16,34 @@
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { LatLng, LatLngBounds } from './maps/coordinates/latlng';
+import { LatLng, LatLngBounds } from "./maps/coordinates/latlng";
 
-import { Autocomplete } from './places/autocomplete';
-import { Circle } from './drawing/polygons/circle';
-import { Data } from './drawing/data/data';
-import { Feature } from './drawing/data/data.feature';
-import { MVCArray } from './maps/event/mvcarray';
-import { MVCObject } from './maps/event/mvcobject';
-import { MapCanvasProjection } from './drawing/DOM/mapcanvasprojection';
-import { MapPanes } from './drawing/DOM/mappanes';
-import { Map_ } from './maps/maps/map';
-import { Marker } from './drawing/marker/marker';
-import { OverlayView } from './drawing/DOM/overlayview';
-import { Point } from './maps/coordinates/point';
-import { Polyline } from './drawing/polygons/polyline';
-import { SearchBox } from './places/searchbox';
-import { Size } from './maps/coordinates/size';
-import { VisibleRegion } from './maps/maps/visibleregion';
-import { StreetViewCoverageLayer } from './street-view/rendering/coverage';
-import { StreetViewPanorama } from './street-view/rendering/panorama';
+import { Autocomplete } from "./places/autocomplete";
+import { Circle } from "./drawing/polygons/circle";
+import { Data } from "./drawing/data/data";
+import { Feature } from "./drawing/data/data.feature";
+import { MVCArray } from "./maps/event/mvcarray";
+import { MVCObject } from "./maps/event/mvcobject";
+import { MapCanvasProjection } from "./drawing/DOM/mapcanvasprojection";
+import { MapPanes } from "./drawing/DOM/mappanes";
+import { Map_ } from "./maps/maps/map";
+import { Marker } from "./drawing/marker/marker";
+import { OverlayView } from "./drawing/DOM/overlayview";
+import { Point } from "./maps/coordinates/point";
+import { Polyline } from "./drawing/polygons/polyline";
+import { SearchBox } from "./places/searchbox";
+import { Size } from "./maps/coordinates/size";
+import { VisibleRegion } from "./maps/maps/visibleregion";
+import { StreetViewCoverageLayer } from "./street-view/rendering/coverage";
+import { StreetViewPanorama } from "./street-view/rendering/panorama";
 import {
   StreetViewPreference,
   StreetViewSource,
   StreetViewStatus,
-} from './street-view/service/constants';
-import { StreetViewService } from './street-view/service/service';
-import { ControlPosition } from './maps/controls/controlposition';
-import { MapTypeId } from './maps/maps/constants';
+} from "./street-view/service/constants";
+import { StreetViewService } from "./street-view/service/service";
+import { ControlPosition } from "./maps/controls/controlposition";
+import { MapTypeId } from "./maps/maps/constants";
 
 const initialize = function (): void {
   (global as any).google = {

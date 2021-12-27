@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { MVCObject } from '../maps/event/mvcobject';
+import { MVCObject } from "../maps/event/mvcobject";
 
 export class Autocomplete
   extends MVCObject
@@ -26,35 +26,37 @@ export class Autocomplete
   ) {
     super();
   }
-  getBounds = jest
+  public getBounds = jest
     .fn()
     .mockImplementation(
       (): google.maps.LatLngBounds | null | undefined => null
     );
-  getFields = jest.fn().mockImplementation((): string[] => []);
-  getPlace = jest
+  public getFields = jest.fn().mockImplementation((): string[] => []);
+  public getPlace = jest
     .fn()
     .mockImplementation(
       (): google.maps.places.PlaceResult =>
-        ({ name: '' } as google.maps.places.PlaceResult)
+        ({ name: "" } as google.maps.places.PlaceResult)
     );
-  setBounds = jest
+  public setBounds = jest
     .fn()
     .mockImplementation(
       (
         bounds: google.maps.LatLngBounds | google.maps.LatLngBoundsLiteral
       ): void => {}
     );
-  setComponentRestrictions = jest
+  public setComponentRestrictions = jest
     .fn()
     .mockImplementation(
       (restrictions: google.maps.places.ComponentRestrictions): void => {}
     );
-  setFields = jest.fn().mockImplementation((fields: string[]): void => {});
-  setOptions = jest
+  public setFields = jest
+    .fn()
+    .mockImplementation((fields: string[]): void => {});
+  public setOptions = jest
     .fn()
     .mockImplementation(
       (options: google.maps.places.AutocompleteOptions): void => {}
     );
-  setTypes = jest.fn().mockImplementation((types: string[]): void => {});
+  public setTypes = jest.fn().mockImplementation((types: string[]): void => {});
 }

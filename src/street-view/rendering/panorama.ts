@@ -14,51 +14,51 @@
  * limitations under the License.
  */
 
-import { LatLng } from '../../maps/coordinates/latlng';
-import { MVCArray } from '../../maps/event/mvcarray';
-import { MVCObject } from '../../maps/event/mvcobject';
+import { LatLng } from "../../maps/coordinates/latlng";
+import { MVCArray } from "../../maps/event/mvcarray";
+import { MVCObject } from "../../maps/event/mvcobject";
 
 export class StreetViewPanorama
   extends MVCObject
   implements google.maps.StreetViewPanorama
 {
-  controls: MVCArray<HTMLElement>[] = [];
-  getLinks = jest
+  public controls: MVCArray<HTMLElement>[] = [];
+  public getLinks = jest
     .fn()
     .mockImplementation(
       (): (google.maps.StreetViewLink | null)[] | null => null
     );
-  getLocation = jest
+  public getLocation = jest
     .fn()
     .mockImplementation((): google.maps.StreetViewLocation | null => ({
       description: null,
       latLng: new LatLng(1, 1),
-      pano: 'pano',
+      pano: "pano",
       shortDescription: null,
     }));
-  getMotionTracking = jest.fn().mockImplementation((): boolean => false);
-  getPano = jest.fn().mockImplementation((): string => 'pano');
-  getPhotographerPov = jest
+  public getMotionTracking = jest.fn().mockImplementation((): boolean => false);
+  public getPano = jest.fn().mockImplementation((): string => "pano");
+  public getPhotographerPov = jest
     .fn()
     .mockImplementation(
       (): google.maps.StreetViewPov => ({ heading: 0, pitch: 0 })
     );
-  getPosition = jest
+  public getPosition = jest
     .fn()
     .mockImplementation((): google.maps.LatLng | null => new LatLng(1, 1));
-  getPov = jest
+  public getPov = jest
     .fn()
     .mockImplementation(
       (): google.maps.StreetViewPov => ({ heading: 0, pitch: 0 })
     );
-  getStatus = jest
+  public getStatus = jest
     .fn()
     .mockImplementation(
       (): google.maps.StreetViewStatus => google.maps.StreetViewStatus.OK
     );
-  getVisible = jest.fn().mockImplementation((): boolean => true);
-  getZoom = jest.fn().mockImplementation((): number => 0);
-  registerPanoProvider = jest
+  public getVisible = jest.fn().mockImplementation((): boolean => true);
+  public getZoom = jest.fn().mockImplementation((): number => 0);
+  public registerPanoProvider = jest
     .fn()
     .mockImplementation(
       (
@@ -66,29 +66,31 @@ export class StreetViewPanorama
         opt_options?: google.maps.PanoProviderOptions
       ): void => null
     );
-  setLinks = jest
+  public setLinks = jest
     .fn()
     .mockImplementation(
       (inks: (google.maps.StreetViewLink | null)[] | null): void => null
     );
-  setMotionTracking = jest
+  public setMotionTracking = jest
     .fn()
     .mockImplementation((motionTracking: boolean): void => null);
-  setOptions = jest
+  public setOptions = jest
     .fn()
     .mockImplementation(
       (options: google.maps.StreetViewPanoramaOptions | null): void => null
     );
-  setPano = jest.fn().mockImplementation((pano: string): void => null);
-  setPosition = jest
+  public setPano = jest.fn().mockImplementation((pano: string): void => null);
+  public setPosition = jest
     .fn()
     .mockImplementation(
       (latLng: google.maps.LatLng | null | google.maps.LatLngLiteral): void =>
         null
     );
-  setPov = jest
+  public setPov = jest
     .fn()
     .mockImplementation((pov: google.maps.StreetViewPov): void => null);
-  setVisible = jest.fn().mockImplementation((flag: boolean): void => null);
-  setZoom = jest.fn().mockImplementation((zoom: number): void => null);
+  public setVisible = jest
+    .fn()
+    .mockImplementation((flag: boolean): void => null);
+  public setZoom = jest.fn().mockImplementation((zoom: number): void => null);
 }

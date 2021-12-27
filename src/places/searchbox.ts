@@ -14,27 +14,27 @@
  * limitations under the License.
  */
 
-import { MVCObject } from '../maps/event/mvcobject';
+import { MVCObject } from "../maps/event/mvcobject";
 
 export class SearchBox
   extends MVCObject
   implements google.maps.places.SearchBox
 {
-  getBounds = jest
+  public getBounds = jest
     .fn()
     .mockImplementation(
       (): google.maps.LatLngBounds | null | undefined => null
     );
-  getPlaces = jest
+  public getPlaces = jest
     .fn()
     .mockImplementation((): google.maps.places.PlaceResult[] => [
-      { name: '' } as google.maps.places.PlaceResult,
+      { name: "" } as google.maps.places.PlaceResult,
     ]);
-  setBounds = jest
+  public setBounds = jest
     .fn()
     .mockImplementation(
       (
         bounds: google.maps.LatLngBounds | google.maps.LatLngBoundsLiteral
-      ): void => {}
+      ): void => null
     );
 }

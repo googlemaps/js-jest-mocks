@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import { initialize } from '../../index';
+import { initialize } from "../../index";
 
-test('street view panorama is mocked', () => {
+test("street view panorama is mocked", () => {
   initialize();
   expect(new google.maps.StreetViewPanorama(null)).toBeTruthy();
 });

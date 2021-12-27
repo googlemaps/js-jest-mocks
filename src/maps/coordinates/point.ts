@@ -21,10 +21,10 @@ export class Point implements google.maps.Point {
     this.x = x;
     this.y = y;
   }
-  equals(other: Point): boolean {
+  public equals(other: Point): boolean {
     return other.x === this.x && other.y === this.y;
   }
-  toString = jest.fn().mockImplementation((): string => {
+  public toString = jest.fn().mockImplementation((): string => {
     return "";
   });
 }

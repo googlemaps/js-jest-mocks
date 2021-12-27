@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import { initialize } from '../../index';
+import { initialize } from "../../index";
 
-test('street view coverage layer is mocked', () => {
+test("street view coverage layer is mocked", () => {
   initialize();
   expect(new google.maps.StreetViewCoverageLayer()).toBeTruthy();
 });

@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import { ControlPosition } from '../../maps/controls/controlposition';
-import { MVCObject } from '../../maps/event/mvcobject';
-import { Feature } from './data.feature';
+import { ControlPosition } from "../../maps/controls/controlposition";
+import { MVCObject } from "../../maps/event/mvcobject";
+import { Feature } from "./data.feature";
 
 export class Data extends MVCObject implements google.maps.Data {
   constructor(opt?: google.maps.Data.DataOptions | null) {

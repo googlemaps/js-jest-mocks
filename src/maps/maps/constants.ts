@@ -15,8 +15,8 @@
  */
 
 export enum MapTypeId {
-  HYBRID = 'hybrid',
-  ROADMAP = 'roadmap',
-  SATELLITE = 'satellite',
-  TERRAIN = 'terrain',
+  HYBRID = "hybrid",
+  ROADMAP = "roadmap",
+  SATELLITE = "satellite",
+  TERRAIN = "terrain",
 }

@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import { initialize } from '../../index';
+import { initialize } from "../../index";
 
-test('street view constants', () => {
+test("street view constants", () => {
   initialize();
   expect(google.maps.StreetViewPreference).toMatchSnapshot();
   expect(google.maps.StreetViewSource).toMatchSnapshot();

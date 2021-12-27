@@ -29,7 +29,7 @@ export class Feature implements google.maps.Data.Feature {
   public getId = jest
     .fn()
     .mockImplementation((): number | string | undefined => {
-      return '1';
+      return "1";
     });
   public getProperty = jest.fn().mockImplementation((name: string): any => {
     return undefined;

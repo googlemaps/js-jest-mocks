@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import { initialize } from '../../index';
+import { initialize } from "../../index";
 
-test('circle constructor is mocked', () => {
+test("circle constructor is mocked", () => {
   initialize();
   expect(new google.maps.Circle(null)).toBeTruthy();
 });
