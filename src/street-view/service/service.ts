@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import { LatLng } from '../../latlng';
-import { Size } from '../../size';
+import { LatLng } from '../../maps/coordinates/latlng';
+import { Size } from '../../maps/coordinates/size';
 
 export class StreetViewService implements google.maps.StreetViewService {
   getPanorama = jest

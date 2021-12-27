@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { MVCObject } from '../../mvcobject';
+import { MVCObject } from '../../maps/event/mvcobject';
 
 export class StreetViewCoverageLayer
   extends MVCObject

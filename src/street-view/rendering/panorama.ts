@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import { LatLng } from '../../latlng';
-import { MVCArray } from '../../mvcarray';
-import { MVCObject } from '../../mvcobject';
+import { LatLng } from '../../maps/coordinates/latlng';
+import { MVCArray } from '../../maps/event/mvcarray';
+import { MVCObject } from '../../maps/event/mvcobject';
 
 export class StreetViewPanorama
   extends MVCObject

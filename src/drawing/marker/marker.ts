@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import { MVCObject } from "./mvcobject";
-import { LatLng } from "./index";
+import { LatLng } from '../../maps/coordinates/latlng';
+import { MVCObject } from '../../maps/event/mvcobject';
 
 export class Marker extends MVCObject implements google.maps.Marker {
   static readonly MAX_ZINDEX: number;

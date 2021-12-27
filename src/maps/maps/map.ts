@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-import { LatLng, LatLngBounds } from "./latlng";
-
-import { MVCObject } from "./mvcobject";
+import { LatLng, LatLngBounds } from '../coordinates/latlng';
+import { MVCObject } from '../event/mvcobject';
 
 export class Map_ extends MVCObject implements google.maps.Map {
   controls: Array<google.maps.MVCArray<Node>>;

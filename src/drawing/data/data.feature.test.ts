@@ -14,15 +14,9 @@
  * limitations under the License.
  */
 
-import { MVCObject } from "./mvcobject";
+import { initialize } from '../../index';
 
-export class VisibleRegion
-  extends MVCObject
-  implements google.maps.VisibleRegion
-{
-  public readonly farLeft: google.maps.LatLng;
-  public readonly farRight: google.maps.LatLng;
-  public readonly latLngBounds: google.maps.LatLngBounds;
-  public readonly nearLeft: google.maps.LatLng;
-  public readonly nearRight: google.maps.LatLng;
-}
+test('feature object is mocked', () => {
+  initialize();
+  expect(new google.maps.Data.Feature(null)).toBeTruthy();
+});

@@ -16,30 +16,30 @@
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { LatLng, LatLngBounds } from "./latlng";
+import { LatLng, LatLngBounds } from './maps/coordinates/latlng';
 
-import { Autocomplete } from "./places/autocomplete";
-import { Circle } from "./circle";
-import { Data } from "./data";
-import { Feature } from "./data.feature";
-import { MVCArray } from "./mvcarray";
-import { MVCObject } from "./mvcobject";
-import { MapCanvasProjection } from "./mapcanvasprojection";
-import { MapPanes } from "./mappanes";
-import { Map_ } from "./map";
-import { Marker } from "./marker";
-import { OverlayView } from "./overlayview";
-import { Point } from "./point";
-import { Polyline } from "./polyline";
-import { SearchBox } from "./places/searchbox";
-import { Size } from "./size";
-import { VisibleRegion } from "./visibleregion";
+import { Autocomplete } from './places/autocomplete';
+import { Circle } from './drawing/polygons/circle';
+import { Data } from './drawing/data/data';
+import { Feature } from './drawing/data/data.feature';
+import { MVCArray } from './maps/event/mvcarray';
+import { MVCObject } from './maps/event/mvcobject';
+import { MapCanvasProjection } from './drawing/DOM/mapcanvasprojection';
+import { MapPanes } from './drawing/DOM/mappanes';
+import { Map_ } from './maps/maps/map';
+import { Marker } from './drawing/marker/marker';
+import { OverlayView } from './drawing/DOM/overlayview';
+import { Point } from './maps/coordinates/point';
+import { Polyline } from './drawing/polygons/polyline';
+import { SearchBox } from './places/searchbox';
+import { Size } from './maps/coordinates/size';
+import { VisibleRegion } from './maps/maps/visibleregion';
 
 enum MapTypeId {
-  HYBRID = "hybrid",
-  ROADMAP = "roadmap",
-  SATELLITE = "satellite",
-  TERRAIN = "terrain",
+  HYBRID = 'hybrid',
+  ROADMAP = 'roadmap',
+  SATELLITE = 'satellite',
+  TERRAIN = 'terrain',
 }
 
 const initialize = function (): void {

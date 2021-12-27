@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import { LatLng } from "./index";
-import { Map_ } from "./map";
-import { MVCObject } from "./mvcobject";
+import { LatLng } from '../../maps/coordinates/latlng';
+import { MVCObject } from '../../maps/event/mvcobject';
+import { Map_ } from '../../maps/maps/map';
 
 export class Circle extends MVCObject implements google.maps.Circle {
   constructor(opt?: google.maps.CircleOptions) {
