@@ -21,12 +21,26 @@ import { MVCObject } from '../../maps/event/mvcobject';
 
 export class OverlayView extends MVCObject implements google.maps.OverlayView {
   public draw = jest.fn();
-  public getMap = jest.fn().mockImplementation(() => new Map_(null, {}));
-  public getPanes = jest.fn().mockImplementation(() => new MapPanes());
+  public getMap = jest
+    .fn()
+    .mockImplementation(
+      (): google.maps.Map | null | google.maps.StreetViewPanorama =>
+        new Map_(null, {})
+    );
+  public getPanes = jest
+    .fn()
+    .mockImplementation((): google.maps.MapPanes | null => new MapPanes());
   public getProjection = jest
     .fn()
-    .mockImplementation(() => new MapCanvasProjection());
+    .mockImplementation(
+      (): google.maps.MapCanvasProjection => new MapCanvasProjection()
+    );
   public onAdd = jest.fn();
   public onRemove = jest.fn();
-  public setMap = jest.fn();
+  public setMap = jest
+    .fn()
+    .mockImplementation(
+      (map: google.maps.Map | null | google.maps.StreetViewPanorama): void =>
+        null
+    );
 }
