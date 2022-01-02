@@ -25,18 +25,35 @@ export class MapCanvasProjection
 {
   public fromContainerPixelToLatLng = jest
     .fn()
-    .mockImplementation(() => new LatLng(0, 0));
+    .mockImplementation(
+      (
+        pixel: google.maps.Point | null,
+        nowrap?: boolean
+      ): google.maps.LatLng | null => new LatLng(0, 0)
+    );
   public fromDivPixelToLatLng = jest
     .fn()
-    .mockImplementation(() => new LatLng(0, 0));
+    .mockImplementation(
+      (
+        pixel: google.maps.Point | null,
+        nowrap?: boolean
+      ): google.maps.LatLng | null => new LatLng(0, 0)
+    );
   public fromLatLngToContainerPixel = jest
     .fn()
-    .mockImplementation(() => new Point(0, 0));
+    .mockImplementation(
+      (latLng: google.maps.LatLng | null): google.maps.Point | null =>
+        new Point(0, 0)
+    );
   public fromLatLngToDivPixel = jest
     .fn()
-    .mockImplementation(() => new Point(0, 0));
+    .mockImplementation(
+      (latLng: google.maps.LatLng | null): google.maps.Point => new Point(0, 0)
+    );
   public getVisibleRegion = jest
     .fn()
-    .mockImplementation(() => new VisibleRegion());
-  public getWorldWidth = jest.fn().mockImplementation(() => 0);
+    .mockImplementation(
+      (): google.maps.VisibleRegion | null => new VisibleRegion()
+    );
+  public getWorldWidth = jest.fn().mockImplementation((): number => 0);
 }

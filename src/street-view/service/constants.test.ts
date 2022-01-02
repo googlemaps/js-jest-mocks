@@ -18,7 +18,17 @@ import { initialize } from "../../index";
 
 test("street view constants", () => {
   initialize();
-  expect(google.maps.StreetViewPreference).toMatchSnapshot();
-  expect(google.maps.StreetViewSource).toMatchSnapshot();
-  expect(google.maps.StreetViewStatus).toMatchSnapshot();
+  expect(google.maps.StreetViewPreference).toMatchObject({
+    BEST: "best",
+    NEAREST: "nearest",
+  });
+  expect(google.maps.StreetViewSource).toMatchObject({
+    DEFAULT: "default",
+    OUTDOOR: "outdoor",
+  });
+  expect(google.maps.StreetViewStatus).toMatchObject({
+    OK: "OK",
+    UNKNOWN_ERROR: "UNKNOWN_ERROR",
+    ZERO_RESULTS: "ZERO_RESULTS",
+  });
 });
