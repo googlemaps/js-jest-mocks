@@ -21,16 +21,20 @@ export class LatLng implements google.maps.LatLng {
     c?: boolean
   ) {}
 
-  equals = jest
+  public equals = jest
     .fn()
     .mockImplementation((other: google.maps.LatLng): boolean => false);
-  lat = jest.fn().mockImplementation((): number => 0);
-  lng = jest.fn().mockImplementation((): number => 0);
-  toString = jest.fn().mockImplementation((): string => "");
-  toUrlValue = jest.fn().mockImplementation((precision?: number): string => "");
-  toJSON = jest.fn().mockImplementation((): google.maps.LatLngLiteral => {
-    return { lat: 0, lng: 0 };
-  });
+  public lat = jest.fn().mockImplementation((): number => 0);
+  public lng = jest.fn().mockImplementation((): number => 0);
+  public toString = jest.fn().mockImplementation((): string => "");
+  public toUrlValue = jest
+    .fn()
+    .mockImplementation((precision?: number): string => "");
+  public toJSON = jest
+    .fn()
+    .mockImplementation((): google.maps.LatLngLiteral => {
+      return { lat: 0, lng: 0 };
+    });
 }
 
 export class LatLngBounds implements google.maps.LatLngBounds {
@@ -38,59 +42,63 @@ export class LatLngBounds implements google.maps.LatLngBounds {
     sw?: google.maps.LatLng | google.maps.LatLngLiteral,
     ne?: google.maps.LatLng | google.maps.LatLngLiteral
   ) {}
-  contains = jest
+  public contains = jest
     .fn()
     .mockImplementation(
       (latLng: google.maps.LatLng | google.maps.LatLngLiteral): boolean => false
     );
-  equals = jest
+  public equals = jest
     .fn()
     .mockImplementation(
       (
         other: google.maps.LatLngBounds | google.maps.LatLngBoundsLiteral
       ): boolean => false
     );
-  extend = jest
+  public extend = jest
     .fn()
     .mockImplementation(
       (
         point: google.maps.LatLng | google.maps.LatLngLiteral
       ): google.maps.LatLngBounds => this
     );
-  getCenter = jest
+  public getCenter = jest
     .fn()
     .mockImplementation(
       (): google.maps.LatLng => new google.maps.LatLng({ lat: 0, lng: 0 })
     );
-  getNorthEast = jest
+  public getNorthEast = jest
     .fn()
     .mockImplementation(
       (): google.maps.LatLng => new google.maps.LatLng({ lat: 0, lng: 0 })
     );
-  getSouthWest = jest
+  public getSouthWest = jest
     .fn()
     .mockImplementation(
       (): google.maps.LatLng => new google.maps.LatLng({ lat: 0, lng: 0 })
     );
-  intersects = jest
+  public intersects = jest
     .fn()
     .mockImplementation(
       (
         other: google.maps.LatLngBounds | google.maps.LatLngBoundsLiteral
       ): boolean => false
     );
-  isEmpty = jest.fn().mockImplementation((): boolean => false);
-  toJSON = jest.fn().mockImplementation((): google.maps.LatLngBoundsLiteral => {
-    return { east: 0, north: 0, south: 0, west: 0 };
-  });
-  toSpan = jest
+  public isEmpty = jest.fn().mockImplementation((): boolean => false);
+  public toJSON = jest
+    .fn()
+    .mockImplementation((): google.maps.LatLngBoundsLiteral => {
+      return { east: 0, north: 0, south: 0, west: 0 };
+    });
+  public toSpan = jest
     .fn()
     .mockImplementation(
       (): google.maps.LatLng => new google.maps.LatLng({ lat: 0, lng: 0 })
     );
-  toString = jest.fn().mockImplementation((): string => "");
-  toUrlValue = jest.fn().mockImplementation((precision?: number): string => "");
-  union = jest
+  public toString = jest.fn().mockImplementation((): string => "");
+  public toUrlValue = jest
+    .fn()
+    .mockImplementation((precision?: number): string => "");
+  public union = jest
     .fn()
     .mockImplementation(
       (

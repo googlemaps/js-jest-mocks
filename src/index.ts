@@ -16,31 +16,34 @@
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { LatLng, LatLngBounds } from "./latlng";
+import { LatLng, LatLngBounds } from "./maps/coordinates/latlng";
 
 import { Autocomplete } from "./places/autocomplete";
-import { Circle } from "./circle";
-import { Data } from "./data";
-import { Feature } from "./data.feature";
-import { MVCArray } from "./mvcarray";
-import { MVCObject } from "./mvcobject";
-import { MapCanvasProjection } from "./mapcanvasprojection";
-import { MapPanes } from "./mappanes";
-import { Map_ } from "./map";
-import { Marker } from "./marker";
-import { OverlayView } from "./overlayview";
-import { Point } from "./point";
-import { Polyline } from "./polyline";
+import { Circle } from "./drawing/polygons/circle";
+import { Data } from "./drawing/data/data";
+import { Feature } from "./drawing/data/data.feature";
+import { MVCArray } from "./maps/event/mvcarray";
+import { MVCObject } from "./maps/event/mvcobject";
+import { MapCanvasProjection } from "./drawing/DOM/mapcanvasprojection";
+import { MapPanes } from "./drawing/DOM/mappanes";
+import { Map_ } from "./maps/maps/map";
+import { Marker } from "./drawing/marker/marker";
+import { OverlayView } from "./drawing/DOM/overlayview";
+import { Point } from "./maps/coordinates/point";
+import { Polyline } from "./drawing/polygons/polyline";
 import { SearchBox } from "./places/searchbox";
-import { Size } from "./size";
-import { VisibleRegion } from "./visibleregion";
-
-enum MapTypeId {
-  HYBRID = "hybrid",
-  ROADMAP = "roadmap",
-  SATELLITE = "satellite",
-  TERRAIN = "terrain",
-}
+import { Size } from "./maps/coordinates/size";
+import { VisibleRegion } from "./maps/maps/visibleregion";
+import { StreetViewCoverageLayer } from "./street-view/rendering/coverage";
+import { StreetViewPanorama } from "./street-view/rendering/panorama";
+import {
+  StreetViewPreference,
+  StreetViewSource,
+  StreetViewStatus,
+} from "./street-view/service/constants";
+import { StreetViewService } from "./street-view/service/service";
+import { ControlPosition } from "./maps/controls/controlposition";
+import { MapTypeId } from "./maps/maps/constants";
 
 const initialize = function (): void {
   (global as any).google = {
@@ -54,8 +57,15 @@ const initialize = function (): void {
       MVCObject: MVCObject,
       MVCArray: MVCArray,
       MapTypeId: MapTypeId,
+      ControlPosition: ControlPosition,
       LatLng: LatLng,
       LatLngBounds: LatLngBounds,
+      StreetViewPanorama: StreetViewPanorama,
+      StreetViewCoverageLayer: StreetViewCoverageLayer,
+      StreetViewService: StreetViewService,
+      StreetViewPreference: StreetViewPreference,
+      StreetViewSource: StreetViewSource,
+      StreetViewStatus: StreetViewStatus,
       event: {
         addListener: jest.fn(),
         addListenerOnce: jest.fn(),
@@ -81,19 +91,24 @@ const initialize = function (): void {
 };
 
 export {
-  Marker,
-  Map_ as Map,
+  Circle,
   Data,
   Feature,
-  Size,
-  MapCanvasProjection,
-  MapPanes,
-  MVCArray,
-  MVCObject,
-  OverlayView,
-  Polyline,
   LatLng,
   LatLngBounds,
+  MVCArray,
+  MVCObject,
+  MapCanvasProjection,
+  MapPanes,
+  Map_ as Map,
+  Marker,
+  OverlayView,
+  Point,
+  Polyline,
+  Size,
+  StreetViewCoverageLayer,
+  StreetViewPanorama,
+  StreetViewService,
   VisibleRegion,
   initialize,
 };

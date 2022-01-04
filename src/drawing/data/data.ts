@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
+import { ControlPosition } from "../../maps/controls/controlposition";
+import { MVCObject } from "../../maps/event/mvcobject";
 import { Feature } from "./data.feature";
-import { MVCObject } from "./mvcobject";
 
 export class Data extends MVCObject implements google.maps.Data {
   constructor(opt?: google.maps.Data.DataOptions | null) {
@@ -24,7 +25,9 @@ export class Data extends MVCObject implements google.maps.Data {
   public static Feature = jest
     .fn()
     .mockImplementation(
-      (options?: google.maps.Data.FeatureOptions | null) => new Feature(options)
+      (
+        options?: google.maps.Data.FeatureOptions | null
+      ): google.maps.Data.Feature => new Feature(options)
     );
   public add = jest
     .fn()
@@ -34,47 +37,63 @@ export class Data extends MVCObject implements google.maps.Data {
           | google.maps.Data.Feature
           | null
           | google.maps.Data.FeatureOptions
-      ) => {
+      ): google.maps.Data.Feature => {
         return null;
       }
     );
   public addGeoJson = jest
     .fn()
     .mockImplementation(
-      (geoJson: object, options?: google.maps.Data.GeoJsonOptions | null) => {
+      (
+        geoJson: object,
+        options?: google.maps.Data.GeoJsonOptions | null
+      ): google.maps.Data.Feature[] => {
         return [];
       }
     );
   public contains = jest
     .fn()
-    .mockImplementation((feature: google.maps.Data.Feature) => {
+    .mockImplementation((feature: google.maps.Data.Feature): boolean => {
       return false;
     });
   public forEach = jest
     .fn()
-    .mockImplementation((callback: (a: google.maps.Data.Feature) => void) => {
-      return null;
+    .mockImplementation(
+      (callback: (a: google.maps.Data.Feature) => void): void => {
+        return null;
+      }
+    );
+  public getControlPosition = jest
+    .fn()
+    .mockImplementation((): google.maps.ControlPosition => {
+      return ControlPosition.BOTTOM_CENTER;
     });
-  public getControlPosition = jest.fn().mockImplementation(() => {
+  public getControls = jest.fn().mockImplementation((): string[] | null => {
     return null;
   });
-  public getControls = jest.fn().mockImplementation(() => {
-    return null;
-  });
-  public getDrawingMode = jest.fn().mockImplementation(() => {
+  public getDrawingMode = jest.fn().mockImplementation((): string[] | null => {
     return null;
   });
   public getFeatureById = jest
     .fn()
-    .mockImplementation((id: number | string) => {
-      return undefined;
-    });
-  public getMap = jest.fn().mockImplementation(() => {
+    .mockImplementation(
+      (id: number | string): google.maps.Data.Feature | undefined => {
+        return undefined;
+      }
+    );
+  public getMap = jest.fn().mockImplementation((): google.maps.Map | null => {
     return null;
   });
-  public getStyle = jest.fn().mockImplementation(() => {
-    return null;
-  });
+  public getStyle = jest
+    .fn()
+    .mockImplementation(
+      ():
+        | google.maps.Data.StylingFunction
+        | google.maps.Data.StyleOptions
+        | null => {
+        return null;
+      }
+    );
   public loadGeoJson = jest
     .fn()
     .mockImplementation(
@@ -82,7 +101,7 @@ export class Data extends MVCObject implements google.maps.Data {
         url: string,
         options?: google.maps.Data.GeoJsonOptions | null,
         callback?: (a: google.maps.Data.Feature[]) => void
-      ) => {
+      ): void => {
         return null;
       }
     );
@@ -92,38 +111,40 @@ export class Data extends MVCObject implements google.maps.Data {
       (
         feature: google.maps.Data.Feature,
         style: google.maps.Data.StyleOptions
-      ) => {
+      ): void => {
         return null;
       }
     );
   public remove = jest
     .fn()
-    .mockImplementation((feature: google.maps.Data.Feature) => {
+    .mockImplementation((feature: google.maps.Data.Feature): void => {
       return null;
     });
   public revertStyle = jest
     .fn()
-    .mockImplementation((feature?: google.maps.Data.Feature | null) => {
+    .mockImplementation((feature?: google.maps.Data.Feature | null): void => {
       return null;
     });
   public setControlPosition = jest
     .fn()
-    .mockImplementation((controlPosition: google.maps.ControlPosition) => {
-      return null;
-    });
+    .mockImplementation(
+      (controlPosition: google.maps.ControlPosition): void => {
+        return null;
+      }
+    );
   public setControls = jest
     .fn()
-    .mockImplementation((controls: string[] | null) => {
+    .mockImplementation((controls: string[] | null): void => {
       return null;
     });
   public setDrawingMode = jest
     .fn()
-    .mockImplementation((drawingMode: string | null) => {
+    .mockImplementation((drawingMode: string | null): void => {
       return null;
     });
   public setMap = jest
     .fn()
-    .mockImplementation((map: google.maps.Map | null) => {
+    .mockImplementation((map: google.maps.Map | null): void => {
       return null;
     });
   public setStyle = jest
@@ -134,13 +155,13 @@ export class Data extends MVCObject implements google.maps.Data {
           | google.maps.Data.StylingFunction
           | google.maps.Data.StyleOptions
           | null
-      ) => {
+      ): void => {
         return null;
       }
     );
   public toGeoJson = jest
     .fn()
-    .mockImplementation((callback: (a: object) => void) => {
+    .mockImplementation((callback: (a: object) => void): void => {
       return null;
     });
 }

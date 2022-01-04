@@ -14,101 +14,111 @@
  * limitations under the License.
  */
 
-import { MVCObject } from "./mvcobject";
-import { LatLng } from "./index";
+import { LatLng } from "../../maps/coordinates/latlng";
+import { MVCObject } from "../../maps/event/mvcobject";
 
 export class Marker extends MVCObject implements google.maps.Marker {
   static readonly MAX_ZINDEX: number;
   constructor(opts?: google.maps.MarkerOptions | null) {
     super();
   }
-  getAnimation = jest
+  public getAnimation = jest
     .fn()
     .mockImplementation((): Animation | null | undefined => null);
-  getClickable = jest.fn().mockImplementation((): boolean => null);
-  getCursor = jest
+  public getClickable = jest.fn().mockImplementation((): boolean => null);
+  public getCursor = jest
     .fn()
     .mockImplementation((): string | null | undefined => null);
-  getDraggable = jest
+  public getDraggable = jest
     .fn()
     .mockImplementation((): boolean | null | undefined => null);
-  getIcon = jest
+  public getIcon = jest
     .fn()
     .mockImplementation(
       (): string | google.maps.Icon | google.maps.Symbol | null | undefined =>
         null
     );
-  getLabel = jest
+  public getLabel = jest
     .fn()
     .mockImplementation((): google.maps.MarkerLabel | null | undefined => null);
-  getMap = jest
+  public getMap = jest
     .fn()
     .mockImplementation(
       (): google.maps.Map | google.maps.StreetViewPanorama | null | undefined =>
         null
     );
-  getOpacity = jest
+  public getOpacity = jest
     .fn()
     .mockImplementation((): number | null | undefined => null);
-  getPosition = jest
+  public getPosition = jest
     .fn()
     .mockImplementation(
       (): google.maps.LatLng | null | undefined =>
         new LatLng({ lat: 0, lng: 0 })
     );
-  getShape = jest
+  public getShape = jest
     .fn()
     .mockImplementation((): google.maps.MarkerShape | null | undefined => null);
-  getTitle = jest
+  public getTitle = jest
     .fn()
     .mockImplementation((): string | null | undefined => null);
-  getVisible = jest.fn().mockImplementation((): boolean => null);
-  getZIndex = jest
+  public getVisible = jest.fn().mockImplementation((): boolean => null);
+  public getZIndex = jest
     .fn()
     .mockImplementation((): number | null | undefined => null);
-  setAnimation = jest
+  public setAnimation = jest
     .fn()
     .mockImplementation((animation: Animation | null): void => {});
-  setClickable = jest.fn().mockImplementation((flag: boolean): void => {});
-  setCursor = jest.fn().mockImplementation((cursor: string | null): void => {});
-  setDraggable = jest
+  public setClickable = jest
+    .fn()
+    .mockImplementation((flag: boolean): void => {});
+  public setCursor = jest
+    .fn()
+    .mockImplementation((cursor: string | null): void => {});
+  public setDraggable = jest
     .fn()
     .mockImplementation((flag: boolean | null): void => {});
-  setIcon = jest
+  public setIcon = jest
     .fn()
     .mockImplementation(
       (icon: string | google.maps.Icon | google.maps.Symbol | null): void => {}
     );
-  setLabel = jest
+  public setLabel = jest
     .fn()
     .mockImplementation(
       (label: string | google.maps.MarkerLabel | null): void => {}
     );
-  setMap = jest
+  public setMap = jest
     .fn()
     .mockImplementation(
       (map: google.maps.Map | google.maps.StreetViewPanorama | null): void => {}
     );
-  setOpacity = jest
+  public setOpacity = jest
     .fn()
     .mockImplementation((opacity: number | null): void => {});
-  setOptions = jest
+  public setOptions = jest
     .fn()
     .mockImplementation((options: google.maps.MarkerOptions): void => {});
-  setPosition = jest
+  public setPosition = jest
     .fn()
     .mockImplementation(
       (
         latlng: google.maps.LatLng | google.maps.LatLngLiteral | null
       ): void => {}
     );
-  setShape = jest
+  public setShape = jest
     .fn()
     .mockImplementation((shape: google.maps.MarkerShape | null): void => {});
-  setTitle = jest.fn().mockImplementation((title: string | null): void => {});
-  setVisible = jest.fn().mockImplementation((visible: boolean): void => {});
-  setZIndex = jest.fn().mockImplementation((zIndex: number | null): void => {});
-  addListener = jest
+  public setTitle = jest
+    .fn()
+    .mockImplementation((title: string | null): void => {});
+  public setVisible = jest
+    .fn()
+    .mockImplementation((visible: boolean): void => {});
+  public setZIndex = jest
+    .fn()
+    .mockImplementation((zIndex: number | null): void => {});
+  public addListener = jest
     .fn()
     .mockImplementation(
       (

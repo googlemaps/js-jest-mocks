@@ -14,9 +14,21 @@
  * limitations under the License.
  */
 
-import { initialize } from "./index";
+import { initialize } from "../../index";
 
-test("circle constructor is mocked", () => {
+test("street view constants", () => {
   initialize();
-  expect(new google.maps.Circle(null)).toBeTruthy();
+  expect(google.maps.StreetViewPreference).toMatchObject({
+    BEST: "best",
+    NEAREST: "nearest",
+  });
+  expect(google.maps.StreetViewSource).toMatchObject({
+    DEFAULT: "default",
+    OUTDOOR: "outdoor",
+  });
+  expect(google.maps.StreetViewStatus).toMatchObject({
+    OK: "OK",
+    UNKNOWN_ERROR: "UNKNOWN_ERROR",
+    ZERO_RESULTS: "ZERO_RESULTS",
+  });
 });

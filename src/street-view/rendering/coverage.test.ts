@@ -14,19 +14,9 @@
  * limitations under the License.
  */
 
-import { MVCObject } from "./mvcobject";
-import { MapCanvasProjection } from "./mapcanvasprojection";
-import { MapPanes } from "./mappanes";
-import { Map_ } from "./map";
+import { initialize } from "../../index";
 
-export class OverlayView extends MVCObject implements google.maps.OverlayView {
-  public draw = jest.fn();
-  public getMap = jest.fn().mockImplementation(() => new Map_(null, {}));
-  public getPanes = jest.fn().mockImplementation(() => new MapPanes());
-  public getProjection = jest
-    .fn()
-    .mockImplementation(() => new MapCanvasProjection());
-  public onAdd = jest.fn();
-  public onRemove = jest.fn();
-  public setMap = jest.fn();
-}
+test("street view coverage layer is mocked", () => {
+  initialize();
+  expect(new google.maps.StreetViewCoverageLayer()).toBeTruthy();
+});

@@ -14,40 +14,44 @@
  * limitations under the License.
  */
 
-import { LatLng } from "./index";
-import { Map_ } from "./map";
-import { MVCObject } from "./mvcobject";
+import { LatLng } from "../../maps/coordinates/latlng";
+import { MVCObject } from "../../maps/event/mvcobject";
+import { Map_ } from "../../maps/maps/map";
 
 export class Circle extends MVCObject implements google.maps.Circle {
   constructor(opt?: google.maps.CircleOptions) {
     super();
   }
-  getBounds = jest
+  public getBounds = jest
     .fn()
     .mockImplementation(
       (): google.maps.LatLngBounds | null | undefined => null
     );
-  getCenter = jest
+  public getCenter = jest
     .fn()
     .mockImplementation(
       (): google.maps.LatLng => new LatLng({ lat: 0, lng: 0 })
     );
-  getDraggable = jest.fn().mockImplementation((): boolean => true);
-  getEditable = jest.fn().mockImplementation((): boolean => true);
-  getMap = jest.fn().mockImplementation((): google.maps.Map => new Map_(null));
-  getRadius = jest.fn().mockImplementation((): number => 0);
-  getVisible = jest.fn().mockImplementation((): boolean => true);
-  setCenter = jest
+  public getDraggable = jest.fn().mockImplementation((): boolean => true);
+  public getEditable = jest.fn().mockImplementation((): boolean => true);
+  public getMap = jest
+    .fn()
+    .mockImplementation((): google.maps.Map => new Map_(null));
+  public getRadius = jest.fn().mockImplementation((): number => 0);
+  public getVisible = jest.fn().mockImplementation((): boolean => true);
+  public setCenter = jest
     .fn()
     .mockImplementation(
       (center: google.maps.LatLng | google.maps.LatLngLiteral) => {}
     );
-  setDraggable = jest.fn().mockImplementation((draggable: boolean) => {});
-  setEditable = jest.fn().mockImplementation((editable: boolean) => {});
-  setMap = jest.fn().mockImplementation((map: google.maps.Map) => {});
-  setOptions = jest
+  public setDraggable = jest
+    .fn()
+    .mockImplementation((draggable: boolean) => {});
+  public setEditable = jest.fn().mockImplementation((editable: boolean) => {});
+  public setMap = jest.fn().mockImplementation((map: google.maps.Map) => {});
+  public setOptions = jest
     .fn()
     .mockImplementation((options: google.maps.CircleOptions) => {});
-  setRadius = jest.fn().mockImplementation((radius: number) => {});
-  setVisible = jest.fn().mockImplementation((visible: boolean) => {});
+  public setRadius = jest.fn().mockImplementation((radius: number) => {});
+  public setVisible = jest.fn().mockImplementation((visible: boolean) => {});
 }

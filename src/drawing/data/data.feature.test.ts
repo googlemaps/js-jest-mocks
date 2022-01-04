@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import { initialize } from "./index";
+import { initialize } from "../../index";
 
-test("can initialize", () => {
+test("feature object is mocked", () => {
   initialize();
-  expect(new google.maps.Map(null)).toBeTruthy();
+  expect(new google.maps.Data.Feature(null)).toBeTruthy();
 });

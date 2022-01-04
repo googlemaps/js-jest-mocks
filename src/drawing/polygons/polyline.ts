@@ -14,32 +14,38 @@
  * limitations under the License.
  */
 
-import { MVCObject } from "./mvcobject";
+import { MVCObject } from "../../maps/event/mvcobject";
 
 export class Polyline extends MVCObject implements google.maps.Polyline {
-  constructor(opts?: {}) {
+  constructor(opts?: google.maps.PolylineOptions | null) {
     super();
   }
 
-  getDraggable = jest.fn().mockImplementation((): boolean => false);
-  getEditable = jest.fn().mockImplementation((): boolean => false);
-  getMap = jest
+  public getDraggable = jest.fn().mockImplementation((): boolean => false);
+  public getEditable = jest.fn().mockImplementation((): boolean => false);
+  public getMap = jest
     .fn()
     .mockImplementation((): google.maps.Map => ({} as google.maps.Map));
-  getPath = jest
+  public getPath = jest
     .fn()
     .mockImplementation(
       (): google.maps.MVCArray<google.maps.LatLng> =>
         ({} as google.maps.MVCArray<google.maps.LatLng>)
     );
-  getVisible = jest.fn().mockImplementation((): boolean => false);
-  setDraggable = jest.fn().mockImplementation((draggable: boolean): void => {});
-  setEditable = jest.fn().mockImplementation((editable: boolean): void => {});
-  setMap = jest.fn().mockImplementation((map: google.maps.Map): void => {});
-  setOptions = jest
+  public getVisible = jest.fn().mockImplementation((): boolean => false);
+  public setDraggable = jest
+    .fn()
+    .mockImplementation((draggable: boolean): void => {});
+  public setEditable = jest
+    .fn()
+    .mockImplementation((editable: boolean): void => {});
+  public setMap = jest
+    .fn()
+    .mockImplementation((map: google.maps.Map): void => {});
+  public setOptions = jest
     .fn()
     .mockImplementation((options: google.maps.PolylineOptions): void => {});
-  setPath = jest
+  public setPath = jest
     .fn()
     .mockImplementation(
       (
@@ -49,5 +55,7 @@ export class Polyline extends MVCObject implements google.maps.Polyline {
           | google.maps.LatLngLiteral[]
       ): void => {}
     );
-  setVisible = jest.fn().mockImplementation((visible: boolean): void => {});
+  public setVisible = jest
+    .fn()
+    .mockImplementation((visible: boolean): void => {});
 }

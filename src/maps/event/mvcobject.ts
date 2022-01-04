@@ -17,12 +17,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 export class MVCObject implements google.maps.MVCObject {
-  addListener = jest
+  public addListener = jest
     .fn()
     .mockImplementation(
-      (eventName: string, handler: (...args: any[]) => void): void => {}
+      (eventName: string, handler: (...args: any[]) => void): void => null
     );
-  bindTo = jest
+  public bindTo = jest
     .fn()
     .mockImplementation(
       (
@@ -30,13 +30,15 @@ export class MVCObject implements google.maps.MVCObject {
         target: MVCObject,
         targetKey?: string,
         noNotify?: boolean
-      ): void => {}
+      ): void => null
     );
-  changed = jest.fn().mockImplementation((key: string): void => {});
-  get = jest.fn().mockImplementation((key: string): any => {});
-  notify = jest.fn().mockImplementation((key: string): void => {});
-  set = jest.fn().mockImplementation((key: string, value: any): void => {});
-  setValues = jest.fn().mockImplementation((values: any): void => {});
-  unbind = jest.fn().mockImplementation((key: string): void => {});
-  unbindAll = jest.fn().mockImplementation(() => {});
+  public changed = jest.fn().mockImplementation((key: string): void => null);
+  public get = jest.fn().mockImplementation((key: string): any => {});
+  public notify = jest.fn().mockImplementation((key: string): void => null);
+  public set = jest
+    .fn()
+    .mockImplementation((key: string, value: any): void => null);
+  public setValues = jest.fn().mockImplementation((values: any): void => null);
+  public unbind = jest.fn().mockImplementation((key: string): void => null);
+  public unbindAll = jest.fn().mockImplementation(() => null);
 }

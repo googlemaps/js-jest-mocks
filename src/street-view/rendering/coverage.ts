@@ -14,17 +14,16 @@
  * limitations under the License.
  */
 
-export class Point implements google.maps.Point {
-  x: number;
-  y: number;
-  constructor(x: number, y: number) {
-    this.x = x;
-    this.y = y;
-  }
-  equals(other: Point): boolean {
-    return other.x === this.x && other.y === this.y;
-  }
-  toString = jest.fn().mockImplementation((): string => {
-    return "";
-  });
+import { MVCObject } from "../../maps/event/mvcobject";
+
+export class StreetViewCoverageLayer
+  extends MVCObject
+  implements google.maps.StreetViewCoverageLayer
+{
+  public getMap = jest
+    .fn()
+    .mockImplementation((): google.maps.Map | null => null);
+  public setMap = jest
+    .fn()
+    .mockImplementation((map: google.maps.Map | null): void => null);
 }

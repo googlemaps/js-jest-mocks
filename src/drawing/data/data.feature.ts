@@ -21,16 +21,20 @@ export class Feature implements google.maps.Data.Feature {
     .mockImplementation((callback: (a: any, b: string) => void) => {
       return null;
     });
-  public getGeometry = jest.fn().mockImplementation(() => {
-    return null;
-  });
-  public getId = jest.fn().mockImplementation(() => {
-    return "1";
-  });
-  public getProperty = jest.fn().mockImplementation((name: string) => {
+  public getGeometry = jest
+    .fn()
+    .mockImplementation((): google.maps.Data.Geometry | null => {
+      return null;
+    });
+  public getId = jest
+    .fn()
+    .mockImplementation((): number | string | undefined => {
+      return "1";
+    });
+  public getProperty = jest.fn().mockImplementation((name: string): any => {
     return undefined;
   });
-  public removeProperty = jest.fn().mockImplementation((name: string) => {
+  public removeProperty = jest.fn().mockImplementation((name: string): void => {
     return null;
   });
   public setGeometry = jest
@@ -42,18 +46,18 @@ export class Feature implements google.maps.Data.Feature {
           | null
           | google.maps.LatLng
           | google.maps.LatLngLiteral
-      ) => {
+      ): void => {
         return null;
       }
     );
   public setProperty = jest
     .fn()
-    .mockImplementation((name: string, newValue: any) => {
+    .mockImplementation((name: string, newValue: any): void => {
       return null;
     });
   public toGeoJson = jest
     .fn()
-    .mockImplementation((callback: (a: object) => void) => {
+    .mockImplementation((callback: (a: object) => void): void => {
       return null;
     });
 }
