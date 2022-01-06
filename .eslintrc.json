@@ -10,13 +10,7 @@
   "plugins": ["jest"],
   "rules": {
     "no-var": 2,
-    "prefer-arrow-callback": 2,
-    "prettier/prettier": [
-      "error",
-      {
-        "endOfLine": "auto"
-      }
-    ]
+    "prefer-arrow-callback": 2
   },
   "overrides": [
     {
