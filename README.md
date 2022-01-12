@@ -14,9 +14,7 @@
 
 Jest mocks for Google Maps in TypeScript.
 
-**Note:** Currently this is a partial set of mocks/stubs.
-
-**Note:** This repository was previously part of https://github.com/googlemaps/v3-utility-library.
+**Note:** If you find a missing mock, please open an [issue][issues].
 
 ## NPM
 
