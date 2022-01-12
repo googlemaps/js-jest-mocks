@@ -15,8 +15,15 @@
  */
 
 import { initialize } from "../../index";
+import { ControlPosition } from "../controls/controlposition";
 
 test("can initialize", () => {
   initialize();
   expect(new google.maps.Map(null)).toBeTruthy();
+});
+
+test("controls initalized", () => {
+  initialize();
+  const map = new google.maps.Map(null);
+  expect(map.controls[ControlPosition.BOTTOM_CENTER]).toBeTruthy();
 });
