@@ -31,6 +31,7 @@ test("controls initialized", () => {
 
 test("mockInstances available", () => {
   initialize();
+  new google.maps.MVCObject();
   const map = new google.maps.Map(null);
-  expect(Map_.mockInstances[0]).toStrictEqual(map);
+  expect(Map_.mockInstances).toMatchObject([map]);
 });

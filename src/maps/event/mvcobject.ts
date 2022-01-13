@@ -17,10 +17,22 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 export class MVCObject implements google.maps.MVCObject {
+  public static _mockClasses: typeof MVCObject[] = [];
   public static mockInstances: MVCObject[] = [];
 
   public constructor() {
-    MVCObject.mockInstances.push(this);
+    const ctor = this.constructor as typeof MVCObject;
+
+    if (ctor.mockInstances === undefined) {
+      ctor.mockInstances = [];
+    }
+
+    if (MVCObject._mockClasses === undefined) {
+      MVCObject._mockClasses = [];
+    }
+
+    ctor.mockInstances.push(this);
+    MVCObject._mockClasses.push(ctor);
   }
 
   public addListener = jest
@@ -53,6 +65,11 @@ export class MVCObject implements google.maps.MVCObject {
 // automatically at the end of each test.
 if (typeof afterEach === "function") {
   afterEach(() => {
-    MVCObject.mockInstances = [];
+    if (MVCObject._mockClasses) {
+      for (const ctor of MVCObject._mockClasses) {
+        ctor.mockInstances = undefined;
+      }
+    }
+    MVCObject._mockClasses = undefined;
   });
 }
