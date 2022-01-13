@@ -22,7 +22,7 @@ test("can initialize", () => {
   expect(new google.maps.Map(null)).toBeTruthy();
 });
 
-test("controls initalized", () => {
+test("controls initialized", () => {
   initialize();
   const map = new google.maps.Map(null);
   expect(map.controls[ControlPosition.BOTTOM_CENTER]).toBeTruthy();
