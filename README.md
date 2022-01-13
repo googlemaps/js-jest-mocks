@@ -9,7 +9,6 @@
 [![](https://github.com/jpoehnelt/in-solidarity-bot/raw/main/static//badge-flat.png)](https://github.com/apps/in-solidarity)
 [![Discord](https://img.shields.io/discord/676948200904589322?color=6A7EC2&logo=discord&logoColor=ffffff)](https://discord.gg/jRteCzP)
 
-
 ## Description
 
 Jest mocks for Google Maps in TypeScript.
@@ -23,12 +22,16 @@ Available via NPM as the package `@googlemaps/jest-mocks`
 ## Example
 
 ```typescript
-import { initialize } from "@googlemaps/jest-mocks";
+import { initialize, Map } from "@googlemaps/jest-mocks";
 
 beforeEach(() => {
   initialize();
 });
 
+// access the object instances if the object isn't easily accessible
+test("my test", () => {
+  expect(Map.mockInstances[0].fitBounds).toHaveBeenCalled();
+});
 ```
 
 ## Support
