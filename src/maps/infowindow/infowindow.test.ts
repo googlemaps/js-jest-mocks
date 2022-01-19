@@ -24,7 +24,6 @@ test("can initialize", () => {
 
 test("mockInstances available", () => {
   initialize();
-  new google.maps.MVCObject();
   const infowindow = new google.maps.InfoWindow();
   expect(InfoWindow_.mockInstances).toMatchObject([infowindow]);
 });
