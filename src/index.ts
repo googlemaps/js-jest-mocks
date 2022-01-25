@@ -44,6 +44,7 @@ import {
 import { StreetViewService } from "./street-view/service/service";
 import { ControlPosition } from "./maps/controls/controlposition";
 import { MapTypeId } from "./maps/maps/constants";
+import { event } from "./maps/event/event";
 
 const initialize = function (): void {
   (global as any).google = {
@@ -66,16 +67,7 @@ const initialize = function (): void {
       StreetViewPreference: StreetViewPreference,
       StreetViewSource: StreetViewSource,
       StreetViewStatus: StreetViewStatus,
-      event: {
-        addListener: jest.fn(),
-        addListenerOnce: jest.fn(),
-        addDomListerner: jest.fn(),
-        addDomListernerOnce: jest.fn(),
-        clearInstanceListeners: jest.fn(),
-        clearListeners: jest.fn(),
-        removeListener: jest.fn(),
-        trigger: jest.fn(),
-      },
+      event: event,
       places: {
         Autocomplete: Autocomplete,
         SearchBox: SearchBox,
@@ -93,6 +85,7 @@ const initialize = function (): void {
 export {
   Circle,
   Data,
+  event,
   Feature,
   LatLng,
   LatLngBounds,
