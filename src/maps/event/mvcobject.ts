@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import { MapsEventListener } from "./event";
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 export class MVCObject implements google.maps.MVCObject {
@@ -38,7 +40,8 @@ export class MVCObject implements google.maps.MVCObject {
   public addListener = jest
     .fn()
     .mockImplementation(
-      (eventName: string, handler: (...args: any[]) => void): void => null
+      (eventName: string, handler: Function): google.maps.MapsEventListener =>
+        MapsEventListener
     );
   public bindTo = jest
     .fn()
