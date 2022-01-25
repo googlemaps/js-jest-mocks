@@ -15,6 +15,7 @@
  */
 
 import { initialize } from "../../index";
+import { Data } from "../../drawing/data/data";
 import { ControlPosition } from "../controls/controlposition";
 import { Map_ } from "./map";
 
@@ -27,6 +28,14 @@ test("controls initialized", () => {
   initialize();
   const map = new google.maps.Map(null);
   expect(map.controls[ControlPosition.BOTTOM_CENTER]).toBeTruthy();
+});
+
+test("map instance has data object", () => {
+  initialize();
+  new google.maps.MVCObject();
+  const map = new google.maps.Map(null);
+  expect(map.data).toBeTruthy();
+  expect(map.data).toBeInstanceOf(Data);
 });
 
 test("mockInstances available", () => {

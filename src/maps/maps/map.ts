@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+import { Data } from "../../drawing/data/data";
 import { LatLng, LatLngBounds } from "../coordinates/latlng";
 import { MVCObject } from "../event/mvcobject";
 
@@ -25,7 +26,7 @@ export class Map_ extends MVCObject implements google.maps.Map {
 
   constructor(mapDiv: Element | null, opts?: google.maps.MapOptions) {
     super();
-    this.data = new google.maps.Data();
+    this.data = new Data();
     this.controls = [
       new google.maps.MVCArray<Node>(), // BOTTOM_CENTER
       new google.maps.MVCArray<Node>(), // BOTTOM_LEFT
