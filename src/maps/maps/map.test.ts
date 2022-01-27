@@ -15,13 +15,12 @@
  */
 
 import { initialize } from "../../index";
-import { Marker } from "../../drawing/marker/marker";
 import { mapMocks } from "../../registry";
 import { ControlPosition } from "../controls/controlposition";
 import { Map_ } from "./map";
 
 beforeEach(() => {
-  mapMocks.clear(Map_, Marker);
+  mapMocks.clearAll();
 });
 
 test("can initialize", () => {
