@@ -16,20 +16,20 @@
 
 import { initialize } from ".";
 import { MVCObject, Map } from ".";
-import { mockInstances, MOCKS_REGISTRY } from "./registry";
+import { mapMocks, MOCKS_REGISTRY } from "./registry";
 
 test("mocks registry", () => {
   initialize();
-  mockInstances.clearAll();
+  mapMocks.clearAll();
   expect(MOCKS_REGISTRY.size).toBe(0);
   const mvc1 = new google.maps.MVCObject();
   const mvc2 = new google.maps.MVCObject();
   expect(MOCKS_REGISTRY.size).toBe(1);
-  expect(mockInstances.get(MVCObject)).toStrictEqual([mvc1, mvc2]);
+  expect(mapMocks.get(MVCObject)).toStrictEqual([mvc1, mvc2]);
   const map = new google.maps.Map(null);
-  mockInstances.clear(MVCObject);
-  expect(mockInstances.get(MVCObject)).toStrictEqual([]);
-  expect(mockInstances.get(Map)).toStrictEqual([map]);
-  mockInstances.clearAll();
+  mapMocks.clear(MVCObject);
+  expect(mapMocks.get(MVCObject)).toStrictEqual([]);
+  expect(mapMocks.get(Map)).toStrictEqual([map]);
+  mapMocks.clearAll();
   expect(MOCKS_REGISTRY.size).toBe(0);
 });
