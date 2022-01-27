@@ -27,7 +27,7 @@ function clearAll(): void {
   MOCKS_REGISTRY.clear();
 }
 
-// Signature to require at least item
+// Signature to require at least one item
 function clear<T extends Constructable, K extends Constructable[]>(
   item: T,
   ...rest: K
