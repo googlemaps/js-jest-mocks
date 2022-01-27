@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-import { __addToRegistry } from "../../registry";
+import { __registerMockInstance } from "../../registry";
 import { MapsEventListener } from "./event";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 export class MVCObject implements google.maps.MVCObject {
   public constructor() {
-    __addToRegistry(this.constructor, this);
+    __registerMockInstance(this.constructor, this);
   }
 
   public addListener = jest

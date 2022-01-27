@@ -37,14 +37,14 @@ function clear<T extends Constructable, K extends Constructable[]>(
   }
 }
 
-export const mockInstances = {
+export const mapMocks = {
   get,
   clear,
   clearAll,
 };
 
 /* Internal */
-export function __addToRegistry(ctr: Function, instance: any): void {
+export function __registerMockInstance(ctr: Function, instance: any): void {
   const existing = MOCKS_REGISTRY.get(ctr.name) || [];
   MOCKS_REGISTRY.set(ctr.name, [...existing, instance]);
 }

@@ -16,12 +16,12 @@
 
 import { initialize } from "../../index";
 import { Marker } from "../../drawing/marker/marker";
-import { mockInstances } from "../../registry";
+import { mapMocks } from "../../registry";
 import { ControlPosition } from "../controls/controlposition";
 import { Map_ } from "./map";
 
 beforeEach(() => {
-  mockInstances.clear(Map_, Marker);
+  mapMocks.clear(Map_, Marker);
 });
 
 test("can initialize", () => {
@@ -40,7 +40,7 @@ test("mockInstances available", () => {
   const map = new google.maps.Map(null);
   map.fitBounds(null);
   map.data.get(null);
-  expect(mockInstances.get(Map_)).toHaveLength(1);
-  expect(mockInstances.get(Map_)[0].fitBounds).toHaveBeenCalledWith(null);
-  expect(mockInstances.get(Map_)[0].data.get).toHaveBeenCalledWith(null);
+  expect(mapMocks.get(Map_)).toHaveLength(1);
+  expect(mapMocks.get(Map_)[0].fitBounds).toHaveBeenCalledWith(null);
+  expect(mapMocks.get(Map_)[0].data.get).toHaveBeenCalledWith(null);
 });
