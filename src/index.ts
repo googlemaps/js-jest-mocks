@@ -45,8 +45,10 @@ import { StreetViewService } from "./street-view/service/service";
 import { ControlPosition } from "./maps/controls/controlposition";
 import { MapTypeId } from "./maps/maps/constants";
 import { event } from "./maps/event/event";
+import { mockInstances } from "./registry";
 
 const initialize = function (): void {
+  mockInstances.clearAll();
   (global as any).google = {
     maps: {
       ImageMapType: jest.fn(),
@@ -104,4 +106,5 @@ export {
   StreetViewService,
   VisibleRegion,
   initialize,
+  mockInstances,
 };
