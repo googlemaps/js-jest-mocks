@@ -37,7 +37,7 @@ test("mockInstances available", () => {
   expect(Map_.mockInstances).toMatchObject([map]);
 });
 
-test("mocks registered", () => {
+test("registers mocks", () => {
   initialize();
   const map = new google.maps.Map(null);
   expect(Map_.mockInstances).toMatchObject([map]);

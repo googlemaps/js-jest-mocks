@@ -20,7 +20,6 @@ import { mapMocks, MOCKS_REGISTRY } from "./registry";
 
 test("mocks registry", () => {
   initialize();
-  mapMocks.clearAll();
   expect(MOCKS_REGISTRY.size).toBe(0);
   const mvc1 = new google.maps.MVCObject();
   const mvc2 = new google.maps.MVCObject();
