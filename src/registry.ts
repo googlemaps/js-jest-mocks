@@ -37,7 +37,7 @@ function clear<T extends Constructable, K extends Constructable[]>(
   }
 }
 
-export const mapMocks = {
+export const mockInstances = {
   get,
   clear,
   clearAll,

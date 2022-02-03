@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-import { initialize } from "../../index";
+import { initialize, Marker } from "../../index";
 import { ControlPosition } from "../controls/controlposition";
 import { Map_ } from "./map";
-import { mapMocks } from "../../registry";
+import { mockInstances } from "../../registry";
 
 test("can initialize", () => {
   initialize();
@@ -43,7 +43,7 @@ test("registers mocks", () => {
   expect(Map_.mockInstances).toMatchObject([map]);
   map.fitBounds(null);
   map.data.get(null);
-  expect(mapMocks.get(Map_)).toHaveLength(1);
-  expect(mapMocks.get(Map_)[0].fitBounds).toHaveBeenCalledWith(null);
-  expect(mapMocks.get(Map_)[0].data.get).toHaveBeenCalledWith(null);
+  expect(mockInstances.get(Map_)).toHaveLength(1);
+  expect(mockInstances.get(Map_)[0].fitBounds).toHaveBeenCalledWith(null);
+  expect(mockInstances.get(Map_)[0].data.get).toHaveBeenCalledWith(null);
 });

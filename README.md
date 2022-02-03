@@ -19,18 +19,56 @@ Jest mocks for Google Maps in TypeScript.
 
 Available via NPM as the package `@googlemaps/jest-mocks`
 
-## Example
+## Inspecting mocks
 
-```typescript
-import { initialize, Map } from "@googlemaps/jest-mocks";
+You can inspect what happens with the created mock instances (e.g. `Map` or `Marker`) via the `mockInstances` object.
+
+```ts
+import { initialize, Map, Marker, mockInstances } from "@googlemaps/jest-mocks";
 
 beforeEach(() => {
   initialize();
 });
 
-// access the object instances if the object isn't easily accessible
 test("my test", () => {
-  expect(Map.mockInstances[0].fitBounds).toHaveBeenCalled();
+  const map = new google.maps.Map(null);
+  const markerOne = new google.maps.Marker();
+  const markerTwo = new google.maps.Marker();
+
+  map.setHeading(8);
+  markerOne.setMap(map);
+  markerTwo.setLabel("My marker");
+
+  const mapMocks = mockInstances.get(Map);
+  const markerMocks = mockInstances.get(Marker);
+
+  expect(mapMocks.length).toBe(1);
+  expect(markerMocks.length).toBe(2);
+  expect(mapMocks[0].setHeading).toHaveBeenCalledWith(8);
+  expect(markerMocks[0].setMap).toHaveBeenCalledTimes(1);
+  expect(markerMocks[1].setLabel).toHaveBeenCalledWith("My marker");
+});
+```
+
+## Cleaning up mocks
+
+Whenever `initialize()` is called, the captured mocks are automatically cleaned. Using any of Jest's methods, you can clean the mock instances at any time:
+
+```ts
+import { initialize, Map, Marker, mockInstances } from "@googlemaps/jest-mocks";
+
+beforeAll(() => {
+  initialize();
+});
+
+// Clear all mocks
+beforeEach(() => {
+  mockInstances.clearAll();
+});
+
+// Clear specific mocks
+beforeEach(() => {
+  mockInstances.clear(Map, Marker);
 });
 ```
 
