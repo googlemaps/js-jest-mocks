@@ -15,13 +15,9 @@
  */
 
 import { initialize } from "../../index";
-import { mapMocks } from "../../registry";
 import { ControlPosition } from "../controls/controlposition";
 import { Map_ } from "./map";
-
-beforeEach(() => {
-  mapMocks.clearAll();
-});
+import { mapMocks } from "../../registry";
 
 test("can initialize", () => {
   initialize();
@@ -36,7 +32,15 @@ test("controls initialized", () => {
 
 test("mockInstances available", () => {
   initialize();
+  new google.maps.MVCObject();
   const map = new google.maps.Map(null);
+  expect(Map_.mockInstances).toMatchObject([map]);
+});
+
+test("mocks registered", () => {
+  initialize();
+  const map = new google.maps.Map(null);
+  expect(Map_.mockInstances).toMatchObject([map]);
   map.fitBounds(null);
   map.data.get(null);
   expect(mapMocks.get(Map_)).toHaveLength(1);
