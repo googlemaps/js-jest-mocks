@@ -41,7 +41,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^27.4.7",
     "prettier": "^2.5.1",
-    "rollup": "^2.66.1",
+    "rollup": "^2.67.0",
     "ts-jest": "^27.1.3",
     "typedoc": "^0.22.11",
     "typescript": "^4.5.5"
