@@ -20,24 +20,8 @@ import { MapsEventListener } from "./event";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 export class MVCObject implements google.maps.MVCObject {
-  public static _mockClasses: typeof MVCObject[] = [];
-  public static mockInstances: MVCObject[] = [];
-
   public constructor() {
-    const ctor = this.constructor as typeof MVCObject;
-
-    __registerMockInstance(ctor, this);
-
-    if (ctor.mockInstances === undefined) {
-      ctor.mockInstances = [];
-    }
-
-    if (MVCObject._mockClasses === undefined) {
-      MVCObject._mockClasses = [];
-    }
-
-    ctor.mockInstances.push(this);
-    MVCObject._mockClasses.push(ctor);
+    __registerMockInstance(this.constructor, this);
   }
 
   public addListener = jest
@@ -65,17 +49,4 @@ export class MVCObject implements google.maps.MVCObject {
   public setValues = jest.fn().mockImplementation((values: any): void => null);
   public unbind = jest.fn().mockImplementation((key: string): void => null);
   public unbindAll = jest.fn().mockImplementation(() => null);
-}
-
-// if running a test that supports afterEach, then we will cleanup the instances
-// automatically at the end of each test.
-if (typeof afterEach === "function") {
-  afterEach(() => {
-    if (MVCObject._mockClasses) {
-      for (const ctor of MVCObject._mockClasses) {
-        ctor.mockInstances = undefined;
-      }
-    }
-    MVCObject._mockClasses = undefined;
-  });
 }
