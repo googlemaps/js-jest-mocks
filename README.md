@@ -42,8 +42,8 @@ test("my test", () => {
   const mapMocks = mockInstances.get(Map);
   const markerMocks = mockInstances.get(Marker);
 
-  expect(mapMocks.length).toBe(1);
-  expect(markerMocks.length).toBe(2);
+  expect(mapMocks).toHaveLength(1);
+  expect(markerMocks).toHaveLength(2);
   expect(mapMocks[0].setHeading).toHaveBeenCalledWith(8);
   expect(markerMocks[0].setMap).toHaveBeenCalledTimes(1);
   expect(markerMocks[1].setLabel).toHaveBeenCalledWith("My marker");

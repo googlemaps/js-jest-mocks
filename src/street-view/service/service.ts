@@ -16,8 +16,12 @@
 
 import { LatLng } from "../../maps/coordinates/latlng";
 import { Size } from "../../maps/coordinates/size";
+import { __registerMockInstance } from "../../registry";
 
 export class StreetViewService implements google.maps.StreetViewService {
+  constructor() {
+    __registerMockInstance(this.constructor, this);
+  }
   public getPanorama = jest
     .fn()
     .mockImplementation(

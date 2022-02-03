@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { initialize, Marker } from "../../index";
+import { initialize } from "../../index";
 import { ControlPosition } from "../controls/controlposition";
 import { Map_ } from "./map";
 import { mockInstances } from "../../registry";
