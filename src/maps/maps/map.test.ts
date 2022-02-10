@@ -1,5 +1,5 @@
 /**
- * Copyright 2019 Google LLC. All Rights Reserved.
+ * Copyright 2022 Google LLC. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 import { initialize } from "../../index";
 import { ControlPosition } from "../controls/controlposition";
 import { Map_ } from "./map";
+import { mockInstances } from "../../registry";
 
 test("can initialize", () => {
   initialize();
@@ -34,4 +35,15 @@ test("mockInstances available", () => {
   new google.maps.MVCObject();
   const map = new google.maps.Map(null);
   expect(Map_.mockInstances).toMatchObject([map]);
+});
+
+test("registers mocks", () => {
+  initialize();
+  const map = new google.maps.Map(null);
+  expect(Map_.mockInstances).toMatchObject([map]);
+  map.fitBounds(null);
+  map.data.get(null);
+  expect(mockInstances.get(Map_)).toHaveLength(1);
+  expect(mockInstances.get(Map_)[0].fitBounds).toHaveBeenCalledWith(null);
+  expect(mockInstances.get(Map_)[0].data.get).toHaveBeenCalledWith(null);
 });

@@ -1,5 +1,5 @@
 /**
- * Copyright 2019 Google LLC. All Rights Reserved.
+ * Copyright 2022 Google LLC. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,8 +45,10 @@ import { StreetViewService } from "./street-view/service/service";
 import { ControlPosition } from "./maps/controls/controlposition";
 import { MapTypeId } from "./maps/maps/constants";
 import { event } from "./maps/event/event";
+import { mockInstances } from "./registry";
 
 const initialize = function (): void {
+  mockInstances.clearAll();
   (global as any).google = {
     maps: {
       ImageMapType: jest.fn(),
@@ -103,5 +105,6 @@ export {
   StreetViewPanorama,
   StreetViewService,
   VisibleRegion,
+  mockInstances,
   initialize,
 };

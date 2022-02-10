@@ -1,5 +1,5 @@
 /**
- * Copyright 2019 Google LLC. All Rights Reserved.
+ * Copyright 2022 Google LLC. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,10 +14,22 @@
  * limitations under the License.
  */
 
-import { initialize } from "../../index";
+import { initialize, mockInstances } from "../../index";
+import { StreetViewService } from "./service";
 
 test("street view service is mocked", async () => {
   initialize();
   const service = new google.maps.StreetViewService();
   expect(await service.getPanorama(null)).toBeTruthy();
+});
+
+test("registers mocks", () => {
+  initialize();
+  const service = new google.maps.StreetViewService();
+  service.getPanorama(null);
+  const mocks = mockInstances.get(StreetViewService);
+  expect(mocks).toHaveLength(1);
+  expect(
+    mockInstances.get(StreetViewService)[0].getPanorama
+  ).toHaveBeenCalledWith(null);
 });

@@ -1,5 +1,5 @@
 /**
- * Copyright 2019 Google LLC. All Rights Reserved.
+ * Copyright 2022 Google LLC. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+import { __registerMockInstance } from "../../registry";
 import { MapsEventListener } from "./event";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -24,6 +25,8 @@ export class MVCObject implements google.maps.MVCObject {
 
   public constructor() {
     const ctor = this.constructor as typeof MVCObject;
+
+    __registerMockInstance(ctor, this);
 
     if (ctor.mockInstances === undefined) {
       ctor.mockInstances = [];
