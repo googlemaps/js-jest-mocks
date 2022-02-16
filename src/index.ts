@@ -44,6 +44,7 @@ import {
 import { StreetViewService } from "./street-view/service/service";
 import { ControlPosition } from "./maps/controls/controlposition";
 import { MapTypeId } from "./maps/maps/constants";
+import { InfoWindow_ } from "./maps/infowindow/infowindow";
 import { event } from "./maps/event/event";
 import { mockInstances } from "./registry";
 
@@ -80,6 +81,7 @@ const initialize = function (): void {
       MapCanvasProjection: MapCanvasProjection,
       MapPanes: MapPanes,
       VisibleRegion: VisibleRegion,
+      InfoWindow: InfoWindow_,
     },
   };
 };
@@ -105,6 +107,7 @@ export {
   StreetViewPanorama,
   StreetViewService,
   VisibleRegion,
+  InfoWindow_ as InfoWindow,
   mockInstances,
   initialize,
 };
