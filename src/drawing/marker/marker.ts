@@ -1,5 +1,5 @@
 /**
- * Copyright 2019 Google LLC. All Rights Reserved.
+ * Copyright 2022 Google LLC. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 
 import { LatLng } from "../../maps/coordinates/latlng";
+import { MapsEventListener } from "../../maps/event/event";
 import { MVCObject } from "../../maps/event/mvcobject";
 
 export class Marker extends MVCObject implements google.maps.Marker {
@@ -124,7 +125,6 @@ export class Marker extends MVCObject implements google.maps.Marker {
       (
         eventName: string,
         handler: (this: Marker, event: MouseEvent) => void
-      ): google.maps.MapsEventListener =>
-        jest.fn() as unknown as google.maps.MapsEventListener
+      ): google.maps.MapsEventListener => MapsEventListener
     );
 }

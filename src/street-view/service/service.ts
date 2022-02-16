@@ -1,5 +1,5 @@
 /**
- * Copyright 2019 Google LLC. All Rights Reserved.
+ * Copyright 2022 Google LLC. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,12 @@
 
 import { LatLng } from "../../maps/coordinates/latlng";
 import { Size } from "../../maps/coordinates/size";
+import { __registerMockInstance } from "../../registry";
 
 export class StreetViewService implements google.maps.StreetViewService {
+  constructor() {
+    __registerMockInstance(this.constructor, this);
+  }
   public getPanorama = jest
     .fn()
     .mockImplementation(

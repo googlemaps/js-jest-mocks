@@ -1,5 +1,5 @@
 /**
- * Copyright 2019 Google LLC. All Rights Reserved.
+ * Copyright 2022 Google LLC. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,8 +45,11 @@ import { StreetViewService } from "./street-view/service/service";
 import { ControlPosition } from "./maps/controls/controlposition";
 import { MapTypeId } from "./maps/maps/constants";
 import { InfoWindow_ } from "./maps/infowindow/infowindow";
+import { event } from "./maps/event/event";
+import { mockInstances } from "./registry";
 
 const initialize = function (): void {
+  mockInstances.clearAll();
   (global as any).google = {
     maps: {
       ImageMapType: jest.fn(),
@@ -67,16 +70,7 @@ const initialize = function (): void {
       StreetViewPreference: StreetViewPreference,
       StreetViewSource: StreetViewSource,
       StreetViewStatus: StreetViewStatus,
-      event: {
-        addListener: jest.fn(),
-        addListenerOnce: jest.fn(),
-        addDomListerner: jest.fn(),
-        addDomListernerOnce: jest.fn(),
-        clearInstanceListeners: jest.fn(),
-        clearListeners: jest.fn(),
-        removeListener: jest.fn(),
-        trigger: jest.fn(),
-      },
+      event: event,
       places: {
         Autocomplete: Autocomplete,
         SearchBox: SearchBox,
@@ -95,6 +89,7 @@ const initialize = function (): void {
 export {
   Circle,
   Data,
+  event,
   Feature,
   LatLng,
   LatLngBounds,
@@ -113,5 +108,6 @@ export {
   StreetViewService,
   VisibleRegion,
   InfoWindow_ as InfoWindow,
+  mockInstances,
   initialize,
 };
