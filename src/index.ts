@@ -30,6 +30,7 @@ import { Map_ } from "./maps/maps/map";
 import { Marker } from "./drawing/marker/marker";
 import { OverlayView } from "./drawing/DOM/overlayview";
 import { Point } from "./maps/coordinates/point";
+import { Polygon } from "./drawing/polygons/polygon";
 import { Polyline } from "./drawing/polygons/polyline";
 import { SearchBox } from "./places/searchbox";
 import { Size } from "./maps/coordinates/size";
@@ -75,6 +76,7 @@ const initialize = function (): void {
         Autocomplete: Autocomplete,
         SearchBox: SearchBox,
       },
+      Polygon: Polygon,
       Polyline: Polyline,
       Circle: Circle,
       OverlayView: OverlayView,
@@ -101,6 +103,7 @@ export {
   Marker,
   OverlayView,
   Point,
+  Polygon,
   Polyline,
   Size,
   StreetViewCoverageLayer,
