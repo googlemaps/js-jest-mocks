@@ -29,6 +29,7 @@ import { MapPanes } from "./drawing/DOM/mappanes";
 import { Map_ } from "./maps/maps/map";
 import { Marker } from "./drawing/marker/marker";
 import { OverlayView } from "./drawing/DOM/overlayview";
+import { KmlLayer } from "./drawing/kml/kmllayer";
 import { Point } from "./maps/coordinates/point";
 import { Polygon } from "./drawing/polygons/polygon";
 import { Polyline } from "./drawing/polygons/polyline";
@@ -80,6 +81,7 @@ const initialize = function (): void {
       Polyline: Polyline,
       Circle: Circle,
       OverlayView: OverlayView,
+      KmlLayer: KmlLayer,
       MapCanvasProjection: MapCanvasProjection,
       MapPanes: MapPanes,
       VisibleRegion: VisibleRegion,
@@ -102,6 +104,7 @@ export {
   Map_ as Map,
   Marker,
   OverlayView,
+  KmlLayer,
   Point,
   Polygon,
   Polyline,
