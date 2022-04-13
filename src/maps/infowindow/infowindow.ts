@@ -19,6 +19,7 @@ import { MVCObject } from "../event/mvcobject";
 
 export class InfoWindow_ extends MVCObject implements google.maps.InfoWindow {
   public close = jest.fn().mockImplementation((): void => null);
+  public focus = jest.fn();
   public getContent = jest
     .fn()
     .mockImplementation((): string | Element | null | Text | undefined => {
