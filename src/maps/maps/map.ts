@@ -40,6 +40,8 @@ export class Map_ extends MVCObject implements google.maps.Map {
       new google.maps.MVCArray<Node>(), // TOP_LEFT
       new google.maps.MVCArray<Node>(), // TOP_RIGHT
     ];
+    this.mapTypes = new google.maps.MVCObject();
+    this.overlayMapTypes = new google.maps.MVCArray();
   }
   public fitBounds = jest
     .fn()
