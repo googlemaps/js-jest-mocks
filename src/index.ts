@@ -91,6 +91,7 @@ const initialize = function (): void {
 };
 
 export {
+  Autocomplete,
   Circle,
   Data,
   event,
@@ -108,6 +109,7 @@ export {
   Point,
   Polygon,
   Polyline,
+  SearchBox,
   Size,
   StreetViewCoverageLayer,
   StreetViewPanorama,
