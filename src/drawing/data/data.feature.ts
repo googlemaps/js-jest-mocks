@@ -14,8 +14,12 @@
  * limitations under the License.
  */
 
-export class Feature implements google.maps.Data.Feature {
-  constructor(options?: google.maps.Data.FeatureOptions | null) {}
+ import { MVCObject } from "../../maps/event/mvcobject";
+
+export class Feature extends MVCObject implements google.maps.Data.Feature {
+  constructor(options?: google.maps.Data.FeatureOptions | null) {
+    super();
+  }
   public forEachProperty = jest
     .fn()
     .mockImplementation((callback: (a: any, b: string) => void) => {

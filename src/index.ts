@@ -21,6 +21,7 @@ import { LatLng, LatLngBounds } from "./maps/coordinates/latlng";
 import { Autocomplete } from "./places/autocomplete";
 import { Circle } from "./drawing/polygons/circle";
 import { Data } from "./drawing/data/data";
+import { DataPolygon } from "./drawing/data/data.polygon";
 import { Feature } from "./drawing/data/data.feature";
 import { MVCArray } from "./maps/event/mvcarray";
 import { MVCObject } from "./maps/event/mvcobject";
@@ -93,6 +94,7 @@ const initialize = function (): void {
 export {
   Circle,
   Data,
+  DataPolygon,
   event,
   Feature,
   LatLng,
