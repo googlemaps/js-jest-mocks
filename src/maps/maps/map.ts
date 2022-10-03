@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+import { StreetViewPanorama } from "../../street-view/rendering/panorama";
 import { LatLng, LatLngBounds } from "../coordinates/latlng";
 import { MVCObject } from "../event/mvcobject";
 
@@ -79,10 +80,7 @@ export class Map_ extends MVCObject implements google.maps.Map {
     );
   public getStreetView = jest
     .fn()
-    .mockImplementation(
-      (): google.maps.StreetViewPanorama =>
-        jest.fn() as unknown as google.maps.StreetViewPanorama
-    );
+    .mockImplementation(() => new StreetViewPanorama());
   public getTilt = jest.fn().mockImplementation((): number => 0);
   public getZoom = jest.fn().mockImplementation((): number => 0);
   public moveCamera = jest
