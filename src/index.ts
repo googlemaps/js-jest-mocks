@@ -33,6 +33,7 @@ import { KmlLayer } from "./drawing/kml/kmllayer";
 import { Point } from "./maps/coordinates/point";
 import { Polygon } from "./drawing/polygons/polygon";
 import { Polyline } from "./drawing/polygons/polyline";
+import { Rectangle } from "./drawing/polygons/rectangle";
 import { SearchBox } from "./places/searchbox";
 import { Size } from "./maps/coordinates/size";
 import { VisibleRegion } from "./maps/maps/visibleregion";
@@ -80,6 +81,7 @@ const initialize = function (): void {
       Polygon: Polygon,
       Polyline: Polyline,
       Circle: Circle,
+      Rectangle: Rectangle,
       OverlayView: OverlayView,
       KmlLayer: KmlLayer,
       MapCanvasProjection: MapCanvasProjection,
@@ -109,6 +111,7 @@ export {
   Point,
   Polygon,
   Polyline,
+  Rectangle,
   SearchBox,
   Size,
   StreetViewCoverageLayer,
