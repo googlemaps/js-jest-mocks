@@ -17,6 +17,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { LatLng, LatLngBounds } from "./maps/coordinates/latlng";
+import { LatLngAltitude } from "./maps/coordinates/latlngaltitude";
 
 import { Autocomplete } from "./places/autocomplete";
 import { Circle } from "./drawing/polygons/circle";
@@ -66,6 +67,7 @@ const initialize = function (): void {
       MapTypeId: MapTypeId,
       ControlPosition: ControlPosition,
       LatLng: LatLng,
+      LatLngAltitude: LatLngAltitude,
       LatLngBounds: LatLngBounds,
       StreetViewPanorama: StreetViewPanorama,
       StreetViewCoverageLayer: StreetViewCoverageLayer,
@@ -99,6 +101,7 @@ export {
   event,
   Feature,
   LatLng,
+  LatLngAltitude,
   LatLngBounds,
   MVCArray,
   MVCObject,
