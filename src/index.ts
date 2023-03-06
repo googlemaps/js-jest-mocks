@@ -19,6 +19,7 @@
 import { LatLng, LatLngBounds } from "./maps/coordinates/latlng";
 
 import { Autocomplete } from "./places/autocomplete";
+import { MaxZoomService } from "./drawing/max-zoom/max-zoom";
 import { Circle } from "./drawing/polygons/circle";
 import { Data } from "./drawing/data/data";
 import { Feature } from "./drawing/data/data.feature";
@@ -88,6 +89,7 @@ const initialize = function (): void {
       MapPanes: MapPanes,
       VisibleRegion: VisibleRegion,
       InfoWindow: InfoWindow_,
+      MaxZoomService,
     },
   };
 };
@@ -119,6 +121,7 @@ export {
   StreetViewService,
   VisibleRegion,
   InfoWindow_ as InfoWindow,
+  MaxZoomService,
   mockInstances,
   initialize,
 };
