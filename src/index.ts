@@ -18,7 +18,11 @@
 
 import { LatLng, LatLngBounds } from "./maps/coordinates/latlng";
 import { PlacesService } from "./places/places-service/places-service";
+import { DirectionsService } from "./routes/directions-service/directions-service";
+import { Geocoder } from "./places/geocoder/geocoder";
 import { Autocomplete } from "./places/autocomplete";
+import { AutocompleteService } from "./places/autocomplete-service/autocomplete-service";
+import { DistanceMatrixService } from "./routes/distance-matrix-service/distance-matrix-service";
 import { Circle } from "./drawing/polygons/circle";
 import { Data } from "./drawing/data/data";
 import { Feature } from "./drawing/data/data.feature";
@@ -78,7 +82,9 @@ const initialize = function (): void {
         Autocomplete: Autocomplete,
         SearchBox: SearchBox,
         PlacesService,
+        AutocompleteService,
       },
+      Geocoder,
       Polygon: Polygon,
       Polyline: Polyline,
       Circle: Circle,
@@ -89,6 +95,8 @@ const initialize = function (): void {
       MapPanes: MapPanes,
       VisibleRegion: VisibleRegion,
       InfoWindow: InfoWindow_,
+      DirectionsService,
+      DistanceMatrixService,
     },
   };
 };
@@ -96,6 +104,8 @@ const initialize = function (): void {
 export {
   Autocomplete,
   PlacesService,
+  AutocompleteService,
+  Geocoder,
   Circle,
   Data,
   event,
@@ -121,6 +131,8 @@ export {
   StreetViewService,
   VisibleRegion,
   InfoWindow_ as InfoWindow,
+  DirectionsService,
+  DistanceMatrixService,
   mockInstances,
   initialize,
 };
