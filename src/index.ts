@@ -17,6 +17,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { LatLng, LatLngBounds } from "./maps/coordinates/latlng";
+import { DirectionsService } from "./routes/directions-service/directions-service";
 import { Geocoder } from "./places/geocoder/geocoder";
 import { Autocomplete } from "./places/autocomplete";
 import { AutocompleteService } from "./places/autocomplete-service/autocomplete-service";
@@ -92,6 +93,7 @@ const initialize = function (): void {
       MapPanes: MapPanes,
       VisibleRegion: VisibleRegion,
       InfoWindow: InfoWindow_,
+      DirectionsService,
       DistanceMatrixService,
     },
   };
@@ -126,6 +128,7 @@ export {
   StreetViewService,
   VisibleRegion,
   InfoWindow_ as InfoWindow,
+  DirectionsService,
   DistanceMatrixService,
   mockInstances,
   initialize,
