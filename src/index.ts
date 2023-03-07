@@ -17,8 +17,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { LatLng, LatLngBounds } from "./maps/coordinates/latlng";
-import { Autocomplete } from "./places/autocomplete";
 import { DirectionsService } from "./routes/directions-service/directions-service";
+import { Geocoder } from "./places/geocoder/geocoder";
+import { Autocomplete } from "./places/autocomplete";
+import { DistanceMatrixService } from "./routes/distance-matrix-service/distance-matrix-service";
 import { Circle } from "./drawing/polygons/circle";
 import { Data } from "./drawing/data/data";
 import { Feature } from "./drawing/data/data.feature";
@@ -78,6 +80,7 @@ const initialize = function (): void {
         Autocomplete: Autocomplete,
         SearchBox: SearchBox,
       },
+      Geocoder,
       Polygon: Polygon,
       Polyline: Polyline,
       Circle: Circle,
@@ -89,12 +92,14 @@ const initialize = function (): void {
       VisibleRegion: VisibleRegion,
       InfoWindow: InfoWindow_,
       DirectionsService,
+      DistanceMatrixService,
     },
   };
 };
 
 export {
   Autocomplete,
+  Geocoder,
   Circle,
   Data,
   event,
@@ -121,6 +126,7 @@ export {
   VisibleRegion,
   InfoWindow_ as InfoWindow,
   DirectionsService,
+  DistanceMatrixService,
   mockInstances,
   initialize,
 };
