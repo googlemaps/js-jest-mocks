@@ -19,6 +19,7 @@
 import { LatLng, LatLngBounds } from "./maps/coordinates/latlng";
 import { Geocoder } from "./places/geocoder/geocoder";
 import { Autocomplete } from "./places/autocomplete";
+import { AutocompleteService } from "./places/autocomplete-service/autocomplete-service";
 import { DistanceMatrixService } from "./routes/distance-matrix-service/distance-matrix-service";
 import { Circle } from "./drawing/polygons/circle";
 import { Data } from "./drawing/data/data";
@@ -78,6 +79,7 @@ const initialize = function (): void {
       places: {
         Autocomplete: Autocomplete,
         SearchBox: SearchBox,
+        AutocompleteService,
       },
       Geocoder,
       Polygon: Polygon,
@@ -97,6 +99,7 @@ const initialize = function (): void {
 
 export {
   Autocomplete,
+  AutocompleteService,
   Geocoder,
   Circle,
   Data,
