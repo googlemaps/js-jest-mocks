@@ -17,7 +17,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { LatLng, LatLngBounds } from "./maps/coordinates/latlng";
-
+import { Geocoder } from "./places/geocoder/geocoder";
 import { Autocomplete } from "./places/autocomplete";
 import { DistanceMatrixService } from "./routes/distance-matrix-service/distance-matrix-service";
 import { Circle } from "./drawing/polygons/circle";
@@ -79,6 +79,7 @@ const initialize = function (): void {
         Autocomplete: Autocomplete,
         SearchBox: SearchBox,
       },
+      Geocoder,
       Polygon: Polygon,
       Polyline: Polyline,
       Circle: Circle,
@@ -96,6 +97,7 @@ const initialize = function (): void {
 
 export {
   Autocomplete,
+  Geocoder,
   Circle,
   Data,
   event,
