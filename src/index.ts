@@ -19,6 +19,7 @@
 import { LatLng, LatLngBounds } from "./maps/coordinates/latlng";
 
 import { Autocomplete } from "./places/autocomplete";
+import { DistanceMatrixService } from "./routes/distance-matrix-service/distance-matrix-service";
 import { Circle } from "./drawing/polygons/circle";
 import { Data } from "./drawing/data/data";
 import { Feature } from "./drawing/data/data.feature";
@@ -88,6 +89,7 @@ const initialize = function (): void {
       MapPanes: MapPanes,
       VisibleRegion: VisibleRegion,
       InfoWindow: InfoWindow_,
+      DistanceMatrixService,
     },
   };
 };
@@ -119,6 +121,7 @@ export {
   StreetViewService,
   VisibleRegion,
   InfoWindow_ as InfoWindow,
+  DistanceMatrixService,
   mockInstances,
   initialize,
 };
