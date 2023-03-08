@@ -18,8 +18,13 @@
 
 import { LatLng, LatLngBounds } from "./maps/coordinates/latlng";
 import { LatLngAltitude } from "./maps/coordinates/latlngaltitude";
-
+import { PlacesService } from "./places/places-service/places-service";
+import { DirectionsService } from "./routes/directions-service/directions-service";
+import { Geocoder } from "./places/geocoder/geocoder";
 import { Autocomplete } from "./places/autocomplete";
+import { MaxZoomService } from "./drawing/max-zoom/max-zoom";
+import { AutocompleteService } from "./places/autocomplete-service/autocomplete-service";
+import { DistanceMatrixService } from "./routes/distance-matrix-service/distance-matrix-service";
 import { Circle } from "./drawing/polygons/circle";
 import { Data } from "./drawing/data/data";
 import { Feature } from "./drawing/data/data.feature";
@@ -79,7 +84,10 @@ const initialize = function (): void {
       places: {
         Autocomplete: Autocomplete,
         SearchBox: SearchBox,
+        PlacesService,
+        AutocompleteService,
       },
+      Geocoder,
       Polygon: Polygon,
       Polyline: Polyline,
       Circle: Circle,
@@ -90,12 +98,18 @@ const initialize = function (): void {
       MapPanes: MapPanes,
       VisibleRegion: VisibleRegion,
       InfoWindow: InfoWindow_,
+      MaxZoomService,
+      DirectionsService,
+      DistanceMatrixService,
     },
   };
 };
 
 export {
   Autocomplete,
+  PlacesService,
+  AutocompleteService,
+  Geocoder,
   Circle,
   Data,
   event,
@@ -122,6 +136,9 @@ export {
   StreetViewService,
   VisibleRegion,
   InfoWindow_ as InfoWindow,
+  MaxZoomService,
+  DirectionsService,
+  DistanceMatrixService,
   mockInstances,
   initialize,
 };
