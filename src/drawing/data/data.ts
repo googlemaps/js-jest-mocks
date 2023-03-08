@@ -17,6 +17,7 @@
 import { ControlPosition } from "../../maps/controls/controlposition";
 import { MVCObject } from "../../maps/event/mvcobject";
 import { Feature } from "./data.feature";
+import { DataPolygon } from "./data.polygon";
 
 export class Data extends MVCObject implements google.maps.Data {
   constructor(opt?: google.maps.Data.DataOptions | null) {
@@ -28,6 +29,19 @@ export class Data extends MVCObject implements google.maps.Data {
       (
         options?: google.maps.Data.FeatureOptions | null
       ): google.maps.Data.Feature => new Feature(options)
+    );
+  public static Polygon = jest
+    .fn()
+    .mockImplementation(
+      (
+        elements?:
+          | google.maps.MVCArray<google.maps.MVCArray<google.maps.LatLng>>
+          | google.maps.MVCArray<google.maps.LatLng>
+          | google.maps.LatLng[][]
+          | google.maps.LatLngLiteral[][]
+          | google.maps.LatLng[]
+          | google.maps.LatLngLiteral[]
+      ): google.maps.Data.Polygon => new DataPolygon(elements)
     );
   public add = jest
     .fn()

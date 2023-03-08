@@ -27,6 +27,7 @@ import { AutocompleteService } from "./places/autocomplete-service/autocomplete-
 import { DistanceMatrixService } from "./routes/distance-matrix-service/distance-matrix-service";
 import { Circle } from "./drawing/polygons/circle";
 import { Data } from "./drawing/data/data";
+import { DataPolygon } from "./drawing/data/data.polygon";
 import { Feature } from "./drawing/data/data.feature";
 import { MVCArray } from "./maps/event/mvcarray";
 import { MVCObject } from "./maps/event/mvcobject";
@@ -112,6 +113,7 @@ export {
   Geocoder,
   Circle,
   Data,
+  DataPolygon,
   event,
   Feature,
   LatLng,
