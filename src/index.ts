@@ -17,8 +17,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { LatLng, LatLngBounds } from "./maps/coordinates/latlng";
-
+import { LatLngAltitude } from "./maps/coordinates/latlngaltitude";
+import { PlacesService } from "./places/places-service/places-service";
+import { DirectionsService } from "./routes/directions-service/directions-service";
+import { Geocoder } from "./places/geocoder/geocoder";
 import { Autocomplete } from "./places/autocomplete";
+import { MaxZoomService } from "./drawing/max-zoom/max-zoom";
+import { AutocompleteService } from "./places/autocomplete-service/autocomplete-service";
+import { DistanceMatrixService } from "./routes/distance-matrix-service/distance-matrix-service";
 import { Circle } from "./drawing/polygons/circle";
 import { Data } from "./drawing/data/data";
 import { DataPolygon } from "./drawing/data/data.polygon";
@@ -34,6 +40,7 @@ import { KmlLayer } from "./drawing/kml/kmllayer";
 import { Point } from "./maps/coordinates/point";
 import { Polygon } from "./drawing/polygons/polygon";
 import { Polyline } from "./drawing/polygons/polyline";
+import { Rectangle } from "./drawing/polygons/rectangle";
 import { SearchBox } from "./places/searchbox";
 import { Size } from "./maps/coordinates/size";
 import { VisibleRegion } from "./maps/maps/visibleregion";
@@ -66,6 +73,7 @@ const initialize = function (): void {
       MapTypeId: MapTypeId,
       ControlPosition: ControlPosition,
       LatLng: LatLng,
+      LatLngAltitude: LatLngAltitude,
       LatLngBounds: LatLngBounds,
       StreetViewPanorama: StreetViewPanorama,
       StreetViewCoverageLayer: StreetViewCoverageLayer,
@@ -77,27 +85,39 @@ const initialize = function (): void {
       places: {
         Autocomplete: Autocomplete,
         SearchBox: SearchBox,
+        PlacesService,
+        AutocompleteService,
       },
+      Geocoder,
       Polygon: Polygon,
       Polyline: Polyline,
       Circle: Circle,
+      Rectangle: Rectangle,
       OverlayView: OverlayView,
       KmlLayer: KmlLayer,
       MapCanvasProjection: MapCanvasProjection,
       MapPanes: MapPanes,
       VisibleRegion: VisibleRegion,
       InfoWindow: InfoWindow_,
+      MaxZoomService,
+      DirectionsService,
+      DistanceMatrixService,
     },
   };
 };
 
 export {
+  Autocomplete,
+  PlacesService,
+  AutocompleteService,
+  Geocoder,
   Circle,
   Data,
   DataPolygon,
   event,
   Feature,
   LatLng,
+  LatLngAltitude,
   LatLngBounds,
   MVCArray,
   MVCObject,
@@ -110,12 +130,17 @@ export {
   Point,
   Polygon,
   Polyline,
+  Rectangle,
+  SearchBox,
   Size,
   StreetViewCoverageLayer,
   StreetViewPanorama,
   StreetViewService,
   VisibleRegion,
   InfoWindow_ as InfoWindow,
+  MaxZoomService,
+  DirectionsService,
+  DistanceMatrixService,
   mockInstances,
   initialize,
 };
