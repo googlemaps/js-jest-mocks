@@ -22,6 +22,7 @@ export class StreetViewPanorama
   extends MVCObject
   implements google.maps.StreetViewPanorama
 {
+  public focus = jest.fn().mockImplementation((): void => {});
   public controls: MVCArray<HTMLElement>[] = [];
   public getLinks = jest
     .fn()

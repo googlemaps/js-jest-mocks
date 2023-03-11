@@ -20,10 +20,10 @@ import { MapsEventListener } from "./event";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 export class MVCObject implements google.maps.MVCObject {
-  public static _mockClasses: typeof MVCObject[] = [];
+  public static _mockClasses: (typeof MVCObject)[] = [];
   public static mockInstances: MVCObject[] = [];
 
-  public constructor() {
+  constructor() {
     const ctor = this.constructor as typeof MVCObject;
 
     __registerMockInstance(ctor, this);

@@ -18,7 +18,7 @@ export const MapsEventListener: google.maps.MapsEventListener = {
   remove: jest.fn(),
 };
 
-export const event: typeof google.maps.event = {
+export const event: google.maps.event = {
   addDomListener: jest
     .fn()
     .mockImplementation(
