@@ -55,6 +55,7 @@ import { StreetViewService } from "./street-view/service/service";
 import { ControlPosition } from "./maps/controls/controlposition";
 import { MapTypeId } from "./maps/maps/constants";
 import { InfoWindow_ } from "./maps/infowindow/infowindow";
+import { AdvancedMarkerView } from "./drawing/advanced-marker-view/advanced-marker-view";
 import { event } from "./maps/event/event";
 import { mockInstances } from "./registry";
 
@@ -102,6 +103,9 @@ const initialize = function (): void {
       MaxZoomService,
       DirectionsService,
       DistanceMatrixService,
+      marker: {
+        AdvancedMarkerView,
+      },
     },
   };
 };
@@ -141,6 +145,7 @@ export {
   MaxZoomService,
   DirectionsService,
   DistanceMatrixService,
+  AdvancedMarkerView,
   mockInstances,
   initialize,
 };
