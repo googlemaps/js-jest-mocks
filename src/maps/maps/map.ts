@@ -17,9 +17,10 @@
 import { StreetViewPanorama } from "../../street-view/rendering/panorama";
 import { LatLng, LatLngBounds } from "../coordinates/latlng";
 import { MVCObject } from "../event/mvcobject";
+import { FeatureLayer } from "./featurelayer";
 
 export class Map_ extends MVCObject implements google.maps.Map {
-  public controls: Array<google.maps.MVCArray<Node>>;
+  public controls: Array<google.maps.MVCArray<HTMLElement>>;
   public data: google.maps.Data;
   public mapTypes: google.maps.MapTypeRegistry;
   public overlayMapTypes: google.maps.MVCArray<google.maps.MapType>;
@@ -28,18 +29,18 @@ export class Map_ extends MVCObject implements google.maps.Map {
     super();
     this.data = new google.maps.Data();
     this.controls = [
-      new google.maps.MVCArray<Node>(), // BOTTOM_CENTER
-      new google.maps.MVCArray<Node>(), // BOTTOM_LEFT
-      new google.maps.MVCArray<Node>(), // BOTTOM_RIGHT
-      new google.maps.MVCArray<Node>(), // LEFT_BOTTOM
-      new google.maps.MVCArray<Node>(), // LEFT_CENTER
-      new google.maps.MVCArray<Node>(), // LEFT_TOP
-      new google.maps.MVCArray<Node>(), // RIGHT_BOTTOM
-      new google.maps.MVCArray<Node>(), // RIGHT_CENTER
-      new google.maps.MVCArray<Node>(), // RIGHT_TOP
-      new google.maps.MVCArray<Node>(), // TOP_CENTER
-      new google.maps.MVCArray<Node>(), // TOP_LEFT
-      new google.maps.MVCArray<Node>(), // TOP_RIGHT
+      new google.maps.MVCArray<HTMLElement>(), // BOTTOM_CENTER
+      new google.maps.MVCArray<HTMLElement>(), // BOTTOM_LEFT
+      new google.maps.MVCArray<HTMLElement>(), // BOTTOM_RIGHT
+      new google.maps.MVCArray<HTMLElement>(), // LEFT_BOTTOM
+      new google.maps.MVCArray<HTMLElement>(), // LEFT_CENTER
+      new google.maps.MVCArray<HTMLElement>(), // LEFT_TOP
+      new google.maps.MVCArray<HTMLElement>(), // RIGHT_BOTTOM
+      new google.maps.MVCArray<HTMLElement>(), // RIGHT_CENTER
+      new google.maps.MVCArray<HTMLElement>(), // RIGHT_TOP
+      new google.maps.MVCArray<HTMLElement>(), // TOP_CENTER
+      new google.maps.MVCArray<HTMLElement>(), // TOP_LEFT
+      new google.maps.MVCArray<HTMLElement>(), // TOP_RIGHT
     ];
     this.mapTypes = new google.maps.MVCObject();
     this.overlayMapTypes = new google.maps.MVCArray();
@@ -146,4 +147,13 @@ export class Map_ extends MVCObject implements google.maps.Map {
     .mockImplementation((clickable: boolean): void => {
       return null;
     });
+  public getFeatureLayer = jest.fn(
+    (featureType: google.maps.FeatureType) => new FeatureLayer()
+  );
+  public getMapCapabilities = jest.fn(() => {
+    return {
+      isAdvancedMarkersAvailable: false,
+      isDataDrivenStylingAvailable: false,
+    };
+  });
 }
