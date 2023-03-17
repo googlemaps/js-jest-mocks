@@ -55,6 +55,7 @@ import { StreetViewService } from "./street-view/service/service";
 import { ControlPosition } from "./maps/controls/controlposition";
 import { MapTypeId } from "./maps/maps/constants";
 import { InfoWindow_ } from "./maps/infowindow/infowindow";
+import { FeatureLayer } from "./maps/maps/featurelayer";
 import { event } from "./maps/event/event";
 import { mockInstances } from "./registry";
 
@@ -102,6 +103,7 @@ const initialize = function (): void {
       MaxZoomService,
       DirectionsService,
       DistanceMatrixService,
+      FeatureLayer,
     },
   };
 };
@@ -141,6 +143,7 @@ export {
   MaxZoomService,
   DirectionsService,
   DistanceMatrixService,
+  FeatureLayer,
   mockInstances,
   initialize,
 };

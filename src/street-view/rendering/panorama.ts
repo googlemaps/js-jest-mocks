@@ -93,4 +93,5 @@ export class StreetViewPanorama
     .fn()
     .mockImplementation((flag: boolean): void => null);
   public setZoom = jest.fn().mockImplementation((zoom: number): void => null);
+  public focus = jest.fn();
 }
