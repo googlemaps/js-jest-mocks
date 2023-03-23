@@ -19,70 +19,49 @@ export const MapsEventListener: google.maps.MapsEventListener = {
 };
 
 export class event implements google.maps.event {
-  addDomListener = jest
-    .fn()
-    .mockImplementation(
-      (
-        instance: object,
-        eventName: string,
-        handler: Function,
-        capture?: boolean
-      ): google.maps.MapsEventListener => MapsEventListener
-    );
-  addDomListenerOnce = jest
-    .fn()
-    .mockImplementation(
-      (
-        instance: object,
-        eventName: string,
-        handler: Function,
-        capture?: boolean
-      ): google.maps.MapsEventListener => MapsEventListener
-    );
+  public static addDomListener: (
+    instance: object,
+    eventName: string,
+    handler: Function,
+    capture?: boolean
+  ) => google.maps.MapsEventListener = jest.fn(() => MapsEventListener);
 
-  addListener = jest
-    .fn()
-    .mockImplementation(
-      (
-        instance: object,
-        eventName: string,
-        handler: Function
-      ): google.maps.MapsEventListener => MapsEventListener
-    );
+  public static addDomListenerOnce: (
+    instance: object,
+    eventName: string,
+    handler: Function,
+    capture?: boolean
+  ) => google.maps.MapsEventListener = jest.fn(() => MapsEventListener);
 
-  addListenerOnce = jest
-    .fn()
-    .mockImplementation(
-      (
-        instance: object,
-        eventName: string,
-        handler: Function
-      ): google.maps.MapsEventListener => MapsEventListener
-    );
+  public static addListener: (
+    instance: object,
+    eventName: string,
+    handler: Function
+  ) => google.maps.MapsEventListener = jest.fn(() => MapsEventListener);
 
-  clearInstanceListeners = jest
-    .fn()
-    .mockImplementation((instance: object): void => null);
+  public static addListenerOnce: (
+    instance: object,
+    eventName: string,
+    handler: Function
+  ) => google.maps.MapsEventListener = jest.fn(() => MapsEventListener);
 
-  clearListeners = jest
-    .fn()
-    .mockImplementation((instance: object, eventName: string): void => null);
+  public static clearInstanceListeners: (instance: object) => void = jest.fn(
+    () => null
+  );
 
-  hasListeners = jest
-    .fn()
-    .mockImplementation(
-      (instance: object, eventName: string): boolean => false
-    );
+  public static clearListeners: (instance: object, eventName: string) => void =
+    jest.fn(() => null);
 
-  removeListener = jest
-    .fn()
-    .mockImplementation(
-      (listener: google.maps.MapsEventListener): void => null
-    );
+  public static hasListeners: (instance: object, eventName: string) => boolean =
+    jest.fn(() => false);
 
-  trigger = jest
-    .fn()
-    .mockImplementation(
-      (instance: object, eventName: string, ...eventArgs: any[]): void => null
-    );
+  public static removeListener: (
+    listener: google.maps.MapsEventListener
+  ) => void = jest.fn(() => null);
+
+  public static trigger: (
+    instance: object,
+    eventName: string,
+    ...eventArgs: any[]
+  ) => void = jest.fn(() => null);
 }
