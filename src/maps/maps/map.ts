@@ -29,14 +29,14 @@ export class Map_ extends MVCObject implements google.maps.Map {
   public getFeatureLayer = jest.fn(
     (featureType: google.maps.FeatureType) => new FeatureLayer()
   );
- 
+
   public getMapCapabilities = jest.fn(() => {
     return {
       isAdvancedMarkersAvailable: false,
       isDataDrivenStylingAvailable: false,
     };
   });
- 
+
   public fitBounds = jest
     .fn()
     .mockImplementation(
