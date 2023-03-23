@@ -25,7 +25,7 @@ import { Autocomplete } from "./places/autocomplete";
 import { MaxZoomService } from "./drawing/max-zoom/max-zoom";
 import { AutocompleteService } from "./places/autocomplete-service/autocomplete-service";
 import { DistanceMatrixService } from "./routes/distance-matrix-service/distance-matrix-service";
-import { ElevationsService } from "./routes/elevation-service/elevation-service";
+import { ElevationService } from "./routes/elevation-service/elevation-service";
 import { Circle } from "./drawing/polygons/circle";
 import { Data } from "./drawing/data/data";
 import { DataPolygon } from "./drawing/data/data.polygon";
@@ -106,7 +106,7 @@ const initialize = function (): void {
       MaxZoomService,
       DirectionsService,
       DistanceMatrixService,
-      ElevationsService,
+      ElevationService,
       marker: {
         PinView,
         AdvancedMarkerView,
@@ -151,7 +151,7 @@ export {
   MaxZoomService,
   DirectionsService,
   DistanceMatrixService,
-  ElevationsService,
+  ElevationService,
   AdvancedMarkerView,
   PinView,
   FeatureLayer,

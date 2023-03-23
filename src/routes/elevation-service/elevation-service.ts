@@ -18,7 +18,7 @@
 
 import { __registerMockInstance } from "../../registry";
 
-export class ElevationsService implements google.maps.ElevationService {
+export class ElevationService implements google.maps.ElevationService {
   public getElevationAlongPath = jest.fn().mockImplementation(
     (
       request: google.maps.PathElevationRequest,

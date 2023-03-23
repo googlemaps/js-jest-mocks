@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { ElevationsService, initialize, mockInstances } from "../../index";
+import { ElevationService, initialize, mockInstances } from "../../index";
 
 beforeEach(() => {
   initialize();
@@ -32,13 +32,13 @@ test("registers mocks", () => {
   service.getElevationAlongPath(null);
   service.getElevationForLocations(null);
 
-  const mocks = mockInstances.get(ElevationsService);
+  const mocks = mockInstances.get(ElevationService);
 
   expect(mocks).toHaveLength(1);
   expect(
-    mockInstances.get(ElevationsService)[0].getElevationAlongPath
+    mockInstances.get(ElevationService)[0].getElevationAlongPath
   ).toHaveBeenCalledWith(null);
   expect(
-    mockInstances.get(ElevationsService)[0].getElevationForLocations
+    mockInstances.get(ElevationService)[0].getElevationForLocations
   ).toHaveBeenCalledWith(null);
 });
