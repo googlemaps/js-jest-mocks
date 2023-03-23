@@ -18,6 +18,7 @@ import { StreetViewPanorama } from "../../street-view/rendering/panorama";
 import { LatLng, LatLngBounds } from "../coordinates/latlng";
 import { MapsEventListener } from "../event/event";
 import { MVCObject } from "../event/mvcobject";
+import { FeatureLayer } from "./featurelayer";
 
 export class Map_ extends MVCObject implements google.maps.Map {
   public controls: Array<google.maps.MVCArray<HTMLElement>>;
@@ -25,23 +26,17 @@ export class Map_ extends MVCObject implements google.maps.Map {
   public mapTypes: google.maps.MapTypeRegistry;
   public overlayMapTypes: google.maps.MVCArray<google.maps.MapType>;
 
-  public getFeatureLayer = jest.fn().mockImplementation(
-    (featureType: google.maps.FeatureType): google.maps.FeatureLayer =>
-      ({
-        featureType: {} as google.maps.FeatureType,
-        isAvailable: true,
-        addListener: (eventName: string, handler: () => void) =>
-          MapsEventListener,
-      } satisfies google.maps.FeatureLayer)
+  public getFeatureLayer = jest.fn(
+    (featureType: google.maps.FeatureType) => new FeatureLayer()
   );
-
-  public getMapCapabilities = jest
-    .fn()
-    .mockImplementation(
-      (): google.maps.MapCapabilities =>
-        ({} satisfies google.maps.MapCapabilities)
-    );
-
+ 
+  public getMapCapabilities = jest.fn(() => {
+    return {
+      isAdvancedMarkersAvailable: false,
+      isDataDrivenStylingAvailable: false,
+    };
+  });
+ 
   public fitBounds = jest
     .fn()
     .mockImplementation(
