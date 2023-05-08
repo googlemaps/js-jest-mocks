@@ -27,7 +27,9 @@ test("advanced marker can initialize", async () => {
 });
 
 test("registers mocks", () => {
-  const advancedMarkerElement = new google.maps.marker.AdvancedMarkerElement(null);
+  const advancedMarkerElement = new google.maps.marker.AdvancedMarkerElement(
+    null
+  );
 
   advancedMarkerElement.position = { lat: 0, lng: 0 };
   advancedMarkerElement.title = "Howdy";
