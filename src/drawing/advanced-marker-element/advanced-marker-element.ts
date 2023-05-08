@@ -19,24 +19,34 @@
 import { MapsEventListener } from "../../maps/event/event";
 import { __registerMockInstance } from "../../registry";
 
-export class PinView implements google.maps.marker.PinView {
-  public background?: string;
-  public borderColor?: string;
-  public element?: HTMLElement | SVGElement;
-  public glyph?: string | Element | URL;
-  public glyphColor?: string;
-  public scale?: number;
+export class AdvancedMarkerElement
+  implements google.maps.marker.AdvancedMarkerElement
+{
+  public collisionBehavior?: google.maps.CollisionBehavior;
+  public content?: Element;
+  public draggable?: boolean;
+  public element: HTMLElement;
+  public map?: google.maps.Map;
+  public position?:
+    | google.maps.LatLng
+    | google.maps.LatLngLiteral
+    | google.maps.LatLngAltitudeLiteral;
+  public title: string;
+  public zIndex?: number;
 
   public addListener = jest
     .fn()
     .mockImplementation(
       (
         eventName: string,
-        handler: (this: PinView, event: MouseEvent) => void
+        handler: (
+          this: AdvancedMarkerElement,
+          event: google.maps.MapMouseEvent
+        ) => void
       ): google.maps.MapsEventListener => MapsEventListener
     );
 
-  constructor(options?: google.maps.marker.PinViewOptions) {
+  constructor(options?: google.maps.marker.AdvancedMarkerElementOptions) {
     __registerMockInstance(this.constructor, this);
   }
 }

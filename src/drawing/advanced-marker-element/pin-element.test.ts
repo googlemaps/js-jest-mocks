@@ -14,30 +14,30 @@
  * limitations under the License.
  */
 
-import { AdvancedMarkerView, initialize } from "../../index";
-import { mockInstances } from "../../registry";
+import { PinElement, initialize, mockInstances } from "../../index";
 
 beforeEach(() => {
   initialize();
 });
 
-test("advanced marker can initialize", async () => {
-  const marker = new google.maps.marker.AdvancedMarkerView(null);
-  expect(marker).toBeTruthy();
+test("pin Element is mocked", async () => {
+  const pinElement = new google.maps.marker.PinElement();
+
+  expect(pinElement).toBeTruthy();
 });
 
 test("registers mocks", () => {
-  const advancedMarkerView = new google.maps.marker.AdvancedMarkerView(null);
+  const pinElement = new google.maps.marker.PinElement();
 
-  advancedMarkerView.position = { lat: 0, lng: 0 };
-  advancedMarkerView.title = "Howdy";
+  pinElement.background = "red";
+  pinElement.borderColor = "blue";
+  pinElement.scale = 2;
 
-  expect(mockInstances.get(AdvancedMarkerView)).toHaveLength(1);
+  const mocks = mockInstances.get(PinElement);
 
-  expect(mockInstances.get(AdvancedMarkerView)[0].position).toEqual({
-    lat: 0,
-    lng: 0,
-  });
+  expect(mocks).toHaveLength(1);
 
-  expect(mockInstances.get(AdvancedMarkerView)[0].title).toBe("Howdy");
+  expect(mockInstances.get(PinElement)[0].background).toBe("red");
+  expect(mockInstances.get(PinElement)[0].borderColor).toBe("blue");
+  expect(mockInstances.get(PinElement)[0].scale).toBe(2);
 });
