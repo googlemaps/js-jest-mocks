@@ -26,6 +26,10 @@ export class Map_ extends MVCObject implements google.maps.Map {
   public mapTypes: google.maps.MapTypeRegistry;
   public overlayMapTypes: google.maps.MVCArray<google.maps.MapType>;
 
+  public getDatasetFeatureLayer = jest.fn(
+    (datasetId: string) => new FeatureLayer()
+  );
+
   public getFeatureLayer = jest.fn(
     (featureType: google.maps.FeatureType) => new FeatureLayer()
   );

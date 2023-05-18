@@ -20,4 +20,5 @@ module.exports = {
   },
   collectCoverage: true,
   testPathIgnorePatterns: ["/dist/"],
+  testEnvironment: "jsdom",
 };
