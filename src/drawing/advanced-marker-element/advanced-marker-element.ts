@@ -20,11 +20,12 @@ import { MapsEventListener } from "../../maps/event/event";
 import { __registerMockInstance } from "../../registry";
 
 export class AdvancedMarkerElement
+  extends HTMLElement
   implements google.maps.marker.AdvancedMarkerElement
 {
   public collisionBehavior?: google.maps.CollisionBehavior;
   public content?: Element;
-  public draggable?: boolean;
+  public gmpDraggable?: boolean;
   public element: HTMLElement;
   public map?: google.maps.Map;
   public position?:
@@ -47,6 +48,9 @@ export class AdvancedMarkerElement
     );
 
   constructor(options?: google.maps.marker.AdvancedMarkerElementOptions) {
+    super();
     __registerMockInstance(this.constructor, this);
   }
 }
+
+customElements.define("gmp-advanced-marker", AdvancedMarkerElement);
