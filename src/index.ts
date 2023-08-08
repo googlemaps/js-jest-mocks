@@ -24,6 +24,7 @@ import { Geocoder } from "./places/geocoder/geocoder";
 import { Autocomplete } from "./places/autocomplete";
 import { MaxZoomService } from "./drawing/max-zoom/max-zoom";
 import { AutocompleteService } from "./places/autocomplete-service/autocomplete-service";
+import { AutocompleteSessionToken } from "./places/autocomplete-session-token/autocomplete-session-token";
 import { DistanceMatrixService } from "./routes/distance-matrix-service/distance-matrix-service";
 import { ElevationService } from "./routes/elevation-service/elevation-service";
 import { Circle } from "./drawing/polygons/circle";
@@ -91,6 +92,7 @@ const initialize = function (): void {
         SearchBox: SearchBox,
         PlacesService,
         AutocompleteService,
+        AutocompleteSessionToken,
       },
       Geocoder,
       Polygon: Polygon,
@@ -120,6 +122,7 @@ export {
   Autocomplete,
   PlacesService,
   AutocompleteService,
+  AutocompleteSessionToken,
   Geocoder,
   Circle,
   Data,
