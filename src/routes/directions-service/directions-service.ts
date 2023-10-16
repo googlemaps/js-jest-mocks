@@ -29,6 +29,7 @@ export class DirectionsService implements google.maps.DirectionsService {
       ) => void
     ): Promise<google.maps.DirectionsResult> =>
       Promise.resolve({
+        request,
         routes: [] as Array<google.maps.DirectionsRoute>,
         available_travel_modes: [] as Array<google.maps.TravelMode>,
         geocoded_waypoints: [] as Array<google.maps.DirectionsGeocodedWaypoint>,
