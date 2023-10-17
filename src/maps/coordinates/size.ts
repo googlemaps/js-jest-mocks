@@ -15,8 +15,8 @@
  */
 
 export class Size implements google.maps.Size {
-  height: number;
-  width: number;
+  public height: number;
+  public width: number;
   constructor(
     width: number,
     height: number,
@@ -26,10 +26,10 @@ export class Size implements google.maps.Size {
     this.width = width;
     this.height = height;
   }
-  equals(other: Size): boolean {
+  public equals(other: Size): boolean {
     return other.height === this.height && other.width === this.width;
   }
-  toString = jest.fn().mockImplementation((): string => {
+  public toString = jest.fn().mockImplementation((): string => {
     return "";
   });
 }

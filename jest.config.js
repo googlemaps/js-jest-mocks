@@ -15,9 +15,8 @@
  */
 
 module.exports = {
-  transform: {
-    "^.+\\.tsx?$": "ts-jest",
-  },
+  roots: ["<rootDir>"],
+  preset: "ts-jest",
   collectCoverage: true,
   testPathIgnorePatterns: ["/dist/"],
   testEnvironment: "jsdom",

@@ -22,7 +22,9 @@ export default [
     plugins: [
       typescript({ tsconfig: "./tsconfig.json", declarationDir: "./" }),
     ],
+
     output: {
+      sourcemap: true,
       file: "dist/index.js",
       format: "cjs",
     },

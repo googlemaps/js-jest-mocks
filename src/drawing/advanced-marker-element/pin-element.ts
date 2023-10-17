@@ -19,7 +19,10 @@
 import { MapsEventListener } from "../../maps/event/event";
 import { __registerMockInstance } from "../../registry";
 
-export class PinElement implements google.maps.marker.PinElement {
+export class PinElement
+  extends HTMLElement
+  implements google.maps.marker.PinElement
+{
   public background?: string;
   public borderColor?: string;
   public element: HTMLElement;
@@ -37,6 +40,8 @@ export class PinElement implements google.maps.marker.PinElement {
     );
 
   constructor(options?: google.maps.marker.PinElementOptions) {
+    super();
     __registerMockInstance(this.constructor, this);
   }
 }
+customElements.define("gmp-pin", PinElement);

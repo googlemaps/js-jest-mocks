@@ -26,6 +26,7 @@ export class Autocomplete
   ) {
     super();
   }
+
   public getBounds = jest
     .fn()
     .mockImplementation(
@@ -36,7 +37,7 @@ export class Autocomplete
     .fn()
     .mockImplementation(
       (): google.maps.places.PlaceResult =>
-        ({ name: "" } as google.maps.places.PlaceResult)
+        ({ name: "" }) as google.maps.places.PlaceResult
     );
   public setBounds = jest
     .fn()
