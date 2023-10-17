@@ -16,6 +16,7 @@
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
+import { importLibrary } from "./import-library";
 import { LatLng, LatLngBounds } from "./maps/coordinates/latlng";
 import { LatLngAltitude } from "./maps/coordinates/latlngaltitude";
 import { PlacesService } from "./places/places-service/places-service";
@@ -65,8 +66,11 @@ import { mockInstances } from "./registry";
 
 const initialize = function (): void {
   mockInstances.clearAll();
+  importLibrary.mockClear();
+
   (global as any).google = {
     maps: {
+      importLibrary,
       ImageMapType: jest.fn(),
       Marker: Marker,
       Map: Map_,
@@ -114,6 +118,10 @@ const initialize = function (): void {
         AdvancedMarkerElement,
       },
       FeatureLayer,
+      drawing: {}, // FIXME: missing implementation (#521)
+      geometry: {}, // FIXME: missing implementation (#299)
+      journeySharing: {}, // FIXME: missing implementation
+      visualization: {}, // FIXME: missing implementation
     },
   };
 };
@@ -158,6 +166,7 @@ export {
   AdvancedMarkerElement,
   PinElement,
   FeatureLayer,
+  importLibrary,
   mockInstances,
   initialize,
 };
