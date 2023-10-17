@@ -15,8 +15,8 @@
  */
 
 export class Point implements google.maps.Point {
-  x: number;
-  y: number;
+  public x: number;
+  public y: number;
   constructor(x: number, y: number) {
     this.x = x;
     this.y = y;

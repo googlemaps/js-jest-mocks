@@ -19,7 +19,7 @@ import { MapsEventListener } from "../../maps/event/event";
 import { MVCObject } from "../../maps/event/mvcobject";
 
 export class Marker extends MVCObject implements google.maps.Marker {
-  static readonly MAX_ZINDEX: number;
+  public static readonly MAX_ZINDEX: number;
   constructor(opts?: google.maps.MarkerOptions | null) {
     super();
   }

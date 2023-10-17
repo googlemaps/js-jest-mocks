@@ -25,18 +25,18 @@ export class Polygon extends MVCObject implements google.maps.Polygon {
   public getEditable = jest.fn().mockImplementation((): boolean => false);
   public getMap = jest
     .fn()
-    .mockImplementation((): google.maps.Map => ({} as google.maps.Map));
+    .mockImplementation((): google.maps.Map => ({}) as google.maps.Map);
   public getPath = jest
     .fn()
     .mockImplementation(
       (): google.maps.MVCArray<google.maps.LatLng> =>
-        ({} as google.maps.MVCArray<google.maps.LatLng>)
+        ({}) as google.maps.MVCArray<google.maps.LatLng>
     );
   public getPaths = jest
     .fn()
     .mockImplementation(
       (): google.maps.MVCArray<google.maps.MVCArray<google.maps.LatLng>> =>
-        ({} as google.maps.MVCArray<google.maps.MVCArray<google.maps.LatLng>>)
+        ({}) as google.maps.MVCArray<google.maps.MVCArray<google.maps.LatLng>>
     );
   public getVisible = jest.fn().mockImplementation((): boolean => false);
   public setDraggable = jest

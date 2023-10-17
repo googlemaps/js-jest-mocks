@@ -25,12 +25,12 @@ export class Polyline extends MVCObject implements google.maps.Polyline {
   public getEditable = jest.fn().mockImplementation((): boolean => false);
   public getMap = jest
     .fn()
-    .mockImplementation((): google.maps.Map => ({} as google.maps.Map));
+    .mockImplementation((): google.maps.Map => ({}) as google.maps.Map);
   public getPath = jest
     .fn()
     .mockImplementation(
       (): google.maps.MVCArray<google.maps.LatLng> =>
-        ({} as google.maps.MVCArray<google.maps.LatLng>)
+        ({}) as google.maps.MVCArray<google.maps.LatLng>
     );
   public getVisible = jest.fn().mockImplementation((): boolean => false);
   public setDraggable = jest
