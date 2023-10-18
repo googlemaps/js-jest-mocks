@@ -12,20 +12,31 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+## Runs the eslint and jest unit tests for every PR and push.
+
 name: Test
-on: [push, pull_request]
+on: [push, pull_request, workflow_call]
 jobs:
   test:
     runs-on: ubuntu-latest
-    steps:      
-      - uses: actions/checkout@v2
-      - uses: actions/cache@v2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-      - run: npm i
-      - run: npm run lint
-      - run: npm test
-      - uses: codecov/codecov-action@v1
+          node-version: 20
+          cache: npm
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run eslint
+        run: npm run lint
+
+      - name: Run Unit Tests
+        run: npm test
+
+      - name: Run codecov Analysis
+        uses: codecov/codecov-action@v1
