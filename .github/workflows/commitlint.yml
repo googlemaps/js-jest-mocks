@@ -12,19 +12,26 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: Package
-on:
-  - push
-  - pull_request
+## Verifies that all PRs use commit-messages (PR titles) in accordance
+##   with conventional commit formatting.
+
+name: Commit Lint
+
+on: [pull_request]
+
 jobs:
-  package:
-    runs-on: ubuntu-latest   
+  enforce-conventional-commit-message:
+    runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - run: npm i
-      - uses: jpoehnelt/verify-npm-files-action@main
+      - name: Setup Node
+        uses: actions/setup-node@v3
         with:
-          keys: |
-            types
-            main
-            module
+          node-version: 20
+
+      - name: Run commitlint
+        run: |
+          npm install -g commitlint @commitlint/config-conventional
+          echo "${PR_TITLE}" | commitlint -x @commitlint/config-conventional
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
