@@ -49,6 +49,9 @@ export class AdvancedMarkerElement
 
   constructor(options?: google.maps.marker.AdvancedMarkerElementOptions) {
     super();
+
+    this.element = document.createElement("div");
+
     __registerMockInstance(this.constructor, this);
   }
 }
