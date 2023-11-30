@@ -15,6 +15,7 @@
  */
 
 import { MVCObject } from "../../maps/event/mvcobject";
+import { MVCArray } from "../../maps/event/mvcarray";
 
 export class Polygon extends MVCObject implements google.maps.Polygon {
   constructor(opts?: google.maps.PolygonOptions | null) {
@@ -25,12 +26,11 @@ export class Polygon extends MVCObject implements google.maps.Polygon {
   public getEditable = jest.fn().mockImplementation((): boolean => false);
   public getMap = jest
     .fn()
-    .mockImplementation((): google.maps.Map => ({}) as google.maps.Map);
+    .mockImplementation((): google.maps.Map | null => null);
   public getPath = jest
     .fn()
     .mockImplementation(
-      (): google.maps.MVCArray<google.maps.LatLng> =>
-        ({}) as google.maps.MVCArray<google.maps.LatLng>
+      (): google.maps.MVCArray<google.maps.LatLng> => new MVCArray()
     );
   public getPaths = jest
     .fn()
@@ -47,7 +47,7 @@ export class Polygon extends MVCObject implements google.maps.Polygon {
     .mockImplementation((editable: boolean): void => {});
   public setMap = jest
     .fn()
-    .mockImplementation((map: google.maps.Map): void => {});
+    .mockImplementation((map: google.maps.Map | null): void => {});
   public setOptions = jest
     .fn()
     .mockImplementation((options: google.maps.PolygonOptions): void => {});
