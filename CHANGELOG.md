@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.21.2](https://github.com/googlemaps/js-jest-mocks/compare/v2.21.1...v2.21.2) (2023-11-30)
+
+
+### Bug Fixes
+
+* trigger release-please ([#566](https://github.com/googlemaps/js-jest-mocks/issues/566)) ([51db24e](https://github.com/googlemaps/js-jest-mocks/commit/51db24e301b5b187a68494f11d22569a73382134))
+
 ## [2.21.1](https://github.com/googlemaps/js-jest-mocks/compare/v2.21.0...v2.21.1) (2023-11-27)
 
 
