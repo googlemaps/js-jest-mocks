@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.21.4](https://github.com/googlemaps/js-jest-mocks/compare/v2.21.3...v2.21.4) (2023-11-30)
+
+
+### Bug Fixes
+
+* polygon.getPath() should return an MVCArray ([#572](https://github.com/googlemaps/js-jest-mocks/issues/572)) ([3357752](https://github.com/googlemaps/js-jest-mocks/commit/3357752a651644f20e21708ee25132773c802236))
+
 ## [2.21.3](https://github.com/googlemaps/js-jest-mocks/compare/v2.21.2...v2.21.3) (2023-11-30)
 
 
