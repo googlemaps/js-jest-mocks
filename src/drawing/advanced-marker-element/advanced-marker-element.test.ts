@@ -42,4 +42,6 @@ test("registers mocks", () => {
   });
 
   expect(mockInstances.get(AdvancedMarkerElement)[0].title).toBe("Howdy");
+
+  expect(mockInstances.get(AdvancedMarkerElement)[0].element).toBeDefined();
 });
