@@ -32,12 +32,15 @@ test("getEditable returns false", () => {
   expect(new google.maps.Polygon(null).getEditable()).toBe(false);
 });
 
-test("getMap returns {}", () => {
-  expect(new google.maps.Polygon(null).getMap()).toEqual({});
+test("getMap returns null", () => {
+  expect(new google.maps.Polygon(null).getMap()).toEqual(null);
 });
 
-test("getPath returns {}", () => {
-  expect(new google.maps.Polygon(null).getPath()).toEqual({});
+test("getPath returns an MVCArray", () => {
+  const p = new google.maps.Polygon(null);
+  const path = p.getPath();
+
+  expect(path).toBeInstanceOf(google.maps.MVCArray);
 });
 
 test("getPaths returns {}", () => {
