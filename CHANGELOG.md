@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.21.3](https://github.com/googlemaps/js-jest-mocks/compare/v2.21.2...v2.21.3) (2023-11-30)
+
+
+### Bug Fixes
+
+* add new ControlPosition constants ([#571](https://github.com/googlemaps/js-jest-mocks/issues/571)) ([a33a39d](https://github.com/googlemaps/js-jest-mocks/commit/a33a39d3ecbcc1523eb56a2d3d035c363fcb2e32)), closes [#548](https://github.com/googlemaps/js-jest-mocks/issues/548)
+* initialize element property of AdvancedMarkerElement ([#568](https://github.com/googlemaps/js-jest-mocks/issues/568)) ([2b2c6bb](https://github.com/googlemaps/js-jest-mocks/commit/2b2c6bbeb3f29dace7d63f920575c46ca14f1fef))
+
 ## [2.21.2](https://github.com/googlemaps/js-jest-mocks/compare/v2.21.1...v2.21.2) (2023-11-30)
 
 
