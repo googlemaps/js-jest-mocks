@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.6",
-    "@types/google.maps": "^3.55.7",
+    "@types/google.maps": "^3.55.8",
     "@types/jest": "^29.5.12",
     "@typescript-eslint/eslint-plugin": ">=7.8.0",
     "@typescript-eslint/parser": ">=7.8.0",
