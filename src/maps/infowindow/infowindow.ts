@@ -25,6 +25,14 @@ export class InfoWindow_ extends MVCObject implements google.maps.InfoWindow {
     .mockImplementation((): string | Element | null | Text | undefined => {
       return jest.fn() as unknown as Element;
     });
+  public getHeaderContent = jest
+    .fn()
+    .mockImplementation((): string | Element | null | Text | undefined => {
+      return jest.fn() as unknown as Element;
+    });
+  public getHeaderDisabled = jest
+    .fn()
+    .mockImplementation((): boolean | undefined => true);
   public getPosition = jest
     .fn()
     .mockImplementation(
@@ -34,6 +42,7 @@ export class InfoWindow_ extends MVCObject implements google.maps.InfoWindow {
   public getZIndex = jest
     .fn()
     .mockImplementation((): number | null | undefined => 1);
+  public isOpen = false;
   public open = jest
     .fn()
     .mockImplementation(
@@ -48,6 +57,12 @@ export class InfoWindow_ extends MVCObject implements google.maps.InfoWindow {
   public setContent = jest
     .fn()
     .mockImplementation((content?: string | Element | Text): void => null);
+  public setHeaderContent = jest
+    .fn()
+    .mockImplementation((headerContent: string | Element | Text) => {});
+  public setHeaderDisabled = jest
+    .fn()
+    .mockImplementation((headerDisabled: boolean) => {});
   public setOptions = jest
     .fn()
     .mockImplementation(

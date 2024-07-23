@@ -63,6 +63,9 @@ export class Map_ extends MVCObject implements google.maps.Map {
     return jest.fn() as unknown as Element;
   });
   public getHeading = jest.fn().mockImplementation((): number => 0);
+  public getHeadingInteractionEnabled = jest
+    .fn()
+    .mockImplementation((): boolean | null => null);
   public getMapTypeId = jest
     .fn()
     .mockImplementation(
@@ -80,6 +83,9 @@ export class Map_ extends MVCObject implements google.maps.Map {
     .fn()
     .mockImplementation(() => new StreetViewPanorama());
   public getTilt = jest.fn().mockImplementation((): number => 0);
+  public getTiltInteractionEnabled = jest
+    .fn()
+    .mockImplementation((): boolean | null => null);
   public getZoom = jest.fn().mockImplementation((): number => 0);
   public moveCamera = jest
     .fn()
@@ -118,6 +124,9 @@ export class Map_ extends MVCObject implements google.maps.Map {
   public setHeading = jest.fn().mockImplementation((heading: number): void => {
     return null;
   });
+  public setHeadingInteractionEnabled = jest
+    .fn()
+    .mockImplementation((headingInteractionEnabled: boolean) => {});
   public setMapTypeId = jest
     .fn()
     .mockImplementation((mapTypeId: google.maps.MapTypeId | string): void => {
@@ -128,6 +137,9 @@ export class Map_ extends MVCObject implements google.maps.Map {
     .mockImplementation((options: google.maps.MapOptions): void => {
       return null;
     });
+  public setRenderingType = jest
+    .fn()
+    .mockImplementation((renderingType: google.maps.RenderingType) => {});
   public setStreetView = jest
     .fn()
     .mockImplementation((panorama: google.maps.StreetViewPanorama): void => {
@@ -136,6 +148,9 @@ export class Map_ extends MVCObject implements google.maps.Map {
   public setTilt = jest.fn().mockImplementation((tilt: number): void => {
     return null;
   });
+  public setTiltInteractionEnabled = jest
+    .fn()
+    .mockImplementation((tiltInteractionEnabled: boolean) => {});
   public setZoom = jest.fn().mockImplementation((zoom: number): void => {
     return null;
   });
