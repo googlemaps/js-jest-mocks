@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-## Automatically approves and merges dependabot PRs if tests pass.
-
 name: Dependabot
 on: pull_request
 
@@ -23,18 +21,15 @@ permissions:
 jobs:
   test:
     uses: ./.github/workflows/test.yml
-
   dependabot:
     needs: test
-    if: ${{ github.actor == 'dependabot[bot]' }}
-
     runs-on: ubuntu-latest
+    if: ${{ github.actor == 'dependabot[bot]' }}
     env:
       PR_URL: ${{github.event.pull_request.html_url}}
       GITHUB_TOKEN: ${{secrets.SYNCED_GITHUB_TOKEN_REPO}}
     steps:
-      - name: Approve
+      - name: approve
         run: gh pr review --approve "$PR_URL"
-
-      - name: Merge
+      - name: merge
         run: gh pr merge --auto --squash --delete-branch "$PR_URL"
