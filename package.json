@@ -44,7 +44,7 @@
     "prettier": "^3.3.3",
     "rollup": "^4.21.2",
     "ts-jest": "^29.2.5",
-    "typedoc": "^0.26.6",
+    "typedoc": "^0.26.7",
     "typescript": "^5.5.3"
   },
   "publishConfig": {
