@@ -20,7 +20,7 @@ export default [
   {
     input: "src/index.ts",
     plugins: [
-      typescript({ tsconfig: "./tsconfig.json", declarationDir: "./" }),
+      typescript({ tsconfig: "./tsconfig.json", declarationDir: "./dist" }),
     ],
 
     output: {
