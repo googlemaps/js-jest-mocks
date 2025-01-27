@@ -34,7 +34,7 @@
     "@types/google.maps": "^3.58.1",
     "@types/jest": "^29.5.14",
     "@typescript-eslint/eslint-plugin": ">=8.19.1",
-    "@typescript-eslint/parser": ">=8.19.1",
+    "@typescript-eslint/parser": ">=8.21.0",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-jest": "^28.11.0",
