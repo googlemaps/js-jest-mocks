@@ -1,23 +1,39 @@
-# Jest Mocks for Google Maps
-
-[![npm](https://img.shields.io/npm/v/@googlemaps/jest-mocks)](https://www.npmjs.com/package/@googlemaps/jest-mocks)
-![Build](https://github.com/googlemaps/js-jest-mocks/workflows/Test/badge.svg)
+[![npm](https://img.shields.io/npm/v/@googlemaps/jest-mocks)][npm-pkg]
 ![Release](https://github.com/googlemaps/js-jest-mocks/workflows/Release/badge.svg)
+![Stable](https://img.shields.io/badge/stability-stable-green)
+[![Tests/Build](https://github.com/googlemaps/js-jest-mocks/actions/workflows/test.yml/badge.svg)](https://github.com/googlemaps/js-jest-mocks/actions/workflows/test.yml)
+
 [![codecov](https://codecov.io/gh/googlemaps/js-jest-mocks/branch/main/graph/badge.svg)](https://codecov.io/gh/googlemaps/js-jest-mocks)
-![GitHub contributors](https://img.shields.io/github/contributors/googlemaps/js-jest-mocks?color=green)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
-[![](https://github.com/jpoehnelt/in-solidarity-bot/raw/main/static//badge-flat.png)](https://github.com/apps/in-solidarity)
-[![Discord](https://img.shields.io/discord/676948200904589322?color=6A7EC2&logo=discord&logoColor=ffffff)](https://discord.gg/jRteCzP)
+[![solidarity](https://github.com/jpoehnelt/in-solidarity-bot/raw/main/static//badge-flat.png)](https://github.com/apps/in-solidarity)
+
+![Contributors](https://img.shields.io/github/contributors/googlemaps/js-jest-mocks?color=green)
+[![License](https://img.shields.io/github/license/googlemaps/js-jest-mocks?color=blue)][license]
+[![StackOverflow](https://img.shields.io/stackexchange/stackoverflow/t/google-maps?color=orange&label=google-maps&logo=stackoverflow)](https://stackoverflow.com/questions/tagged/google-maps)
+[![Discord](https://img.shields.io/discord/676948200904589322?color=6A7EC2&logo=discord&logoColor=ffffff)][Discord server]
+
+# Jest Mocks for Google Maps
 
 ## Description
 
 Jest mocks for Google Maps in TypeScript.
 
-**Note:** If you find a missing mock, please open an [issue][issues].
+**Note:** If you find a missing mock, please [file an issue].
 
-## NPM
+## Requirements
+
+- [Sign up with Google Maps Platform]
+- A Google Maps Platform [project] with the [**Maps Javascript API**][maps-sdk] enabled
+- An [API key] associated with the project above
+- Node.js and NPM
+
+## Installation
 
 Available via NPM as the package `@googlemaps/jest-mocks`
+
+```
+npm i @googlemaps/jest-mocks
+```
 
 ## Usage
 
@@ -305,13 +321,43 @@ beforeEach(() => {
 });
 ```
 
+## Contributing
+
+Contributions are welcome and encouraged! If you'd like to contribute, send us a [pull request] and refer to our [code of conduct] and [contributing guide].
+
+## Terms of Service
+
+This library uses Google Maps Platform services. Use of Google Maps Platform services through this library is subject to the Google Maps Platform [Terms of Service].
+
+This library is not a Google Maps Platform Core Service. Therefore, the Google Maps Platform Terms of Service (e.g. Technical Support Services, Service Level Agreements, and Deprecation Policy) do not apply to the code in this library.
+
 ## Support
 
-This library is community supported. We're comfortable enough with the stability and features of
-the library that we want you to build real production applications on it.
+This library is offered via an open source [license]. It is not governed by the Google Maps Platform Support [Technical Support Services Guidelines, the SLA, or the [Deprecation Policy]. However, any Google Maps Platform services used by the library remain subject to the Google Maps Platform Terms of Service.
 
-If you find a bug, or have a feature suggestion, please [log an issue][issues]. If you'd like to
-contribute, please read [How to Contribute][contrib].
+This library adheres to [semantic versioning] to indicate when backwards-incompatible changes are introduced. Accordingly, while the library is in version 0.x, backwards-incompatible changes may be introduced at any time.
 
-[issues]: https://github.com/googlemaps/js-jest-mocks/issues
-[contrib]: CONTRIBUTING.md
+If you find a bug, or have a feature request, please [file an issue] on GitHub. If you would like to get answers to technical questions from other Google Maps Platform developers, ask through one of our [developer community channels]. If you'd like to contribute, please check the [contributing guide].
+
+You can also discuss this library on our [Discord server].
+
+[API key]: https://developers.google.com/maps/documentation/javascript/get-api-key
+[maps-sdk]: https://developers.google.com/maps/documentation/javascript
+[documentation]: https://googlemaps.github.io/js-jest-mocks
+[npm-pkg]: https://npmjs.com/package/@googlemaps/jest-mocks
+
+[code of conduct]: ?tab=coc-ov-file#readme
+[contributing guide]: CONTRIBUTING.md
+[Deprecation Policy]: https://cloud.google.com/maps-platform/terms
+[developer community channels]: https://developers.google.com/maps/developer-community
+[Discord server]: https://discord.gg/hYsWbmk
+[file an issue]: https://github.com/googlemaps/js-jest-mocks/issues/new/choose
+[license]: LICENSE
+[project]: https://developers.google.com/maps/documentation/javascript/cloud-setup#enabling-apis
+[pull request]: https://github.com/googlemaps/js-jest-mocks/compare
+[semantic versioning]: https://semver.org
+[Sign up with Google Maps Platform]: https://console.cloud.google.com/google/maps-apis/start
+[similar inquiry]: https://github.com/googlemaps/js-jest-mocks/issues
+[SLA]: https://cloud.google.com/maps-platform/terms/sla
+[Technical Support Services Guidelines]: https://cloud.google.com/maps-platform/terms/tssg
+[Terms of Service]: https://cloud.google.com/maps-platform/terms
