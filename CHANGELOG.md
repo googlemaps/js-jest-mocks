@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.22.1](https://github.com/googlemaps/js-jest-mocks/compare/v2.22.0...v2.22.1) (2025-02-06)
+
+
+### Miscellaneous Chores
+
+* update README per template ([#801](https://github.com/googlemaps/js-jest-mocks/issues/801)) ([b395e8c](https://github.com/googlemaps/js-jest-mocks/commit/b395e8ce28e0b4a36567c28bfb2c5103e1f1d478))
+
 ## [2.22.0](https://github.com/googlemaps/js-jest-mocks/compare/v2.21.4...v2.22.0) (2024-07-24)
 
 
