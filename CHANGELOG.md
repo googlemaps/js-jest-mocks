@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.22.6](https://github.com/googlemaps/js-jest-mocks/compare/v2.22.5...v2.22.6) (2025-02-13)
+
+
+### Miscellaneous Chores
+
+* trigger release-please ([#844](https://github.com/googlemaps/js-jest-mocks/issues/844)) ([3d729ec](https://github.com/googlemaps/js-jest-mocks/commit/3d729ec473161eabcb0f0c8d9650ba3866d49b0e))
+
 ## [2.22.5](https://github.com/googlemaps/js-jest-mocks/compare/v2.22.4...v2.22.5) (2025-02-11)
 
 
