@@ -33,7 +33,7 @@
     "@rollup/plugin-typescript": "^12.1.2",
     "@types/google.maps": "^3.58.1",
     "@types/jest": "^29.5.14",
-    "@typescript-eslint/eslint-plugin": ">=8.32.1",
+    "@typescript-eslint/eslint-plugin": ">=8.33.0",
     "@typescript-eslint/parser": ">=8.32.1",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^10.1.5",
