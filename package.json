@@ -30,7 +30,7 @@
     "test:watch": "jest --watch src/*"
   },
   "devDependencies": {
-    "@rollup/plugin-typescript": "^12.1.4",
+    "@rollup/plugin-typescript": "^12.3.0",
     "@types/google.maps": "^3.58.1",
     "@types/jest": "^29.5.14",
     "@typescript-eslint/eslint-plugin": ">=8.46.0",
