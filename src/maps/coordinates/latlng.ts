@@ -45,7 +45,9 @@ export class LatLngBounds implements google.maps.LatLngBounds {
   constructor(
     sw?: google.maps.LatLng | google.maps.LatLngLiteral,
     ne?: google.maps.LatLng | google.maps.LatLngLiteral
-  ) {}
+  ) {
+    __registerMockInstance(this.constructor, this);
+  }
   public contains = jest
     .fn()
     .mockImplementation(

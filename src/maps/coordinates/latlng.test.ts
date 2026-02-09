@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { LatLng, initialize, mockInstances } from "../../index";
+import { LatLng, LatLngBounds, initialize, mockInstances } from "../../index";
 
 beforeEach(() => {
   initialize();
@@ -33,6 +33,24 @@ test("lat lng registers mocks", () => {
   latLng1.equals(latLng2);
 
   const mocks = mockInstances.get(LatLng);
+
+  expect(mocks).toHaveLength(2);
+  expect(mocks[0].equals).toHaveBeenCalledWith(mocks[1]);
+});
+
+test("lat lng bounds can initialize", async () => {
+  const latLngBounds = new google.maps.LatLngBounds();
+
+  expect(latLngBounds).toBeTruthy();
+});
+
+test("lat lng bounds registers mocks", () => {
+  const latLngBounds1 = new google.maps.LatLngBounds();
+  const latLngBounds2 = new google.maps.LatLngBounds();
+
+  latLngBounds1.equals(latLngBounds2);
+
+  const mocks = mockInstances.get(LatLngBounds);
 
   expect(mocks).toHaveLength(2);
   expect(mocks[0].equals).toHaveBeenCalledWith(mocks[1]);
