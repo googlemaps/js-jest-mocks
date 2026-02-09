@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { __registerMockInstance } from "../../registry";
 
 export class LatLngAltitude implements google.maps.LatLngAltitude {
   public lat = 0;
@@ -26,7 +27,9 @@ export class LatLngAltitude implements google.maps.LatLngAltitude {
       | google.maps.LatLngAltitude
       | google.maps.LatLngAltitudeLiteral,
     noClampNoWrap?: boolean
-  ) {}
+  ) {
+    __registerMockInstance(this.constructor, this);
+  }
 
   public equals = jest
     .fn()
