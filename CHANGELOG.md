@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.22.7](https://github.com/googlemaps/js-jest-mocks/compare/v2.22.6...v2.22.7) (2026-02-10)
+
+
+### Bug Fixes
+
+* register mocks for LatLng, LatLngBounds and LatLngfAltitude classes ([#1018](https://github.com/googlemaps/js-jest-mocks/issues/1018)) ([c72b95e](https://github.com/googlemaps/js-jest-mocks/commit/c72b95e68860aae6ff93f0d0ba4a728c75b6f5bd))
+
 ## [2.22.6](https://github.com/googlemaps/js-jest-mocks/compare/v2.22.5...v2.22.6) (2025-02-13)
 
 
