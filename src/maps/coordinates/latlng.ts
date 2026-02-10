@@ -14,12 +14,16 @@
  * limitations under the License.
  */
 
+import { __registerMockInstance } from "../../registry";
+
 export class LatLng implements google.maps.LatLng {
   constructor(
     a: google.maps.LatLngLiteral | number,
     b?: boolean | number,
     c?: boolean
-  ) {}
+  ) {
+    __registerMockInstance(this.constructor, this);
+  }
 
   public equals = jest
     .fn()
@@ -41,7 +45,9 @@ export class LatLngBounds implements google.maps.LatLngBounds {
   constructor(
     sw?: google.maps.LatLng | google.maps.LatLngLiteral,
     ne?: google.maps.LatLng | google.maps.LatLngLiteral
-  ) {}
+  ) {
+    __registerMockInstance(this.constructor, this);
+  }
   public contains = jest
     .fn()
     .mockImplementation(
