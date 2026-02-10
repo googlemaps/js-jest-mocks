@@ -1,5 +1,5 @@
 /**
- * Copyright 2022 Google LLC. All Rights Reserved.
+ * Copyright 2026 Google LLC. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,13 +20,13 @@ beforeEach(() => {
   initialize();
 });
 
-test("lat lng can initialize", async () => {
+test("LatLng can initialize", async () => {
   const latLng = new google.maps.LatLng(0, 0);
 
   expect(latLng).toBeTruthy();
 });
 
-test("lat lng registers mocks", () => {
+test("LatLng registers mocks", () => {
   const latLng1 = new google.maps.LatLng(0, 0);
   const latLng2 = new google.maps.LatLng(0, 0);
 
@@ -38,13 +38,13 @@ test("lat lng registers mocks", () => {
   expect(mocks[0].equals).toHaveBeenCalledWith(mocks[1]);
 });
 
-test("lat lng bounds can initialize", async () => {
+test("LatLngBounds can initialize", async () => {
   const latLngBounds = new google.maps.LatLngBounds();
 
   expect(latLngBounds).toBeTruthy();
 });
 
-test("lat lng bounds registers mocks", () => {
+test("LatLngBounds registers mocks", () => {
   const latLngBounds1 = new google.maps.LatLngBounds();
   const latLngBounds2 = new google.maps.LatLngBounds();
 
