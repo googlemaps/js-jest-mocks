@@ -31,7 +31,7 @@ test.each(libraries)("library %s is returned", async (name) => {
 });
 
 test("throws an error for unknown libraries", async () => {
-  await expect(google.maps.importLibrary("unknown")).rejects.toThrowError();
+  await expect(google.maps.importLibrary("unknown")).rejects.toThrow();
 });
 
 test("importLibrary is exported as mock", async () => {
