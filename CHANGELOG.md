@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.22.8](https://github.com/googlemaps/js-jest-mocks/compare/v2.22.7...v2.22.8) (2026-02-11)
+
+
+### Bug Fixes
+
+* add tslib dev-dependency ([509ae96](https://github.com/googlemaps/js-jest-mocks/commit/509ae9619072db62355fbff26452926a9aa941f9))
+
 ## [2.22.7](https://github.com/googlemaps/js-jest-mocks/compare/v2.22.6...v2.22.7) (2026-02-10)
 
 
