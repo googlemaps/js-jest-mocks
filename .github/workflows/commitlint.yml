@@ -19,15 +19,18 @@ name: Commit Lint
 
 on: [pull_request]
 
+permissions:
+  contents: read
+
 jobs:
   enforce-conventional-commit-message:
     runs-on: ubuntu-latest
 
     steps:
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
 
       - name: Run commitlint
         run: |
