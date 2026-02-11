@@ -2,7 +2,7 @@
   "compilerOptions": {
     "declaration": true,
     "declarationDir": "./dist",
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "outDir": "./dist",
     "sourceMap": true,
     "esModuleInterop": true,
