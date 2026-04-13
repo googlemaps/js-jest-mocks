@@ -46,7 +46,7 @@
     "ts-jest": "^29.4.9",
     "tslib": "^2.8.1",
     "typedoc": "^0.28.18",
-    "typescript": "^5.6.3"
+    "typescript": "^6.0.2"
   },
   "publishConfig": {
     "access": "public",
