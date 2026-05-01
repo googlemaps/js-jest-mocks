@@ -63,6 +63,7 @@ import { PinElement } from "./drawing/advanced-marker-element/pin-element";
 import { FeatureLayer } from "./maps/maps/featurelayer";
 import { event } from "./maps/event/event";
 import { mockInstances } from "./registry";
+import { Animation } from "./drawing/marker/constants";
 
 const initialize = function (): void {
   mockInstances.clearAll();
@@ -79,6 +80,7 @@ const initialize = function (): void {
       Size: Size,
       MVCObject: MVCObject,
       MVCArray: MVCArray,
+      Animation: Animation,
       MapTypeId: MapTypeId,
       ControlPosition: ControlPosition,
       LatLng: LatLng,
@@ -168,5 +170,6 @@ export {
   FeatureLayer,
   importLibrary,
   mockInstances,
+  Animation,
   initialize,
 };
