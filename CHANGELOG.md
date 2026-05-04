@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.22.9](https://github.com/googlemaps/js-jest-mocks/compare/v2.22.8...v2.22.9) (2026-05-04)
+
+
+### Bug Fixes
+
+* add google.maps.Animation mock ([#1066](https://github.com/googlemaps/js-jest-mocks/issues/1066)) ([bd2a5ce](https://github.com/googlemaps/js-jest-mocks/commit/bd2a5ceba30736fdce0bf367e0c4b10717f4e6ff))
+
 ## [2.22.8](https://github.com/googlemaps/js-jest-mocks/compare/v2.22.7...v2.22.8) (2026-02-11)
 
 
