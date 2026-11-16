@@ -55,3 +55,5 @@ export class Circle extends MVCObject implements google.maps.Circle {
   public setRadius = jest.fn().mockImplementation((radius: number) => {});
   public setVisible = jest.fn().mockImplementation((visible: boolean) => {});
 }
+
+Circle satisfies typeof google.maps.Circle;

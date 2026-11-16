@@ -55,3 +55,8 @@ test("LatLngBounds registers mocks", () => {
   expect(mocks).toHaveLength(2);
   expect(mocks[0].equals).toHaveBeenCalledWith(mocks[1]);
 });
+
+test("LatLngBounds.MAX_BOUNDS is not a registered instance", () => {
+  expect(google.maps.LatLngBounds.MAX_BOUNDS).toBeInstanceOf(LatLngBounds);
+  expect(mockInstances.get(LatLngBounds)).toHaveLength(0);
+});

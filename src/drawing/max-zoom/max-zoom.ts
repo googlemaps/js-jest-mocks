@@ -34,3 +34,5 @@ export class MaxZoomService implements google.maps.MaxZoomService {
     __registerMockInstance(this.constructor, this);
   }
 }
+
+MaxZoomService satisfies typeof google.maps.MaxZoomService;

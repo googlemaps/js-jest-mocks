@@ -59,3 +59,5 @@ export class Polyline extends MVCObject implements google.maps.Polyline {
     .fn()
     .mockImplementation((visible: boolean): void => {});
 }
+
+Polyline satisfies typeof google.maps.Polyline;

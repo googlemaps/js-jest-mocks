@@ -31,7 +31,7 @@ test("registers mocks", () => {
   const latLng = new google.maps.LatLng(0, 0);
   const latLngAltitude = new google.maps.LatLngAltitude(latLng);
 
-  latLngAltitude.altitude = 100;
+  (latLngAltitude as unknown as LatLngAltitude).altitude = 100;
 
   const mocks = mockInstances.get(LatLngAltitude);
 

@@ -18,7 +18,7 @@ export const MapsEventListener: google.maps.MapsEventListener = {
   remove: jest.fn(),
 };
 
-export class event implements google.maps.event {
+export class event {
   public static addDomListener: (
     instance: object,
     eventName: string,
@@ -65,3 +65,5 @@ export class event implements google.maps.event {
     ...eventArgs: any[]
   ) => void = jest.fn(() => null);
 }
+
+event satisfies typeof google.maps.event;

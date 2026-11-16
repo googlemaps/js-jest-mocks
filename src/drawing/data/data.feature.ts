@@ -65,3 +65,5 @@ export class Feature extends MVCObject implements google.maps.Data.Feature {
       return null;
     });
 }
+
+Feature satisfies typeof google.maps.Data.Feature;

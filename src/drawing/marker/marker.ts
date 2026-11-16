@@ -128,3 +128,5 @@ export class Marker extends MVCObject implements google.maps.Marker {
       ): google.maps.MapsEventListener => MapsEventListener
     );
 }
+
+Marker satisfies typeof google.maps.Marker;
