@@ -48,3 +48,15 @@ export function __registerMockInstance(ctr: Function, instance: any): void {
   const existing = MOCKS_REGISTRY.get(ctr.name) || [];
   MOCKS_REGISTRY.set(ctr.name, [...existing, instance]);
 }
+
+/* Internal */
+export function __unregisterMockInstance(ctr: Function, instance: any): void {
+  const existing = MOCKS_REGISTRY.get(ctr.name);
+  if (!existing) return;
+  const remaining = existing.filter((item) => item !== instance);
+  if (remaining.length) {
+    MOCKS_REGISTRY.set(ctr.name, remaining);
+  } else {
+    MOCKS_REGISTRY.delete(ctr.name);
+  }
+}

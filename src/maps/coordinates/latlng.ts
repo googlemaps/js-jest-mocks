@@ -14,7 +14,10 @@
  * limitations under the License.
  */
 
-import { __registerMockInstance } from "../../registry";
+import {
+  __registerMockInstance,
+  __unregisterMockInstance,
+} from "../../registry";
 
 export class LatLng implements google.maps.LatLng {
   constructor(
@@ -111,4 +114,21 @@ export class LatLngBounds implements google.maps.LatLngBounds {
         other: google.maps.LatLngBounds | google.maps.LatLngBoundsLiteral
       ): google.maps.LatLngBounds => this
     );
+
+  /**
+   * Mirrors `google.maps.LatLngBounds.MAX_BOUNDS`. Created once at module load
+   * and kept out of `mockInstances`, so it doesn't show up as a test-created
+   * instance.
+   */
+  public static readonly MAX_BOUNDS: google.maps.LatLngBounds = (() => {
+    const bounds = new LatLngBounds(
+      { lat: -90, lng: -180 },
+      { lat: 90, lng: 180 }
+    );
+    __unregisterMockInstance(LatLngBounds, bounds);
+    return bounds;
+  })();
 }
+
+LatLng satisfies typeof google.maps.LatLng;
+LatLngBounds satisfies typeof google.maps.LatLngBounds;

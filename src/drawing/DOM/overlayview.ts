@@ -20,6 +20,13 @@ import { Map_ } from "../../maps/maps/map";
 import { MVCObject } from "../../maps/event/mvcobject";
 
 export class OverlayView extends MVCObject implements google.maps.OverlayView {
+  public static preventMapHitsAndGesturesFrom = jest
+    .fn()
+    .mockImplementation((element: Element): void => {});
+  public static preventMapHitsFrom = jest
+    .fn()
+    .mockImplementation((element: Element): void => {});
+
   public draw = jest.fn();
   public getMap = jest
     .fn()
@@ -44,3 +51,5 @@ export class OverlayView extends MVCObject implements google.maps.OverlayView {
         null
     );
 }
+
+OverlayView satisfies typeof google.maps.OverlayView;

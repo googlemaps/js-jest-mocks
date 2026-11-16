@@ -78,3 +78,5 @@ export class Polygon extends MVCObject implements google.maps.Polygon {
     .fn()
     .mockImplementation((visible: boolean): void => {});
 }
+
+Polygon satisfies typeof google.maps.Polygon;

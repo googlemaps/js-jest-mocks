@@ -57,3 +57,5 @@ export class AdvancedMarkerElement
 }
 
 customElements.define("gmp-advanced-marker", AdvancedMarkerElement);
+
+AdvancedMarkerElement satisfies typeof google.maps.marker.AdvancedMarkerElement;

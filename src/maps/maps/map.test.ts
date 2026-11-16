@@ -47,3 +47,12 @@ test("registers mocks", () => {
   expect(mockInstances.get(Map_)[0].fitBounds).toHaveBeenCalledWith(null);
   expect(mockInstances.get(Map_)[0].data.get).toHaveBeenCalledWith(null);
 });
+
+test("exposes DEMO_MAP_ID", () => {
+  expect(google.maps.Map.DEMO_MAP_ID).toBe("DEMO_MAP_ID");
+});
+
+test("getInternalUsageAttributionIds returns null by default", () => {
+  const map = new google.maps.Map(document.createElement("div"));
+  expect(map.getInternalUsageAttributionIds()).toBeNull();
+});

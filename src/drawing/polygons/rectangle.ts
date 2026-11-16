@@ -37,3 +37,5 @@ export class Rectangle extends MVCObject implements google.maps.Rectangle {
   );
   public setVisible = jest.fn((visible: boolean) => {});
 }
+
+Rectangle satisfies typeof google.maps.Rectangle;

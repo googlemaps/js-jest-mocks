@@ -22,6 +22,8 @@ import { FeatureLayer } from "./featurelayer";
 import { ControlPosition } from "../controls/controlposition";
 
 export class Map_ extends MVCObject implements google.maps.Map {
+  public static readonly DEMO_MAP_ID = "DEMO_MAP_ID";
+
   public controls: Array<google.maps.MVCArray<HTMLElement>>;
   public data: google.maps.Data;
   public mapTypes: google.maps.MapTypeRegistry;
@@ -34,6 +36,10 @@ export class Map_ extends MVCObject implements google.maps.Map {
   public getFeatureLayer = jest.fn(
     (featureType: google.maps.FeatureType) => new FeatureLayer()
   );
+
+  public getInternalUsageAttributionIds = jest
+    .fn()
+    .mockImplementation((): Iterable<string> | null => null);
 
   public getMapCapabilities = jest.fn(() => {
     return {
@@ -174,3 +180,5 @@ export class Map_ extends MVCObject implements google.maps.Map {
     this.overlayMapTypes = new google.maps.MVCArray();
   }
 }
+
+Map_ satisfies typeof google.maps.Map;

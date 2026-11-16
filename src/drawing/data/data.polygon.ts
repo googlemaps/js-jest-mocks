@@ -19,6 +19,10 @@ import { MVCObject } from "../../maps/event/mvcobject";
 export class DataPolygon extends MVCObject implements google.maps.Data.Polygon {
   constructor(
     elements?:
+      | (
+          | google.maps.Data.LinearRing
+          | (google.maps.LatLng | google.maps.LatLngLiteral)[]
+        )[]
       | google.maps.MVCArray<google.maps.MVCArray<google.maps.LatLng>>
       | google.maps.MVCArray<google.maps.LatLng>
       | google.maps.LatLng[][]
@@ -47,3 +51,5 @@ export class DataPolygon extends MVCObject implements google.maps.Data.Polygon {
   public getLength = jest.fn().mockImplementation((): number => 0);
   public getType = jest.fn().mockImplementation((): string => "MultiPolygon");
 }
+
+DataPolygon satisfies typeof google.maps.Data.Polygon;

@@ -68,3 +68,5 @@ export class KmlLayer extends MVCObject implements google.maps.KmlLayer {
     super();
   }
 }
+
+KmlLayer satisfies typeof google.maps.KmlLayer;

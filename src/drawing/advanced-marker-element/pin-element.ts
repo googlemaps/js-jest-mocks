@@ -45,3 +45,5 @@ export class PinElement
   }
 }
 customElements.define("gmp-pin", PinElement);
+
+PinElement satisfies typeof google.maps.marker.PinElement;

@@ -179,3 +179,18 @@ export class Data extends MVCObject implements google.maps.Data {
       return null;
     });
 }
+
+/**
+ * `google.maps.Data` geometry classes that have no mock yet. Listed explicitly
+ * so this check still catches any other static member that goes missing.
+ */
+type UnmockedDataGeometries =
+  | "GeometryCollection"
+  | "LinearRing"
+  | "LineString"
+  | "MultiLineString"
+  | "MultiPoint"
+  | "MultiPolygon"
+  | "Point";
+
+Data satisfies Omit<typeof google.maps.Data, UnmockedDataGeometries>;
